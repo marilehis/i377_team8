@@ -563,7 +563,7 @@ CREATE TABLE OBJEKTI_LIIK (
        sulgeja              VARCHAR(32),
        suletud              DATE NOT NULL,
        nimetus              VARCHAR(100) NOT NULL,
-       kommentaar           LONG VARBINARY,
+       kommentaar           VARCHAR,
        kood                 CHAR(18),
        PRIMARY KEY (objekt_liik_ID)
 );
@@ -582,7 +582,7 @@ CREATE TABLE OBJEKT (
        sulgeja              VARCHAR(32),
        suletud              DATE NOT NULL,
        nimetus              VARCHAR(100),
-       kommentaar           LONG VARBINARY,
+       kommentaar           VARCHAR,
        objekt_ID            INTEGER NOT NULL,
        objekt_liik_ID       INTEGER NOT NULL,
        PRIMARY KEY (objekt_ID), 
