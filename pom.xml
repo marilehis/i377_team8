@@ -167,7 +167,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-            <version>3.6.4.Final</version>
+            <version>3.6.7.Final</version>
             <classifier/>
             <exclusions>
                 <exclusion>
