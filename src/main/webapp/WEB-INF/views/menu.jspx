@@ -6,6 +6,7 @@
         <menu:category id="c_controller" z="nj8Dm3hojIyIEyPkwE1UMDIs+K8=">
             <menu:item id="i_controller__guardindex_id" messageCode="global_generic" url="/guard/index" z="dVTlnY+LSeFpP/VZPUrjRDfwdFE="/>
             <menu:item id="i_controller__scheduleindex_id" messageCode="global_generic" url="/schedule/index" z="bS39jYP6LOfHyJVa+ueG24Z8xzk="/>
+            <menu:item id="i_controller__individualscheduleindex_id" messageCode="global_generic" url="/individualschedule/index" z="9vNZ0EW3YVIQ9lLDFg75o0EECTk="/>
         </menu:category>
     </menu:menu>
 </div>
