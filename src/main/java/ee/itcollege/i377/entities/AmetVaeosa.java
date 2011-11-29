@@ -16,6 +16,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -37,25 +38,30 @@ public class AmetVaeosa implements Serializable {
 	private Long ametVaeosasId;
 
     @Temporal( TemporalType.DATE)
-	private Date alates;
+    @DateTimeFormat(style="M-")
+	private Date alates; // ok
 
 	private String avaja;
 
     @Temporal( TemporalType.DATE)
-	private Date avatud;
+    @DateTimeFormat(style="M-")
+	private Date avatud; // ok
 
 	private String kommentaar;
 
     @Temporal( TemporalType.DATE)
-	private Date kuni;
+    @DateTimeFormat(style="M-")
+	private Date kuni; // ok
 
     @Temporal( TemporalType.DATE)
-	private Date muudetud;
+    @DateTimeFormat(style="M-")
+	private Date muudetud; // ok
 
 	private String muutja;
 
     @Temporal( TemporalType.DATE)
-	private Date suletud;
+    @DateTimeFormat(style="M-")
+	private Date suletud; // ok
 
 	private String sulgeja;
 

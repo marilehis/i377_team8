@@ -13,6 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -35,21 +36,24 @@ public class Auaste implements Serializable {
 	private String avaja;
 
     @Temporal( TemporalType.DATE)
-	private Date avatud;
+    @DateTimeFormat(style="M-")
+	private Date avatud; // ok
 
 	private String kommentaar;
 
 	private String kood;
 
     @Temporal( TemporalType.DATE)
-	private Date muudetud;
+    @DateTimeFormat(style="M-")
+	private Date muudetud; // ok
 
 	private String muutja;
 
 	private String nimetus;
 
     @Temporal( TemporalType.DATE)
-	private Date suletud;
+    @DateTimeFormat(style="M-")
+	private Date suletud; // ok
 
 	private String sulgeja;
 
