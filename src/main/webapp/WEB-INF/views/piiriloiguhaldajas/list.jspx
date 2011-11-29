@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_PiiriloiguHaldaja" items="${piiriloiguhaldajas}" z="/nnfDINDhV8sv7DmYn23iHylJ2s=">
+        <table:table data="${piiriloiguhaldajas}" id="l_ee_itcollege_i377_entities_PiiriloiguHaldaja" path="/piiriloiguhaldajas" typeIdFieldName="piiriloiguHaldajaId" z="etFz1p5VJ6qVYz1Vtw4I5A9VJek=">
+            <table:column date="true" dateTimePattern="${piiriloiguHaldaja_alates_date_format}" id="c_ee_itcollege_i377_entities_PiiriloiguHaldaja_alates" property="alates" z="DeSojW/BwH45kHUVIIdXM2QcINE="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiiriloiguHaldaja_avaja" property="avaja" z="2ZuAp5b1qNBnTl9wDGIHVDS/e3I="/>
+            <table:column date="true" dateTimePattern="${piiriloiguHaldaja_avatud_date_format}" id="c_ee_itcollege_i377_entities_PiiriloiguHaldaja_avatud" property="avatud" z="0FPMsJy7q/msQnfzlyLg2GfEtnU="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiiriloiguHaldaja_kommentaar" property="kommentaar" z="bkFxf6y5n1poQ2YLVzWP4oBbCP4="/>
+            <table:column date="true" dateTimePattern="${piiriloiguHaldaja_kuni_date_format}" id="c_ee_itcollege_i377_entities_PiiriloiguHaldaja_kuni" property="kuni" z="dpwOk5VedaUIqvEWK1BKHKFkOAI="/>
+            <table:column date="true" dateTimePattern="${piiriloiguHaldaja_muudetud_date_format}" id="c_ee_itcollege_i377_entities_PiiriloiguHaldaja_muudetud" property="muudetud" z="avRyxUyKR7T7CipVBPDtuURelWM="/>
+        </table:table>
+    </page:list>
+</div>

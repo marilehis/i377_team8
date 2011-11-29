@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_ObjektiLiik" idField="objektLiikId" modelAttribute="objektiLiik" path="/objektiliiks" versionField="Version" z="vfd2frruf9o+2Q+Xi55Y9UHppMY=">
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_ObjektiLiik_avaja" z="n6AZyUeuhf/hqlbnqh0nL0FXZYQ="/>
+        <field:datetime dateTimePattern="${objektiLiik_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_ObjektiLiik_avatud" z="RXD2dKCU6G5lsO1IFLR4etfYBTY="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_ObjektiLiik_kommentaar" z="T+a41NdqSpNsaffnYMDAxI/rwbs="/>
+        <field:input field="kood" id="c_ee_itcollege_i377_entities_ObjektiLiik_kood" z="odGb9LC6BizwtpTVzYQ1uEiWDSQ="/>
+        <field:datetime dateTimePattern="${objektiLiik_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_ObjektiLiik_muudetud" z="LUv8MqvlpCe/+ZhLEkl0mryZQ6s="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_ObjektiLiik_muutja" z="JcHplPU0R/lRo6oe7AsCTKoI8fU="/>
+        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_ObjektiLiik_nimetus" z="C5jmSZxFsFmJmmu1dYQ/V4TLEIo="/>
+        <field:datetime dateTimePattern="${objektiLiik_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_ObjektiLiik_suletud" z="GPzLH76wD6T8xwuqhzh14GqjlTY="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_ObjektiLiik_sulgeja" z="wdDYWBiJk0Lf5HJ9dCSy9++N7C0="/>
+        <field:simple field="objekts" id="c_ee_itcollege_i377_entities_ObjektiLiik_objekts" messageCode="entity_reference_not_managed" messageCodeAttribute="Objekt" z="HLmPaiuV9dPtHNAy59uwlFUodFU="/>
+    </form:update>
+</div>

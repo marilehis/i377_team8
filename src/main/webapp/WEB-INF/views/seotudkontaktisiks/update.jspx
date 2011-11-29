@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_SeotudKontaktisik" idField="piirivalvuriKontaktId" modelAttribute="seotudKontaktisik" path="/seotudkontaktisiks" versionField="Version" z="Fy88gCuWIBRHDUYyJIREjd1MTfo=">
+        <field:datetime dateTimePattern="${seotudKontaktisik_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_alates" z="woz5JECBLOicijJow2oj84mfrx8="/>
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_avaja" z="+XjL8kfmNDnLQ/sB3bbX3CVihVs="/>
+        <field:datetime dateTimePattern="${seotudKontaktisik_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_avatud" z="XFWgzuazSzkvG8bmBwxO0GpRqpo="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_kommentaar" z="359jShUtK8p6K8orYo6wtQzuD/Q="/>
+        <field:datetime dateTimePattern="${seotudKontaktisik_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_kuni" z="SOls3oI1+dnGVFMukAftcpsK5q4="/>
+        <field:datetime dateTimePattern="${seotudKontaktisik_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_muudetud" z="ZG2dQ67KVdboctcp6EUEYBnx68A="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_muutja" z="KLQb7I31ra3bzpVezO7rsUkK9KQ="/>
+        <field:datetime dateTimePattern="${seotudKontaktisik_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_suletud" z="OPgHIHoYqkqWycSihc8V5YuC5eQ="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_sulgeja" z="oDnnevrnutKuhPw7KTygLaKH6MY="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_piirivalvur" itemValue="piirivalvurId" items="${piirivalvurs}" path="/piirivalvurs" z="z6HONrd6zx+u/Lzh+Oq/1FlfnKw="/>
+        <field:select field="suguluseRolliLiik" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_suguluseRolliLiik" itemValue="suguluseRolliLiikId" items="${suguluserolliliiks}" path="/suguluserolliliiks" z="IEzWnXxL9JXF0hPrGpCVSbVQ3jA="/>
+    </form:update>
+</div>

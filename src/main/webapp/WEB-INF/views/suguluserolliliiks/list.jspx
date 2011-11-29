@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_SuguluseRolliLiik" items="${suguluserolliliiks}" z="Uk/Ilbj5cYR+eR6Z5SiaMoxUvTk=">
+        <table:table data="${suguluserolliliiks}" id="l_ee_itcollege_i377_entities_SuguluseRolliLiik" path="/suguluserolliliiks" typeIdFieldName="suguluseRolliLiikId" z="CZAkJhUjwGwLH2VVh7CwL7dyHPc=">
+            <table:column id="c_ee_itcollege_i377_entities_SuguluseRolliLiik_avaja" property="avaja" z="KZZJ50+/vo334TPG0GqxOsVGHUI="/>
+            <table:column date="true" dateTimePattern="${suguluseRolliLiik_avatud_date_format}" id="c_ee_itcollege_i377_entities_SuguluseRolliLiik_avatud" property="avatud" z="lhRZoCKxBwAH4vE195NdfI1Wg0E="/>
+            <table:column id="c_ee_itcollege_i377_entities_SuguluseRolliLiik_kommentaar" property="kommentaar" z="14JizI54bYG61JvJDTGm4KWeDMI="/>
+            <table:column date="true" dateTimePattern="${suguluseRolliLiik_muudetud_date_format}" id="c_ee_itcollege_i377_entities_SuguluseRolliLiik_muudetud" property="muudetud" z="oeiPeVWLcrS1DaA+21Q2ymdR5rk="/>
+            <table:column id="c_ee_itcollege_i377_entities_SuguluseRolliLiik_muutja" property="muutja" z="CWNv3aa0vXau4hVwC9qBum6FjU4="/>
+            <table:column id="c_ee_itcollege_i377_entities_SuguluseRolliLiik_nimetus" property="nimetus" z="nh/5msGB2O2wDerosLJ4nsDUx5M="/>
+        </table:table>
+    </page:list>
+</div>

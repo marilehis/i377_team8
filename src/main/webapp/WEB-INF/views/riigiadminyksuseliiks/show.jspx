@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_RiigiAdminYksuseLiik" object="${riigiadminyksuseliik}" path="/riigiadminyksuseliiks" z="4oOUWAwbZPBrOFwJUj/0pp9r42g=">
+        <field:display date="true" dateTimePattern="${riigiAdminYksuseLiik_alates_date_format}" field="alates" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_alates" object="${riigiadminyksuseliik}" z="ZTfLg5uQO+69yOJSWkbRfw6ggRU="/>
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_avaja" object="${riigiadminyksuseliik}" z="u+dBqE8GhFtFY034zRzXyDXXz1Q="/>
+        <field:display date="true" dateTimePattern="${riigiAdminYksuseLiik_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_avatud" object="${riigiadminyksuseliik}" z="8DUCtbihixqD104yUlza51GQsV8="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_kommentaar" object="${riigiadminyksuseliik}" z="wmfb+sz/RWlYmCIc+To4addZE1Q="/>
+        <field:display field="kood" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_kood" object="${riigiadminyksuseliik}" z="Jo+lozDjtD3yqMwh9Htb7IO1D0g="/>
+        <field:display date="true" dateTimePattern="${riigiAdminYksuseLiik_kuni_date_format}" field="kuni" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_kuni" object="${riigiadminyksuseliik}" z="3Nwp/I1kexA5y5L/ptQNcPIsua4="/>
+        <field:display date="true" dateTimePattern="${riigiAdminYksuseLiik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_muudetud" object="${riigiadminyksuseliik}" z="WQP382hDcoyG1o5wG7GddWEMgWg="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_muutja" object="${riigiadminyksuseliik}" z="S64DHfA2WQGP09wMdXN9DOokBBA="/>
+        <field:display field="nimetus" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_nimetus" object="${riigiadminyksuseliik}" z="7tOXGTh6jjG0KVD1EKVjwQgc+ZM="/>
+        <field:display date="true" dateTimePattern="${riigiAdminYksuseLiik_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_suletud" object="${riigiadminyksuseliik}" z="PC6zUFSKfvQW7jgc7oLtoBuBtqE="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_RiigiAdminYksuseLiik_sulgeja" object="${riigiadminyksuseliik}" z="dqczLTnGE+3Ky4HcNfux48EvUnE="/>
+    </page:show>
+</div>

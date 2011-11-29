@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_AuastmeMuutumine" idField="auastmeMuutumineId" modelAttribute="auastmeMuutumine" path="/auastmemuutumines" versionField="Version" z="d5w2AoO6ryOzZgUvMz9CVvd9HZU=">
+        <field:datetime dateTimePattern="${auastmeMuutumine_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_alates" z="/ym9NF9vJAygX83GyGiQJSefNP0="/>
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_avaja" z="YOkdZ5MBo9ynS3pt3gzRNzRyYYQ="/>
+        <field:datetime dateTimePattern="${auastmeMuutumine_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_avatud" z="db5GtxBVMnPQDgM9EjV2QzPVhUw="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_kommentaar" z="XG5mBafTYmxPdYN6k1q+t41blDs="/>
+        <field:datetime dateTimePattern="${auastmeMuutumine_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_kuni" z="8hF0y/qzfIQR/xqLP3zLRIXy058="/>
+        <field:datetime dateTimePattern="${auastmeMuutumine_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_muudetud" z="HeOCueE4fgTtpAwkop9GOacBErU="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_muutja" z="gZvCIX/sroWsT2S6HWgvg/22xqI="/>
+        <field:datetime dateTimePattern="${auastmeMuutumine_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_suletud" z="4Emnic08SsYOYwiiSroiVL1A534="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_sulgeja" z="4O93bOPCKYYRuVpo926/knCwtHY="/>
+        <field:select field="auaste" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_auaste" itemValue="auasteId" items="${auastes}" path="/auastes" z="if2mL5wqNEzw28sYS+gCvUFYtWM="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_i377_entities_AuastmeMuutumine_piirivalvur" itemValue="piirivalvurId" items="${piirivalvurs}" path="/piirivalvurs" z="Uoo6wXfWp2OEpiJ9YtGKYnLF+SY="/>
+    </form:update>
+</div>

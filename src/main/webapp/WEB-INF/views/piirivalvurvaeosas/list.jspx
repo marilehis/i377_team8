@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_PiirivalvurVaeosa" items="${piirivalvurvaeosas}" z="OVbQbTIWmS81VMZeGkCMiCbTyFI=">
+        <table:table data="${piirivalvurvaeosas}" id="l_ee_itcollege_i377_entities_PiirivalvurVaeosa" path="/piirivalvurvaeosas" typeIdFieldName="piirivalvurVaeosasId" z="oIqJdRmAoGlbCc2NBktc3ZQr0Gg=">
+            <table:column date="true" dateTimePattern="${piirivalvurVaeosa_alates_date_format}" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_alates" property="alates" z="OabKd6d27HSOs4hVM+Rh41D8z3Y="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_avaja" property="avaja" z="+O8kxDeP9gTjd3sCNGFUx42Rcks="/>
+            <table:column date="true" dateTimePattern="${piirivalvurVaeosa_avatud_date_format}" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_avatud" property="avatud" z="Ru9WPFUzd4XG9WpzgPakpJh7Bgs="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_kommentaar" property="kommentaar" z="4/VnhLlYB2zlgNJJl1rWDotNRd0="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_koormus" property="koormus" z="HsJTbxsOR0zcfQOOJ7tnhgdLEXs="/>
+            <table:column date="true" dateTimePattern="${piirivalvurVaeosa_kuni_date_format}" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_kuni" property="kuni" z="JE3D13beTkfvppG0HfqqDIAzxgs="/>
+        </table:table>
+    </page:list>
+</div>

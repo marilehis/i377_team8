@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_VoimalikAlluvus" idField="voimalikAlluvusId" modelAttribute="voimalikAlluvus" path="/voimalikalluvuses" versionField="Version" z="I6CPHkKHbpeE9e4R1MCue3+ZFZk=">
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_avaja" z="/Gh2OvbDG8xbvS4uG8LK7A9rjAw="/>
+        <field:datetime dateTimePattern="${voimalikAlluvus_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_avatud" z="XEwlsoD/SzIZdTycWCGrjIEdbXM="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_kommentaar" z="BxQLEG5amI/9Pvl+hDbaiPhdieE="/>
+        <field:datetime dateTimePattern="${voimalikAlluvus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_muudetud" z="sZlRZVmOtgR2Hemb8pjgabvCJzo="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_muutja" z="HYeIfityXKsObApGqnoT9l8sbVQ="/>
+        <field:datetime dateTimePattern="${voimalikAlluvus_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_suletud" z="Bx/mW3n5FYzZjmXOOweTYPIinWU="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_sulgeja" z="cbbdbaKX+TZ4Hsm7lX5BdzgPpT4="/>
+        <field:select field="riigiAdminYksuseLiik1" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_riigiAdminYksuseLiik1" itemValue="riigiAdminYksuseLikId" items="${riigiadminyksuseliiks}" path="/riigiadminyksuseliiks" z="7EKdOmg5fyEqXgxYCgMGdPcWT0Y="/>
+        <field:select field="riigiAdminYksuseLiik2" id="c_ee_itcollege_i377_entities_VoimalikAlluvus_riigiAdminYksuseLiik2" itemValue="riigiAdminYksuseLikId" items="${riigiadminyksuseliiks}" path="/riigiadminyksuseliiks" z="v2aGHXVUOVSgaYAlaLXwDWnVuJs="/>
+    </form:update>
+</div>

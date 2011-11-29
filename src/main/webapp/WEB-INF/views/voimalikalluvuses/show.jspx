@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_VoimalikAlluvus" object="${voimalikalluvus}" path="/voimalikalluvuses" z="WX0No4B5W83BSEd6X0/UirVfmEg=">
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_avaja" object="${voimalikalluvus}" z="lDc11wNTd0y8SVML4BeHA9Xx5AQ="/>
+        <field:display date="true" dateTimePattern="${voimalikAlluvus_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_avatud" object="${voimalikalluvus}" z="OS9GQ6MTg+0+GgRQYfqvnY3RK4U="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_kommentaar" object="${voimalikalluvus}" z="K6LvToHfi92GQAo6h3sav3a+mUU="/>
+        <field:display date="true" dateTimePattern="${voimalikAlluvus_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_muudetud" object="${voimalikalluvus}" z="npBuj+eoZW3uYcTY2E4pqcyB6QU="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_muutja" object="${voimalikalluvus}" z="gPYGUQ0ACRGA3Fx0fqD9iCFT4P0="/>
+        <field:display date="true" dateTimePattern="${voimalikAlluvus_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_suletud" object="${voimalikalluvus}" z="QjKYUZBr+OUOTAvM+NdmpSKrMw0="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_sulgeja" object="${voimalikalluvus}" z="gvuQeYqtmBXh7fJDnm8H2U0ooXQ="/>
+        <field:display field="riigiAdminYksuseLiik1" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_riigiAdminYksuseLiik1" object="${voimalikalluvus}" z="sRJYsO2m86UEmOvad3aIpSbxQO8="/>
+        <field:display field="riigiAdminYksuseLiik2" id="s_ee_itcollege_i377_entities_VoimalikAlluvus_riigiAdminYksuseLiik2" object="${voimalikalluvus}" z="9PrsSX0PRZZi65BZIJCJuTma13U="/>
+    </page:show>
+</div>

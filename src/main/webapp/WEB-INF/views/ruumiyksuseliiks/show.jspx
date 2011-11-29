@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_RuumiyksuseLiik" object="${ruumiyksuseliik}" path="/ruumiyksuseliiks" z="2THt4PVsvxqB8sZptuoaa4GbWOI=">
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_avaja" object="${ruumiyksuseliik}" z="Y8jSDZDdnrasTh4JC26XzveAo1c="/>
+        <field:display date="true" dateTimePattern="${ruumiyksuseLiik_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_avatud" object="${ruumiyksuseliik}" z="FPaCihjFVJGRvLdhWRCsaSGGpEs="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_kommentaar" object="${ruumiyksuseliik}" z="hJFxLhTJHUeys8pyghjBc0ZZ6UQ="/>
+        <field:display field="kood" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_kood" object="${ruumiyksuseliik}" z="i08LSjcXZUHUZuT0KAyrxAYqBNk="/>
+        <field:display date="true" dateTimePattern="${ruumiyksuseLiik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_muudetud" object="${ruumiyksuseliik}" z="VoLB/Ysm8mDOVzxvTErt/4uacyo="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_muutja" object="${ruumiyksuseliik}" z="jOqFbcA/xR2phyzy6BeJsMu24qU="/>
+        <field:display field="nimetus" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_nimetus" object="${ruumiyksuseliik}" z="e95kMllqkFD0hf+xYPvHKK6edSI="/>
+        <field:display date="true" dateTimePattern="${ruumiyksuseLiik_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_suletud" object="${ruumiyksuseliik}" z="93oh2tH5DfZ4a33pnb1dAq3xjHk="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_RuumiyksuseLiik_sulgeja" object="${ruumiyksuseliik}" z="0hVK27NVRYiKkgcYeo2BS894v1k="/>
+    </page:show>
+</div>

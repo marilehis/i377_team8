@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_Voodikoht" object="${voodikoht}" path="/voodikohts" z="PbKBOI0fJTrJvJQCGLCQMOqfl6M=">
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_Voodikoht_avaja" object="${voodikoht}" z="4emDv5BEXp5jgrbCyFdIUV9ArDQ="/>
+        <field:display date="true" dateTimePattern="${voodikoht_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_Voodikoht_avatud" object="${voodikoht}" z="Ojz2w3iIZ2fSZCpYR6aNODmdqqo="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_Voodikoht_kommentaar" object="${voodikoht}" z="8EqyZ4BrlmGtLSXzDFnhKIh8ljk="/>
+        <field:display field="laius" id="s_ee_itcollege_i377_entities_Voodikoht_laius" object="${voodikoht}" z="TPpMne9npbtqq3IRIRAyuLixkfg="/>
+        <field:display date="true" dateTimePattern="${voodikoht_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_Voodikoht_muudetud" object="${voodikoht}" z="aWIGzYxXW3Dm0GzMbfa0+cNp8hs="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_Voodikoht_muutja" object="${voodikoht}" z="LwEPkc280By8cnAPngQK+B2eQ00="/>
+        <field:display field="number" id="s_ee_itcollege_i377_entities_Voodikoht_number" object="${voodikoht}" z="Bx8ujn5WQ0ErCcKm5OmBv/5TgXw="/>
+        <field:display field="pikkus" id="s_ee_itcollege_i377_entities_Voodikoht_pikkus" object="${voodikoht}" z="eZSmp/qNlrUu7sAZNc3uJwDgLKA="/>
+        <field:display date="true" dateTimePattern="${voodikoht_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_Voodikoht_suletud" object="${voodikoht}" z="NY/BrTd51tFQAVsIpOucZLou5L4="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_Voodikoht_sulgeja" object="${voodikoht}" z="TpJjQyiD/9fT5Y7CY2NrLcaB/kU="/>
+        <field:display field="ruumiyksus" id="s_ee_itcollege_i377_entities_Voodikoht_ruumiyksus" object="${voodikoht}" z="J5FslRb/xPQ9eUWhsul0J/hnWmA="/>
+    </page:show>
+</div>

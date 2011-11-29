@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_SeotudKontaktisik" object="${seotudkontaktisik}" path="/seotudkontaktisiks" z="84jvq9VUG5HnTS1DdJBZtKVjFeo=">
+        <field:display date="true" dateTimePattern="${seotudKontaktisik_alates_date_format}" field="alates" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_alates" object="${seotudkontaktisik}" z="mOx0aAhjbpDrtsAxBlFbzoZsIjg="/>
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_avaja" object="${seotudkontaktisik}" z="qrajCT+AKreXKCR4+fNX1gThD8o="/>
+        <field:display date="true" dateTimePattern="${seotudKontaktisik_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_avatud" object="${seotudkontaktisik}" z="uD6edXH5hhrquRbUIkCxwLrCZ8k="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_kommentaar" object="${seotudkontaktisik}" z="zKb1kcGZk/0T22Nf0IgSh6xxX/Y="/>
+        <field:display date="true" dateTimePattern="${seotudKontaktisik_kuni_date_format}" field="kuni" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_kuni" object="${seotudkontaktisik}" z="EqOuoJkT17kgLqh/u1OGe1KanpM="/>
+        <field:display date="true" dateTimePattern="${seotudKontaktisik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_muudetud" object="${seotudkontaktisik}" z="/+huhpRJLMPkuZoNPs3C8bo+RWs="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_muutja" object="${seotudkontaktisik}" z="caY1+JwGsOqNQulJZfGybrYBLX8="/>
+        <field:display date="true" dateTimePattern="${seotudKontaktisik_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_suletud" object="${seotudkontaktisik}" z="oL8oXPtdfoLnYuWr6TVU3nUix4U="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_sulgeja" object="${seotudkontaktisik}" z="xuq1LztRc9CmOG9C2Aq5AbWuZtg="/>
+        <field:display field="piirivalvur" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_piirivalvur" object="${seotudkontaktisik}" z="isA1Ib0ZIsTcKinSUy0lw4r20os="/>
+        <field:display field="suguluseRolliLiik" id="s_ee_itcollege_i377_entities_SeotudKontaktisik_suguluseRolliLiik" object="${seotudkontaktisik}" z="ml/3YWOQq8szgI7VpLRn9lVPCU8="/>
+    </page:show>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_SeotudKontaktisik" items="${seotudkontaktisiks}" z="bPWoxWyWmC4GeUXyxWiH3lJegCI=">
+        <table:table data="${seotudkontaktisiks}" id="l_ee_itcollege_i377_entities_SeotudKontaktisik" path="/seotudkontaktisiks" typeIdFieldName="piirivalvuriKontaktId" z="8dx9sSvpy/EGaQnbN5l2sVkQVYA=">
+            <table:column date="true" dateTimePattern="${seotudKontaktisik_alates_date_format}" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_alates" property="alates" z="6ar6dGZHaCksctC449j2h7upvZA="/>
+            <table:column id="c_ee_itcollege_i377_entities_SeotudKontaktisik_avaja" property="avaja" z="GikxKvoMbNcrLsvBj0R0a8qlvHM="/>
+            <table:column date="true" dateTimePattern="${seotudKontaktisik_avatud_date_format}" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_avatud" property="avatud" z="xPHQ9eoo4vTS8zDKy5ALpHbg9nk="/>
+            <table:column id="c_ee_itcollege_i377_entities_SeotudKontaktisik_kommentaar" property="kommentaar" z="b0knWmi4fp8RPX5NHC017DFX07g="/>
+            <table:column date="true" dateTimePattern="${seotudKontaktisik_kuni_date_format}" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_kuni" property="kuni" z="VELw/wO05H3K97X0lNLPEqN0hRk="/>
+            <table:column date="true" dateTimePattern="${seotudKontaktisik_muudetud_date_format}" id="c_ee_itcollege_i377_entities_SeotudKontaktisik_muudetud" property="muudetud" z="8d5HE81UMGqo/g8ayUwUTcOnCVI="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_PiirivalvurPiiripunkti" items="${piirivalvurpiiripunktis}" z="awt/8cqr8/R/9OAVSvlKZMgY8gI=">
+        <table:table data="${piirivalvurpiiripunktis}" id="l_ee_itcollege_i377_entities_PiirivalvurPiiripunkti" path="/piirivalvurpiiripunktis" typeIdFieldName="piirivalvurPiiripunktisId" z="j+Ztq5dhF71Nfmzp48bEoXQA9So=">
+            <table:column date="true" dateTimePattern="${piirivalvurPiiripunkti_alates_date_format}" id="c_ee_itcollege_i377_entities_PiirivalvurPiiripunkti_alates" property="alates" z="dSGyBCdi+ewtrP4zPRLJjSFQ6GI="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiirivalvurPiiripunkti_avaja" property="avaja" z="97biMS108rAufwKhRQchrwlJdJM="/>
+            <table:column date="true" dateTimePattern="${piirivalvurPiiripunkti_avatud_date_format}" id="c_ee_itcollege_i377_entities_PiirivalvurPiiripunkti_avatud" property="avatud" z="sPLdLuyM1ue1irbHYckW+JFUOBw="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiirivalvurPiiripunkti_kommentaar" property="kommentaar" z="PW/512rqs5t9f7dVrpcSIp3b/ew="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiirivalvurPiiripunkti_koormus" property="koormus" z="5IyDEDmFpF9i1pK9q8PluPcOOuQ="/>
+            <table:column date="true" dateTimePattern="${piirivalvurPiiripunkti_kuni_date_format}" id="c_ee_itcollege_i377_entities_PiirivalvurPiiripunkti_kuni" property="kuni" z="LoiVHAB01zCWpcjAp94cfHmlIGU="/>
+        </table:table>
+    </page:list>
+</div>

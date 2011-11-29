@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_KontaktiLiik" idField="kontaktiLiikId" modelAttribute="kontaktiLiik" path="/kontaktiliiks" versionField="Version" z="OSsiiCNJujoTiBFLM8CXFJ9EZwc=">
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_KontaktiLiik_avaja" z="jrWgPx+/brMWADLH9rjHhDTrQcE="/>
+        <field:datetime dateTimePattern="${kontaktiLiik_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_KontaktiLiik_avatud" z="Hr9O6y9gSBf6fmw8aA1My24OJf4="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_KontaktiLiik_kommentaar" z="dq4/qIGeumkR1q8T3/fJbsiUrZ0="/>
+        <field:datetime dateTimePattern="${kontaktiLiik_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_KontaktiLiik_muudetud" z="wc8yVfVvveyvPwo3bJWfflFmTQo="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_KontaktiLiik_muutja" z="AZIF87h5cSjWavYoqQsgvr20dHo="/>
+        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_KontaktiLiik_nimetus" z="z2UA+Xj4j3eNrQpHZ2jRnbUjJLs="/>
+        <field:datetime dateTimePattern="${kontaktiLiik_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_KontaktiLiik_suletud" z="gdprHroiOTBhvgyxVic7p9eeM2s="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_KontaktiLiik_sulgeja" z="mB44+2qN0KH7MZ0HeGMfhcQ734s="/>
+        <field:input field="xmlKirjeldus" id="c_ee_itcollege_i377_entities_KontaktiLiik_xmlKirjeldus" z="NFzhY3F92dDNM1UQkqkP+Fus5fE="/>
+        <field:simple field="piirivalvuriKontakts" id="c_ee_itcollege_i377_entities_KontaktiLiik_piirivalvuriKontakts" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvuri Kontakt" z="UYZeFZSqwPEhU4mTiKVIOaGHXIw="/>
+    </form:update>
+</div>

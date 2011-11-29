@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_AmetVaeosa" idField="ametVaeosasId" modelAttribute="ametVaeosa" path="/ametvaeosas" versionField="Version" z="Qj+nxPUTC0DdAIMAhtUD4Xgshao=">
+        <field:datetime dateTimePattern="${ametVaeosa_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_AmetVaeosa_alates" z="vwPRCgEHAb79GGTELA8FUKSAMNc="/>
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_AmetVaeosa_avaja" z="D0ZNhhIqoDr2teFwKohxSLWaNYE="/>
+        <field:datetime dateTimePattern="${ametVaeosa_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_AmetVaeosa_avatud" z="NOQP8fgBUCTSyMAiHB4esCTLbdU="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_AmetVaeosa_kommentaar" z="Irc5XLwSwfk8+Yfsrb1mGK6wTrc="/>
+        <field:datetime dateTimePattern="${ametVaeosa_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_AmetVaeosa_kuni" z="kIPw0mBSKYRdKEDtIrwCisclDQ4="/>
+        <field:datetime dateTimePattern="${ametVaeosa_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_AmetVaeosa_muudetud" z="perfUSL4yylJ6Kc6JPFTqyd2Mm8="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_AmetVaeosa_muutja" z="pGcoz4wO37hWryniySKPnAmPrhw="/>
+        <field:datetime dateTimePattern="${ametVaeosa_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_AmetVaeosa_suletud" z="0PGc8k9ObAW0ieJ/WcAdDwuWSCQ="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_AmetVaeosa_sulgeja" z="oFlDDfdbgGelZ81RTdWbdXv+3CA="/>
+        <field:select field="amet" id="c_ee_itcollege_i377_entities_AmetVaeosa_amet" itemValue="ametId" items="${amets}" path="/amets" z="UobrQuQqv08/E7bnQ7R02PyFo0c="/>
+        <field:select field="vaeosa" id="c_ee_itcollege_i377_entities_AmetVaeosa_vaeosa" itemValue="vaeosaIdId" items="${vaeosas}" path="/vaeosas" z="DtAY8pM7UImT7t2WtA9Rd+KcT2Q="/>
+        <field:simple field="piirivalvurVaeosas" id="c_ee_itcollege_i377_entities_AmetVaeosa_piirivalvurVaeosas" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Vaeosa" z="LM30MmhtJjf1pI//4I5EVkn+7w0="/>
+    </form:update>
+</div>

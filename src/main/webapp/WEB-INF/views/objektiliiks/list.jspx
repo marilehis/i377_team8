@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_ObjektiLiik" items="${objektiliiks}" z="OK1Nv+Cq2zYS6OBpIB+3J5hsGAA=">
+        <table:table data="${objektiliiks}" id="l_ee_itcollege_i377_entities_ObjektiLiik" path="/objektiliiks" typeIdFieldName="objektLiikId" z="GxalOjQ3QHE1qrN15ClYWDA8V7U=">
+            <table:column id="c_ee_itcollege_i377_entities_ObjektiLiik_avaja" property="avaja" z="vQ5AO2zzhJFDSYdsasnHGKraQmg="/>
+            <table:column date="true" dateTimePattern="${objektiLiik_avatud_date_format}" id="c_ee_itcollege_i377_entities_ObjektiLiik_avatud" property="avatud" z="OlYTB6ssw1dEgSDr8hHEjmxL9s4="/>
+            <table:column id="c_ee_itcollege_i377_entities_ObjektiLiik_kommentaar" property="kommentaar" z="SuPCMiL/wqSnOFSXqxajyXPfJgY="/>
+            <table:column id="c_ee_itcollege_i377_entities_ObjektiLiik_kood" property="kood" z="hs84AkEefI5UCksQKBMkGJcs8hM="/>
+            <table:column date="true" dateTimePattern="${objektiLiik_muudetud_date_format}" id="c_ee_itcollege_i377_entities_ObjektiLiik_muudetud" property="muudetud" z="jCx/oCRCk+nbGD2HGMQXCU7OZzQ="/>
+            <table:column id="c_ee_itcollege_i377_entities_ObjektiLiik_muutja" property="muutja" z="FgP1lDKxjRbSMXpL7sOoG7qqgPk="/>
+        </table:table>
+    </page:list>
+</div>

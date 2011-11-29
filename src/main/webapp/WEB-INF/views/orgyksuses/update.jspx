@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_OrgYksus" idField="orgYksusId" modelAttribute="orgYksus" path="/orgyksuses" versionField="Version" z="Zy/CROsc8Jcb6Rvp10w0/mjILHA=">
+        <field:datetime dateTimePattern="${orgYksus_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_OrgYksus_alates" z="jaPskszxY1x6NjGxC3s1NxbsFzg="/>
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_OrgYksus_avaja" z="O2znqsfvjIAH/Cu2xIVUGdo5U1Q="/>
+        <field:datetime dateTimePattern="${orgYksus_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_OrgYksus_avatud" z="fVq+NzWwEviCvIfxPk8Op7twXIM="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_OrgYksus_kommentaar" z="vxuZZb/1LFTs29SOWTIh6guM6JA="/>
+        <field:input field="kood" id="c_ee_itcollege_i377_entities_OrgYksus_kood" z="ztvfkvCBzo6YVNLz6RIaskmk0Bs="/>
+        <field:datetime dateTimePattern="${orgYksus_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_OrgYksus_kuni" z="fdw03LrKJ+lDghbuKb9it4Z991s="/>
+        <field:datetime dateTimePattern="${orgYksus_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_OrgYksus_muudetud" z="R6L+/aiDbVM/pWesTVCXxIlTvFE="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_OrgYksus_muutja" z="84ZWkHQuAC34f6mNH5eea4KRz8Y="/>
+        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_OrgYksus_nimetus" z="SBFFSclkbU6WNAGoNtOcB/ofqHo="/>
+        <field:datetime dateTimePattern="${orgYksus_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_OrgYksus_suletud" z="VGCVhdOMJii9WtuMhExUP7Q9X50="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_OrgYksus_sulgeja" z="TiWhWM1xwdGGIwiCvVdNvDPNdtc="/>
+        <field:select field="orgYksus" id="c_ee_itcollege_i377_entities_OrgYksus_orgYksus" itemValue="orgYksusId" items="${orgyksuses}" path="/orgyksuses" z="mPglxZ5vJzfJmbymLNSsGgHYXaA="/>
+        <field:simple field="orgYksuses" id="c_ee_itcollege_i377_entities_OrgYksus_orgYksuses" messageCode="entity_reference_not_managed" messageCodeAttribute="Org Yksus" z="rNqHi99k6fBt5IfrVQVm56bGI9s="/>
+        <field:select field="vaeosa" id="c_ee_itcollege_i377_entities_OrgYksus_vaeosa" itemValue="vaeosaIdId" items="${vaeosas}" path="/vaeosas" z="vyi80DubFZ2U0vXJAvQGoty9bl4="/>
+    </form:update>
+</div>

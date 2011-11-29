@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_VahtkonnaLiige" object="${vahtkonnaliige}" path="/vahtkonnaliiges" z="ieJcbiUIagzEONFKHPpYfNk61ao=">
+        <field:display field="alates" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_alates" object="${vahtkonnaliige}" z="cPq8B9tzDq8Aq2YPlRbDzPxoYg0="/>
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_avaja" object="${vahtkonnaliige}" z="p1UKO6S838gQ6zGFLkAzogFgv38="/>
+        <field:display date="true" dateTimePattern="${vahtkonnaLiige_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_avatud" object="${vahtkonnaliige}" z="aM4j1VSaoDywNjCc6IG7cw3AptY="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_kommentaar" object="${vahtkonnaliige}" z="RnJ0KvXDb5Tqqg8BUkYS/2NbBKw="/>
+        <field:display field="kuni" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_kuni" object="${vahtkonnaliige}" z="oySIXkJ+iRPq3aAUry4T6yC8gPk="/>
+        <field:display date="true" dateTimePattern="${vahtkonnaLiige_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_muudetud" object="${vahtkonnaliige}" z="eINWQXadUezSHn6U74s3eHT3RHg="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_muutja" object="${vahtkonnaliige}" z="+UwMw2932zfyv6A4Edb0VbHa7EY="/>
+        <field:display date="true" dateTimePattern="${vahtkonnaLiige_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_suletud" object="${vahtkonnaliige}" z="FEpivHp85CLtuvPeGZtKZQ85WHU="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_sulgeja" object="${vahtkonnaliige}" z="HgpskjfbcrJgY41Z5neehyf+oy0="/>
+        <field:display field="piirivalvur" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_piirivalvur" object="${vahtkonnaliige}" z="QTrrG6/XMJKms8tg8Ewx79zf/d4="/>
+        <field:display field="vahtkond" id="s_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" object="${vahtkonnaliige}" z="LIdmHMlCKYYEzvVe94obXato3T0="/>
+    </page:show>
+</div>

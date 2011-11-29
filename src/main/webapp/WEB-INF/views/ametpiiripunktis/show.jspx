@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_AmetPiiripunkti" object="${ametpiiripunkti}" path="/ametpiiripunktis" z="wUGUqdi29iTMRbnLruDAkIY7LRE=">
+        <field:display date="true" dateTimePattern="${ametPiiripunkti_alates_date_format}" field="alates" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_alates" object="${ametpiiripunkti}" z="0HvnBJ8UPhVtY22HjWMA3xz2qm8="/>
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_avaja" object="${ametpiiripunkti}" z="4cNBqYk80BWJeTZ8Fl++cjPnTHE="/>
+        <field:display date="true" dateTimePattern="${ametPiiripunkti_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_avatud" object="${ametpiiripunkti}" z="oCGUU1SBGIPK0HouHX7W7M04408="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_kommentaar" object="${ametpiiripunkti}" z="v0i3gn7n5MvdgVIDlzr7iJkGv5A="/>
+        <field:display date="true" dateTimePattern="${ametPiiripunkti_kuni_date_format}" field="kuni" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_kuni" object="${ametpiiripunkti}" z="OIhdsn3wIkdx4ZBfBsnZ/RcROw0="/>
+        <field:display date="true" dateTimePattern="${ametPiiripunkti_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_muudetud" object="${ametpiiripunkti}" z="NvwNcrE08fhIJ1wE+Sodn9Y7pG0="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_muutja" object="${ametpiiripunkti}" z="xUj7jR4MPYQ7xJiS2AzcI3dhb3k="/>
+        <field:display date="true" dateTimePattern="${ametPiiripunkti_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_suletud" object="${ametpiiripunkti}" z="AAmtmqWka5ccAMh6PAJU+99hduM="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_sulgeja" object="${ametpiiripunkti}" z="Ei8kK/EUckaT7bXhJIxkGKatwuc="/>
+        <field:display field="amet" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_amet" object="${ametpiiripunkti}" z="leVlnBSwv1E57uTIvGC5ckgRQno="/>
+        <field:display field="piiripunkt" id="s_ee_itcollege_i377_entities_AmetPiiripunkti_piiripunkt" object="${ametpiiripunkti}" z="fQzjEhujmt1W31rcQN72GVoMqIU="/>
+    </page:show>
+</div>

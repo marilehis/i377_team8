@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_OrgYksus" object="${orgyksus}" path="/orgyksuses" z="mjbbixFY7Yam8CVwkENahyCcQUs=">
+        <field:display date="true" dateTimePattern="${orgYksus_alates_date_format}" field="alates" id="s_ee_itcollege_i377_entities_OrgYksus_alates" object="${orgyksus}" z="QePROGRK0y9COqbZOJTEgdr83Oc="/>
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_OrgYksus_avaja" object="${orgyksus}" z="IBY3v5rNCa0hjLx2DYnaZ7hu8uc="/>
+        <field:display date="true" dateTimePattern="${orgYksus_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_OrgYksus_avatud" object="${orgyksus}" z="034kDiHMYZ/HcgtOetysnrGQrwc="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_OrgYksus_kommentaar" object="${orgyksus}" z="VvaGx5v0Ol9hl9ZDCH8yXbXfoX4="/>
+        <field:display field="kood" id="s_ee_itcollege_i377_entities_OrgYksus_kood" object="${orgyksus}" z="zAC9kJRE3tCXzJPzPlF2wUCgZTU="/>
+        <field:display date="true" dateTimePattern="${orgYksus_kuni_date_format}" field="kuni" id="s_ee_itcollege_i377_entities_OrgYksus_kuni" object="${orgyksus}" z="6chXIc/gUtSflPuZ/gEjPhbjiFs="/>
+        <field:display date="true" dateTimePattern="${orgYksus_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_OrgYksus_muudetud" object="${orgyksus}" z="Z1sWsZKSgHRDmFaAEy284MC6yI8="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_OrgYksus_muutja" object="${orgyksus}" z="uySyrRLzOlXb6JormLaaf4TlUpE="/>
+        <field:display field="nimetus" id="s_ee_itcollege_i377_entities_OrgYksus_nimetus" object="${orgyksus}" z="V3HVGhO98grBqY/nb/Zntd7sN/Y="/>
+        <field:display date="true" dateTimePattern="${orgYksus_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_OrgYksus_suletud" object="${orgyksus}" z="FmQF57buQXAcMIZeE/4LnPjzD5k="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_OrgYksus_sulgeja" object="${orgyksus}" z="5xbigstA9XfYRc/5HQIENB22OQ0="/>
+        <field:display field="orgYksus" id="s_ee_itcollege_i377_entities_OrgYksus_orgYksus" object="${orgyksus}" z="RbxPMBMSSutqpXrh0n/Unp8/qfA="/>
+        <field:display field="vaeosa" id="s_ee_itcollege_i377_entities_OrgYksus_vaeosa" object="${orgyksus}" z="+zxeGRnMsKCJZEyPvFfc0wfry64="/>
+    </page:show>
+</div>

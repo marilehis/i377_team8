@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_KontaktiLiik" object="${kontaktiliik}" path="/kontaktiliiks" z="fBZCzCcUQgE0lNdv6sX59tPeEKA=">
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_KontaktiLiik_avaja" object="${kontaktiliik}" z="j0qvaS83O7kovX7iG00uw4jUNn0="/>
+        <field:display date="true" dateTimePattern="${kontaktiLiik_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_KontaktiLiik_avatud" object="${kontaktiliik}" z="r1eNc8jDF3Rff5IpjsqA3tHRjHo="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_KontaktiLiik_kommentaar" object="${kontaktiliik}" z="AWYSCnXYX46xXppqUuBGfWABZsQ="/>
+        <field:display date="true" dateTimePattern="${kontaktiLiik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_KontaktiLiik_muudetud" object="${kontaktiliik}" z="/RuBNr1LryRo9xykRS3XhCh+wYA="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_KontaktiLiik_muutja" object="${kontaktiliik}" z="YKxepZFmTG5hdP3p+I67d1/eEzE="/>
+        <field:display field="nimetus" id="s_ee_itcollege_i377_entities_KontaktiLiik_nimetus" object="${kontaktiliik}" z="OaWnLdUJAJWqI37NIn0nm8If1xs="/>
+        <field:display date="true" dateTimePattern="${kontaktiLiik_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_KontaktiLiik_suletud" object="${kontaktiliik}" z="RBk2JSNkeiy7H9yXHcli9F5xltY="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_KontaktiLiik_sulgeja" object="${kontaktiliik}" z="q+jVePlCXrU76WoDznCvoCtCF/A="/>
+        <field:display field="xmlKirjeldus" id="s_ee_itcollege_i377_entities_KontaktiLiik_xmlKirjeldus" object="${kontaktiliik}" z="FWjjTX3OYzAuPqjs6sFH/Em1xPg="/>
+    </page:show>
+</div>

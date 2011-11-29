@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_Auaste" items="${auastes}" z="YFbip54zrUzqsAU8r9j5MCCgKSw=">
+        <table:table data="${auastes}" id="l_ee_itcollege_i377_entities_Auaste" path="/auastes" typeIdFieldName="auasteId" z="+B+wubnvkzLKwdizlFaE+unA5QQ=">
+            <table:column id="c_ee_itcollege_i377_entities_Auaste_avaja" property="avaja" z="4ihUWDRTgQ/TDg+/2AKE87VqF18="/>
+            <table:column date="true" dateTimePattern="${auaste_avatud_date_format}" id="c_ee_itcollege_i377_entities_Auaste_avatud" property="avatud" z="1YAkgrs6M4BzkOmQrsu7v+Gbdgk="/>
+            <table:column id="c_ee_itcollege_i377_entities_Auaste_kommentaar" property="kommentaar" z="ocB3VNSoHNM5/DE9EtSy5zMK6zg="/>
+            <table:column id="c_ee_itcollege_i377_entities_Auaste_kood" property="kood" z="FDn3IsTtjS6A3E1A/1AMu0bWsRY="/>
+            <table:column date="true" dateTimePattern="${auaste_muudetud_date_format}" id="c_ee_itcollege_i377_entities_Auaste_muudetud" property="muudetud" z="iA/mXWowfZlnZfKl5h6H9ILqlqo="/>
+            <table:column id="c_ee_itcollege_i377_entities_Auaste_muutja" property="muutja" z="xCGniFsuEUVE1owTM+PcHeS0LrI="/>
+        </table:table>
+    </page:list>
+</div>

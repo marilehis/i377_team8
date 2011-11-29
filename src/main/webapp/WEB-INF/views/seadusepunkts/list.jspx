@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_SeadusePunkt" items="${seadusepunkts}" z="1/6bJR0dL9kjTsNIhHi2ZY//0bg=">
+        <table:table data="${seadusepunkts}" id="l_ee_itcollege_i377_entities_SeadusePunkt" path="/seadusepunkts" typeIdFieldName="seadusePunktId" z="K3GFxXz9w/hjUyv3XRfc1h/UF08=">
+            <table:column id="c_ee_itcollege_i377_entities_SeadusePunkt_avaja" property="avaja" z="ixIsWgp5ZlI3nXSrL3HubX5NaqY="/>
+            <table:column date="true" dateTimePattern="${seadusePunkt_avatud_date_format}" id="c_ee_itcollege_i377_entities_SeadusePunkt_avatud" property="avatud" z="EvDu0cCpCSijyqayNNHgjQgtraQ="/>
+            <table:column id="c_ee_itcollege_i377_entities_SeadusePunkt_kehtivAlates" property="kehtivAlates" z="qYemSIluzfkABanO0oHVJuvZ/NA="/>
+            <table:column id="c_ee_itcollege_i377_entities_SeadusePunkt_kehtivKuni" property="kehtivKuni" z="MCltfJf//EhKBXbd8iTXVMvk9CU="/>
+            <table:column id="c_ee_itcollege_i377_entities_SeadusePunkt_kommentaar" property="kommentaar" z="4cLgnp2/LCyVUlvcCbdBgVTkskU="/>
+            <table:column date="true" dateTimePattern="${seadusePunkt_muudetud_date_format}" id="c_ee_itcollege_i377_entities_SeadusePunkt_muudetud" property="muudetud" z="79YjFWNUAAvk6doQyXoST6Oz6pA="/>
+        </table:table>
+    </page:list>
+</div>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_SuguluseRolliLiik" object="${suguluserolliliik}" path="/suguluserolliliiks" z="6SRUzFX+lplsoBohzJphZoHN7OM=">
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_avaja" object="${suguluserolliliik}" z="Am5ZpM3u3dyLRKktxQ4cOc0HLJY="/>
+        <field:display date="true" dateTimePattern="${suguluseRolliLiik_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_avatud" object="${suguluserolliliik}" z="5ShfMgp9p42ZQ6eNc+gU8hyJaA4="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_kommentaar" object="${suguluserolliliik}" z="wLY4+x3+8dosqMu0REghBz9ncco="/>
+        <field:display date="true" dateTimePattern="${suguluseRolliLiik_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_muudetud" object="${suguluserolliliik}" z="sJ1xzs/d7hnLTdLGNzRf/O0lF3Y="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_muutja" object="${suguluserolliliik}" z="21+TxQ8ztWHQZO2pggKweX3IY4E="/>
+        <field:display field="nimetus" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_nimetus" object="${suguluserolliliik}" z="wYRMSG/tz3Ruw5YpI3gHjW9IEwg="/>
+        <field:display field="sugulaneVoiMitte" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_sugulaneVoiMitte" object="${suguluserolliliik}" z="PEGNQSvI4pEqHkcEcG1BhAkUcmY="/>
+        <field:display date="true" dateTimePattern="${suguluseRolliLiik_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_suletud" object="${suguluserolliliik}" z="OMOIQpdrErZiqub1Vpa5WX83Cog="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_SuguluseRolliLiik_sulgeja" object="${suguluserolliliik}" z="VQP9HmEsHyw7g/ryJ9X3/PQlJmw="/>
+    </page:show>
+</div>

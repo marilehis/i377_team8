@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_i377_entities_PiirivalvurVaeosa" idField="piirivalvurVaeosasId" modelAttribute="piirivalvurVaeosa" path="/piirivalvurvaeosas" versionField="Version" z="gTvNpydNZxJ8W67GbdNgvuSOjVE=">
+        <field:datetime dateTimePattern="${piirivalvurVaeosa_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_alates" z="0JdoJ7YCJPUT48Pdm9ATs4HbEcU="/>
+        <field:input field="avaja" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_avaja" z="MFn3BXiUUKgVIqqHbDnk+8Z1R1Q="/>
+        <field:datetime dateTimePattern="${piirivalvurVaeosa_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_avatud" z="c6wLtvhB3mQBDTWGd1fum/zPwao="/>
+        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_kommentaar" z="TCPUi0cpBW+oCaG3Y1so/snEiMw="/>
+        <field:input field="koormus" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_koormus" validationMessageCode="field_invalid_number" z="WOBL5GnyNx0CFNmazKDC05PY0ZU="/>
+        <field:datetime dateTimePattern="${piirivalvurVaeosa_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_kuni" z="NT67FFs7f/BXZy09UA3hsN/PFdg="/>
+        <field:datetime dateTimePattern="${piirivalvurVaeosa_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_muudetud" z="1ERYza8s6SR+lD+7ZxT27TZszUM="/>
+        <field:input field="muutja" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_muutja" z="MShO37eXe5fQ5Zx4pSp7K1A5Ves="/>
+        <field:datetime dateTimePattern="${piirivalvurVaeosa_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_suletud" z="+Lpk8ePx+ZCpb1xM0iNMyn7kX3c="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_sulgeja" z="uYbI82mL2uKikEgLbSYb/VNDuSg="/>
+        <field:select field="ametVaeosa" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_ametVaeosa" itemValue="ametVaeosasId" items="${ametvaeosas}" path="/ametvaeosas" z="UoX6R3euht0Bf9Fw+j4ct7P5RLw="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_i377_entities_PiirivalvurVaeosa_piirivalvur" itemValue="piirivalvurId" items="${piirivalvurs}" path="/piirivalvurs" z="PqwPMUkUoAMRmKtIvE9ja0hGdLE="/>
+    </form:update>
+</div>

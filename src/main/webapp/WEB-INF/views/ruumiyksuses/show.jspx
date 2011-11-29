@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_i377_entities_Ruumiyksus" object="${ruumiyksus}" path="/ruumiyksuses" z="qIFM+M0CKbuLcLrv2agE515o4+4=">
+        <field:display field="aadress" id="s_ee_itcollege_i377_entities_Ruumiyksus_aadress" object="${ruumiyksus}" z="F0/pB5VO+rK9aw4L2O+ZHaTzB4Y="/>
+        <field:display field="avaja" id="s_ee_itcollege_i377_entities_Ruumiyksus_avaja" object="${ruumiyksus}" z="ONBzd/dwzomrZE57MohvXWT5rBw="/>
+        <field:display date="true" dateTimePattern="${ruumiyksus_avatud_date_format}" field="avatud" id="s_ee_itcollege_i377_entities_Ruumiyksus_avatud" object="${ruumiyksus}" z="Jxcqkd8/aT3SBy6aC6OdhxeUQCc="/>
+        <field:display field="kommentaar" id="s_ee_itcollege_i377_entities_Ruumiyksus_kommentaar" object="${ruumiyksus}" z="1eTg3/tsaqpShZqOsg55aPA7AME="/>
+        <field:display field="kood" id="s_ee_itcollege_i377_entities_Ruumiyksus_kood" object="${ruumiyksus}" z="XtLLsWlHAtXyChhrR1pVwj0CKnc="/>
+        <field:display date="true" dateTimePattern="${ruumiyksus_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_i377_entities_Ruumiyksus_muudetud" object="${ruumiyksus}" z="Vj7+vz5t98Q2NU1zCUf0nwCa5qk="/>
+        <field:display field="muutja" id="s_ee_itcollege_i377_entities_Ruumiyksus_muutja" object="${ruumiyksus}" z="Hr7xM+sNVMkG1Fq0/i1q8gijJ/c="/>
+        <field:display field="nimetus" id="s_ee_itcollege_i377_entities_Ruumiyksus_nimetus" object="${ruumiyksus}" z="dNq2SFPVRuC5IH/qLKglnMuDLEk="/>
+        <field:display date="true" dateTimePattern="${ruumiyksus_suletud_date_format}" field="suletud" id="s_ee_itcollege_i377_entities_Ruumiyksus_suletud" object="${ruumiyksus}" z="sawsX0dEpSkXU/m8Jv4p4wiZEmU="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_i377_entities_Ruumiyksus_sulgeja" object="${ruumiyksus}" z="KJ61fug3gosyexpDZS+yB8zSftY="/>
+        <field:display field="riigiAdminYksus" id="s_ee_itcollege_i377_entities_Ruumiyksus_riigiAdminYksus" object="${ruumiyksus}" z="7paWLGNDtEcF5AGaxClAahqCZ8E="/>
+        <field:display field="ruumiyksus" id="s_ee_itcollege_i377_entities_Ruumiyksus_ruumiyksus" object="${ruumiyksus}" z="nbXy8VTNf4/fCboc3EvAdyMc4OI="/>
+        <field:display field="ruumiyksuseLiik" id="s_ee_itcollege_i377_entities_Ruumiyksus_ruumiyksuseLiik" object="${ruumiyksus}" z="SpMR8e//vB2QL3K4/89m1xPPUiU="/>
+    </page:show>
+</div>

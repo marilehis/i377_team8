@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_i377_entities_PiiripunktiAlluvus" items="${piiripunktialluvuses}" z="Z9FuHrheTjf0ABCZweMkRhNQph0=">
+        <table:table data="${piiripunktialluvuses}" id="l_ee_itcollege_i377_entities_PiiripunktiAlluvus" path="/piiripunktialluvuses" typeIdFieldName="piiripunktiAlluvusId" z="z/C9SzK5L+WizAEZyuzM48PJbe4=">
+            <table:column id="c_ee_itcollege_i377_entities_PiiripunktiAlluvus_alates" property="alates" z="Rw5EKV7LzvOILGB9ES6soNuCBWo="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiiripunktiAlluvus_avaja" property="avaja" z="egJW/Y9bY0tnhQaClxZV9/DPfmE="/>
+            <table:column date="true" dateTimePattern="${piiripunktiAlluvus_avatud_date_format}" id="c_ee_itcollege_i377_entities_PiiripunktiAlluvus_avatud" property="avatud" z="49T7GNeuyC5I7qeVArEmZGlAN60="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiiripunktiAlluvus_kommentaar" property="kommentaar" z="V+DTFewAZSJ578RPKvf2cnZp4RU="/>
+            <table:column id="c_ee_itcollege_i377_entities_PiiripunktiAlluvus_kuni" property="kuni" z="AJgOaxF9XdckusAe1lJcAQzuJzQ="/>
+            <table:column date="true" dateTimePattern="${piiripunktiAlluvus_muudetud_date_format}" id="c_ee_itcollege_i377_entities_PiiripunktiAlluvus_muudetud" property="muudetud" z="RuGrLnNWavVUO8j8ghUDRU3u/UM="/>
+        </table:table>
+    </page:list>
+</div>
