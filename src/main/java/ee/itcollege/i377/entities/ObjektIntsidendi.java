@@ -20,8 +20,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
-import org.springframework.roo.addon.tostring.RooToString;
-
 
 /**
  * The persistent class for the OBJEKT_INTSIDENDIS database table.
