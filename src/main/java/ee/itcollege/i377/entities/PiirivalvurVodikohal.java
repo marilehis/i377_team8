@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the PIIRIVALVUR_VODIKOHAL database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="PIIRIVALVUR_VODIKOHAL")
 public class PiirivalvurVodikohal implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class PiirivalvurVodikohal implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="\"_ID\"")
-	private int id;
+	private Long id;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -65,11 +70,11 @@ public class PiirivalvurVodikohal implements Serializable {
     public PiirivalvurVodikohal() {
     }
 
-	public int getId() {
+	public Long getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

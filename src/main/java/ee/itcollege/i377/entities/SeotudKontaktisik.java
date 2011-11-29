@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the SEOTUD_KONTAKTISIK database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="SEOTUD_KONTAKTISIK")
 public class SeotudKontaktisik implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class SeotudKontaktisik implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PIIRIVALVURI_KONTAKT_ID")
-	private int piirivalvuriKontaktId;
+	private Long piirivalvuriKontaktId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -65,11 +70,11 @@ public class SeotudKontaktisik implements Serializable {
     public SeotudKontaktisik() {
     }
 
-	public int getPiirivalvuriKontaktId() {
+	public Long getPiirivalvuriKontaktId() {
 		return this.piirivalvuriKontaktId;
 	}
 
-	public void setPiirivalvuriKontaktId(int piirivalvuriKontaktId) {
+	public void setPiirivalvuriKontaktId(Long piirivalvuriKontaktId) {
 		this.piirivalvuriKontaktId = piirivalvuriKontaktId;
 	}
 

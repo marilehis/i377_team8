@@ -16,12 +16,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the PIIRIPUNKTI_ORG_YKSUS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="PIIRIPUNKTI_ORG_YKSUS")
 public class PiiripunktiOrgYksus implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +34,7 @@ public class PiiripunktiOrgYksus implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PIIRIPUNKTI_ORG_YKSUS_ID")
-	private int piiripunktiOrgYksusId;
+	private Long piiripunktiOrgYksusId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -59,7 +64,7 @@ public class PiiripunktiOrgYksus implements Serializable {
 	private String sulgeja;
 
 	@Column(name="VAEOSA_ID_ID")
-	private int vaeosaIdId;
+	private Long vaeosaIdId;
 
 	//bi-directional many-to-one association to Piiripunkt
     @ManyToOne
@@ -78,11 +83,11 @@ public class PiiripunktiOrgYksus implements Serializable {
     public PiiripunktiOrgYksus() {
     }
 
-	public int getPiiripunktiOrgYksusId() {
+	public Long getPiiripunktiOrgYksusId() {
 		return this.piiripunktiOrgYksusId;
 	}
 
-	public void setPiiripunktiOrgYksusId(int piiripunktiOrgYksusId) {
+	public void setPiiripunktiOrgYksusId(Long piiripunktiOrgYksusId) {
 		this.piiripunktiOrgYksusId = piiripunktiOrgYksusId;
 	}
 
@@ -174,11 +179,11 @@ public class PiiripunktiOrgYksus implements Serializable {
 		this.sulgeja = sulgeja;
 	}
 
-	public int getVaeosaIdId() {
+	public Long getVaeosaIdId() {
 		return this.vaeosaIdId;
 	}
 
-	public void setVaeosaIdId(int vaeosaIdId) {
+	public void setVaeosaIdId(Long vaeosaIdId) {
 		this.vaeosaIdId = vaeosaIdId;
 	}
 

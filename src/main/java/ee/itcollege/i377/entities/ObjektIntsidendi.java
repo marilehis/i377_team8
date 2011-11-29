@@ -16,12 +16,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the OBJEKT_INTSIDENDIS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="OBJEKT_INTSIDENDIS")
 public class ObjektIntsidendi implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +34,7 @@ public class ObjektIntsidendi implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="OBJEKT_INTSIDENDIS_ID")
-	private int objektIntsidendisId;
+	private Long objektIntsidendisId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -73,11 +78,11 @@ public class ObjektIntsidendi implements Serializable {
     public ObjektIntsidendi() {
     }
 
-	public int getObjektIntsidendisId() {
+	public Long getObjektIntsidendisId() {
 		return this.objektIntsidendisId;
 	}
 
-	public void setObjektIntsidendisId(int objektIntsidendisId) {
+	public void setObjektIntsidendisId(Long objektIntsidendisId) {
 		this.objektIntsidendisId = objektIntsidendisId;
 	}
 

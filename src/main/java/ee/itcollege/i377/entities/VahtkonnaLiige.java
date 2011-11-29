@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the VAHTKONNA_LIIGE database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="VAHTKONNA_LIIGE")
 public class VahtkonnaLiige implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class VahtkonnaLiige implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="VAHTKONNA_LIIGE_ID")
-	private int vahtkonnaLiigeId;
+	private Long vahtkonnaLiigeId;
 
 	private String alates;
 
@@ -63,11 +68,11 @@ public class VahtkonnaLiige implements Serializable {
     public VahtkonnaLiige() {
     }
 
-	public int getVahtkonnaLiigeId() {
+	public Long getVahtkonnaLiigeId() {
 		return this.vahtkonnaLiigeId;
 	}
 
-	public void setVahtkonnaLiigeId(int vahtkonnaLiigeId) {
+	public void setVahtkonnaLiigeId(Long vahtkonnaLiigeId) {
 		this.vahtkonnaLiigeId = vahtkonnaLiigeId;
 	}
 

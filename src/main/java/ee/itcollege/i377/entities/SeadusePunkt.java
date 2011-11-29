@@ -16,12 +16,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the SEADUSE_PUNKT database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="SEADUSE_PUNKT")
 public class SeadusePunkt implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +34,7 @@ public class SeadusePunkt implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="SEADUSE_PUNKT_ID")
-	private int seadusePunktId;
+	private Long seadusePunktId;
 
 	private String avaja;
 
@@ -89,11 +94,11 @@ public class SeadusePunkt implements Serializable {
     public SeadusePunkt() {
     }
 
-	public int getSeadusePunktId() {
+	public Long getSeadusePunktId() {
 		return this.seadusePunktId;
 	}
 
-	public void setSeadusePunktId(int seadusePunktId) {
+	public void setSeadusePunktId(Long seadusePunktId) {
 		this.seadusePunktId = seadusePunktId;
 	}
 

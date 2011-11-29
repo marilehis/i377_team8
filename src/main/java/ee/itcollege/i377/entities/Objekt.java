@@ -15,19 +15,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the OBJEKT database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Objekt implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="OBJEKT_ID")
-	private int objektId;
+	private Long objektId;
 
 	private String avaja;
 
@@ -64,11 +69,11 @@ public class Objekt implements Serializable {
     public Objekt() {
     }
 
-	public int getObjektId() {
+	public Long getObjektId() {
 		return this.objektId;
 	}
 
-	public void setObjektId(int objektId) {
+	public void setObjektId(Long objektId) {
 		this.objektId = objektId;
 	}
 

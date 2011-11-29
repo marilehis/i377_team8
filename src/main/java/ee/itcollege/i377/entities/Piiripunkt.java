@@ -14,19 +14,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the PIIRIPUNKT database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Piiripunkt implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PIIRIPUNKT_ID")
-	private int piiripunktId;
+	private Long piiripunktId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -87,11 +92,11 @@ public class Piiripunkt implements Serializable {
     public Piiripunkt() {
     }
 
-	public int getPiiripunktId() {
+	public Long getPiiripunktId() {
 		return this.piiripunktId;
 	}
 
-	public void setPiiripunktId(int piiripunktId) {
+	public void setPiiripunktId(Long piiripunktId) {
 		this.piiripunktId = piiripunktId;
 	}
 

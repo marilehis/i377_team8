@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the KONTAKTI_LIIK database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="KONTAKTI_LIIK")
 public class KontaktiLiik implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class KontaktiLiik implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="KONTAKTI_LIIK_ID")
-	private int kontaktiLiikId;
+	private Long kontaktiLiikId;
 
 	private String avaja;
 
@@ -58,11 +63,11 @@ public class KontaktiLiik implements Serializable {
     public KontaktiLiik() {
     }
 
-	public int getKontaktiLiikId() {
+	public Long getKontaktiLiikId() {
 		return this.kontaktiLiikId;
 	}
 
-	public void setKontaktiLiikId(int kontaktiLiikId) {
+	public void setKontaktiLiikId(Long kontaktiLiikId) {
 		this.kontaktiLiikId = kontaktiLiikId;
 	}
 

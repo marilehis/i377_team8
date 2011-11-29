@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the AUASTME_MUUTUMINE database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="AUASTME_MUUTUMINE")
 public class AuastmeMuutumine implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class AuastmeMuutumine implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="AUASTME_MUUTUMINE_ID")
-	private int auastmeMuutumineId;
+	private Long auastmeMuutumineId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -65,11 +70,11 @@ public class AuastmeMuutumine implements Serializable {
     public AuastmeMuutumine() {
     }
 
-	public int getAuastmeMuutumineId() {
+	public Long getAuastmeMuutumineId() {
 		return this.auastmeMuutumineId;
 	}
 
-	public void setAuastmeMuutumineId(int auastmeMuutumineId) {
+	public void setAuastmeMuutumineId(Long auastmeMuutumineId) {
 		this.auastmeMuutumineId = auastmeMuutumineId;
 	}
 

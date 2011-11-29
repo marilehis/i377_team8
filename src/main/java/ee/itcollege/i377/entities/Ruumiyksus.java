@@ -15,19 +15,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the RUUMIYKSUS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Ruumiyksus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="RUUMIYKSUS_ID")
-	private int ruumiyksusId;
+	private Long ruumiyksusId;
 
 	private String aadress;
 
@@ -78,11 +83,11 @@ public class Ruumiyksus implements Serializable {
     public Ruumiyksus() {
     }
 
-	public int getRuumiyksusId() {
+	public Long getRuumiyksusId() {
 		return this.ruumiyksusId;
 	}
 
-	public void setRuumiyksusId(int ruumiyksusId) {
+	public void setRuumiyksusId(Long ruumiyksusId) {
 		this.ruumiyksusId = ruumiyksusId;
 	}
 

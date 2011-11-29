@@ -13,19 +13,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the AMET database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Amet implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="AMET_ID")
-	private int ametId;
+	private Long ametId;
 
 	private String avaja;
 
@@ -60,11 +65,11 @@ public class Amet implements Serializable {
     public Amet() {
     }
 
-	public int getAmetId() {
+	public Long getAmetId() {
 		return this.ametId;
 	}
 
-	public void setAmetId(int ametId) {
+	public void setAmetId(Long ametId) {
 		this.ametId = ametId;
 	}
 

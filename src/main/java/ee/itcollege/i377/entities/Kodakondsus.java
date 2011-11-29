@@ -13,19 +13,24 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the KODAKONDSUS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Kodakondsus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="KODAKONDSUS_ID")
-	private int kodakondsusId;
+	private Long kodakondsusId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -65,11 +70,11 @@ public class Kodakondsus implements Serializable {
     public Kodakondsus() {
     }
 
-	public int getKodakondsusId() {
+	public Long getKodakondsusId() {
 		return this.kodakondsusId;
 	}
 
-	public void setKodakondsusId(int kodakondsusId) {
+	public void setKodakondsusId(Long kodakondsusId) {
 		this.kodakondsusId = kodakondsusId;
 	}
 

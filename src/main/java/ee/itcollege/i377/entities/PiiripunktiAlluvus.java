@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the PIIRIPUNKTI_ALLUVUS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="PIIRIPUNKTI_ALLUVUS")
 public class PiiripunktiAlluvus implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class PiiripunktiAlluvus implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PIIRIPUNKTI_ALLUVUS_ID")
-	private int piiripunktiAlluvusId;
+	private Long piiripunktiAlluvusId;
 
 	private String alates;
 
@@ -63,11 +68,11 @@ public class PiiripunktiAlluvus implements Serializable {
     public PiiripunktiAlluvus() {
     }
 
-	public int getPiiripunktiAlluvusId() {
+	public Long getPiiripunktiAlluvusId() {
 		return this.piiripunktiAlluvusId;
 	}
 
-	public void setPiiripunktiAlluvusId(int piiripunktiAlluvusId) {
+	public void setPiiripunktiAlluvusId(Long piiripunktiAlluvusId) {
 		this.piiripunktiAlluvusId = piiripunktiAlluvusId;
 	}
 

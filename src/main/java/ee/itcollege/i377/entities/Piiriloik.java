@@ -13,19 +13,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the PIIRILOIK database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Piiriloik implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PIIRILOIK_ID")
-	private int piiriloikId;
+	private Long piiriloikId;
 
 	private String avaja;
 
@@ -66,11 +71,11 @@ public class Piiriloik implements Serializable {
     public Piiriloik() {
     }
 
-	public int getPiiriloikId() {
+	public Long getPiiriloikId() {
 		return this.piiriloikId;
 	}
 
-	public void setPiiriloikId(int piiriloikId) {
+	public void setPiiriloikId(Long piiriloikId) {
 		this.piiriloikId = piiriloikId;
 	}
 

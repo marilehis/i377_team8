@@ -13,19 +13,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the AUASTE database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Auaste implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="AUASTE_ID")
-	private int auasteId;
+	private Long auasteId;
 
 	private String avaja;
 
@@ -55,11 +60,11 @@ public class Auaste implements Serializable {
     public Auaste() {
     }
 
-	public int getAuasteId() {
+	public Long getAuasteId() {
 		return this.auasteId;
 	}
 
-	public void setAuasteId(int auasteId) {
+	public void setAuasteId(Long auasteId) {
 		this.auasteId = auasteId;
 	}
 

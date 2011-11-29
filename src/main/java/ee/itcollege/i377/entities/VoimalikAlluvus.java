@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the VOIMALIK_ALLUVUS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="VOIMALIK_ALLUVUS")
 public class VoimalikAlluvus implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class VoimalikAlluvus implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="VOIMALIK_ALLUVUS_ID")
-	private int voimalikAlluvusId;
+	private Long voimalikAlluvusId;
 
 	private String avaja;
 
@@ -59,11 +64,11 @@ public class VoimalikAlluvus implements Serializable {
     public VoimalikAlluvus() {
     }
 
-	public int getVoimalikAlluvusId() {
+	public Long getVoimalikAlluvusId() {
 		return this.voimalikAlluvusId;
 	}
 
-	public void setVoimalikAlluvusId(int voimalikAlluvusId) {
+	public void setVoimalikAlluvusId(Long voimalikAlluvusId) {
 		this.voimalikAlluvusId = voimalikAlluvusId;
 	}
 

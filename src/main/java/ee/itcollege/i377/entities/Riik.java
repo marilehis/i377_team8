@@ -13,19 +13,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the RIIK database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Riik implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="RIIK_ID")
-	private int riikId;
+	private Long riikId;
 
 	@Column(name="ANSI_KOOD")
 	private String ansiKood;
@@ -57,11 +62,11 @@ public class Riik implements Serializable {
     public Riik() {
     }
 
-	public int getRiikId() {
+	public Long getRiikId() {
 		return this.riikId;
 	}
 
-	public void setRiikId(int riikId) {
+	public void setRiikId(Long riikId) {
 		this.riikId = riikId;
 	}
 

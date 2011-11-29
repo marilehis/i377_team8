@@ -15,19 +15,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the PIIRIRIKKUJA database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Piiririkkuja implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PIIRIRIKKUJA_ID")
-	private int piiririkkujaId;
+	private Long piiririkkujaId;
 
 	private String avaja;
 
@@ -74,11 +79,11 @@ public class Piiririkkuja implements Serializable {
     public Piiririkkuja() {
     }
 
-	public int getPiiririkkujaId() {
+	public Long getPiiririkkujaId() {
 		return this.piiririkkujaId;
 	}
 
-	public void setPiiririkkujaId(int piiririkkujaId) {
+	public void setPiiririkkujaId(Long piiririkkujaId) {
 		this.piiririkkujaId = piiririkkujaId;
 	}
 

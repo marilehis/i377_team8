@@ -16,19 +16,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the INTSIDENT database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Intsident implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="INTSIDENT_ID")
-	private int intsidentId;
+	private Long intsidentId;
 
 	private String avaja;
 
@@ -96,11 +101,11 @@ public class Intsident implements Serializable {
     public Intsident() {
     }
 
-	public int getIntsidentId() {
+	public Long getIntsidentId() {
 		return this.intsidentId;
 	}
 
-	public void setIntsidentId(int intsidentId) {
+	public void setIntsidentId(Long intsidentId) {
 		this.intsidentId = intsidentId;
 	}
 

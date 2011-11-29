@@ -15,19 +15,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the VAEOSA database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Vaeosa implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="VAEOSA_ID_ID")
-	private int vaeosaIdId;
+	private Long vaeosaIdId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -92,11 +97,11 @@ public class Vaeosa implements Serializable {
     public Vaeosa() {
     }
 
-	public int getVaeosaIdId() {
+	public Long getVaeosaIdId() {
 		return this.vaeosaIdId;
 	}
 
-	public void setVaeosaIdId(int vaeosaIdId) {
+	public void setVaeosaIdId(Long vaeosaIdId) {
 		this.vaeosaIdId = vaeosaIdId;
 	}
 

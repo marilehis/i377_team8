@@ -14,12 +14,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the ISIKU_SEADUS_INTSIDENDIS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="ISIKU_SEADUS_INTSIDENDIS")
 public class IsikuSeadusIntsidendi implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -27,7 +32,7 @@ public class IsikuSeadusIntsidendi implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ISIKU_SEADUS_INTSIDENDIS_ID")
-	private int isikuSeadusIntsidendisId;
+	private Long isikuSeadusIntsidendisId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -67,11 +72,11 @@ public class IsikuSeadusIntsidendi implements Serializable {
     public IsikuSeadusIntsidendi() {
     }
 
-	public int getIsikuSeadusIntsidendisId() {
+	public Long getIsikuSeadusIntsidendisId() {
 		return this.isikuSeadusIntsidendisId;
 	}
 
-	public void setIsikuSeadusIntsidendisId(int isikuSeadusIntsidendisId) {
+	public void setIsikuSeadusIntsidendisId(Long isikuSeadusIntsidendisId) {
 		this.isikuSeadusIntsidendisId = isikuSeadusIntsidendisId;
 	}
 

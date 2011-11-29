@@ -13,19 +13,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the SEADUS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Seadus implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="SEADUSE_ID")
-	private int seaduseId;
+	private Long seaduseId;
 
 	private String avaja;
 
@@ -61,11 +66,11 @@ public class Seadus implements Serializable {
     public Seadus() {
     }
 
-	public int getSeaduseId() {
+	public Long getSeaduseId() {
 		return this.seaduseId;
 	}
 
-	public void setSeaduseId(int seaduseId) {
+	public void setSeaduseId(Long seaduseId) {
 		this.seaduseId = seaduseId;
 	}
 

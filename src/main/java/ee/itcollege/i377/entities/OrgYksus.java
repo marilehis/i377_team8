@@ -16,12 +16,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the ORG_YKSUS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="ORG_YKSUS")
 public class OrgYksus implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +34,7 @@ public class OrgYksus implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ORG_YKSUS_ID")
-	private int orgYksusId;
+	private Long orgYksusId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -75,11 +80,11 @@ public class OrgYksus implements Serializable {
     public OrgYksus() {
     }
 
-	public int getOrgYksusId() {
+	public Long getOrgYksusId() {
 		return this.orgYksusId;
 	}
 
-	public void setOrgYksusId(int orgYksusId) {
+	public void setOrgYksusId(Long orgYksusId) {
 		this.orgYksusId = orgYksusId;
 	}
 

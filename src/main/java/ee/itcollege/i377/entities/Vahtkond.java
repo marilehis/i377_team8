@@ -15,19 +15,24 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the VAHTKOND database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 public class Vahtkond implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="VAHTKOND_ID")
-	private int vahtkondId;
+	private Long vahtkondId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -81,11 +86,11 @@ public class Vahtkond implements Serializable {
     public Vahtkond() {
     }
 
-	public int getVahtkondId() {
+	public Long getVahtkondId() {
 		return this.vahtkondId;
 	}
 
-	public void setVahtkondId(int vahtkondId) {
+	public void setVahtkondId(Long vahtkondId) {
 		this.vahtkondId = vahtkondId;
 	}
 

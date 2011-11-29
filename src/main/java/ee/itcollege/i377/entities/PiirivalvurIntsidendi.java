@@ -16,12 +16,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the PIIRIVALVUR_INTSIDENDIS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="PIIRIVALVUR_INTSIDENDIS")
 public class PiirivalvurIntsidendi implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +34,7 @@ public class PiirivalvurIntsidendi implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="PIIRIVALVUR_INTSIDENDIS_ID")
-	private int piirivalvurIntsidendisId;
+	private Long piirivalvurIntsidendisId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -78,11 +83,11 @@ public class PiirivalvurIntsidendi implements Serializable {
     public PiirivalvurIntsidendi() {
     }
 
-	public int getPiirivalvurIntsidendisId() {
+	public Long getPiirivalvurIntsidendisId() {
 		return this.piirivalvurIntsidendisId;
 	}
 
-	public void setPiirivalvurIntsidendisId(int piirivalvurIntsidendisId) {
+	public void setPiirivalvurIntsidendisId(Long piirivalvurIntsidendisId) {
 		this.piirivalvurIntsidendisId = piirivalvurIntsidendisId;
 	}
 

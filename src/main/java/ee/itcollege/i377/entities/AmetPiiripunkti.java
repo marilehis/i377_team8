@@ -16,12 +16,17 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
 
 /**
  * The persistent class for the AMET_PIIRIPUNKTIS database table.
  * 
  */
 @Entity
+@RooToString
+@RooEntity
 @Table(name="AMET_PIIRIPUNKTIS")
 public class AmetPiiripunkti implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -29,7 +34,7 @@ public class AmetPiiripunkti implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="AMET_PIIRIPUNKTIS_ID")
-	private int ametPiiripunktisId;
+	private Long ametPiiripunktisId;
 
     @Temporal( TemporalType.DATE)
 	private Date alates;
@@ -71,11 +76,11 @@ public class AmetPiiripunkti implements Serializable {
     public AmetPiiripunkti() {
     }
 
-	public int getAmetPiiripunktisId() {
+	public Long getAmetPiiripunktisId() {
 		return this.ametPiiripunktisId;
 	}
 
-	public void setAmetPiiripunktisId(int ametPiiripunktisId) {
+	public void setAmetPiiripunktisId(Long ametPiiripunktisId) {
 		this.ametPiiripunktisId = ametPiiripunktisId;
 	}
 
