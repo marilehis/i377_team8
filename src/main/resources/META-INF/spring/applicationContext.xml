@@ -74,4 +74,48 @@ xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springf
         <property name="persistenceUnitName" value="persistenceUnit"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
+    <bean id="piirivalvurPeeter" class="ee.itcollege.i377.entities.Piirivalvur">
+    	<property name="eesnimed" value="Peeter"></property>
+    	<property name="perekonnanimi" value="Pakiraam"></property>
+    </bean>
+    <bean id="piirivalvurRaivo" class="ee.itcollege.i377.entities.Piirivalvur">
+    	<property name="eesnimed" value="Raivo"></property>
+    	<property name="perekonnanimi" value="Relvavend"></property>
+    </bean>
+    <bean id="oineVahtkond" class="ee.itcollege.i377.entities.Vahtkond">
+    	<property name="nimetus" value="Öine"></property>
+    </bean>
+    <bean id="kykametsaPiiripunkt" class="ee.itcollege.i377.entities.Piiripunkt">
+    	<property name="nimetus" value="Öine"></property>
+    </bean>
+    <bean id="kykametsaPiiriloik1" class="ee.itcollege.i377.entities.Piiriloik">
+    	<property name="nimetus" value="Kükametsa piirilõik nr. 1"></property>
+    </bean>
+    <bean id="kykametsaPiiriloik2" class="ee.itcollege.i377.entities.Piiriloik">
+    	<property name="nimetus" value="Kükametsa piirilõik nr. 2"></property>
+    </bean>
+	<bean id="seedDatabase" class="ee.itcollege.i377.entities.SeedDatabase">
+		<property name="piirivalvurid">
+			<list>
+				<ref bean="piirivalvurPeeter"></ref>
+				<ref bean="piirivalvurRaivo"></ref>
+			</list>
+		</property>
+		<property name="vahtkonnad">
+			<list>
+				<ref bean="oineVahtkond"></ref>
+			</list>
+		</property>
+		<property name="piiripunktid">
+			<list>
+				<ref bean="kykametsaPiiripunkt"></ref>
+			</list>
+		</property>
+		<property name="piiriloigud">
+			<list>
+				<ref bean="kykametsaPiiriloik1"></ref>
+				<ref bean="kykametsaPiiriloik2"></ref>
+			</list>
+		</property>
+	</bean>    
 </beans>

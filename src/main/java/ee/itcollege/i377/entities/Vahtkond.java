@@ -228,4 +228,11 @@ public class Vahtkond implements Serializable {
 		this.vahtkonndPiiriloiguls = vahtkonndPiiriloiguls;
 	}
 	
+	public static boolean exists(Vahtkond o) {
+    	return entityManager().
+    			createQuery("SELECT COUNT(o) FROM Vahtkond o WHERE o.nimetus = :nimetus", Long.class).
+    			setParameter("nimetus", o.getNimetus()).
+    			getSingleResult() > 0;
+	}
+	
 }

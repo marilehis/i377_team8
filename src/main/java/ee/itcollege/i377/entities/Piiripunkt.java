@@ -258,4 +258,11 @@ public class Piiripunkt implements Serializable {
 		this.vahtkonds = vahtkonds;
 	}
 	
+	public static boolean exists(Piiripunkt o) {
+    	return entityManager().
+    			createQuery("SELECT COUNT(o) FROM Piiripunkt o WHERE o.nimetus = :nimetus", Long.class).
+    			setParameter("nimetus", o.getNimetus()).
+    			getSingleResult() > 0;
+	}
+	
 }

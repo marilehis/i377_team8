@@ -267,4 +267,12 @@ public class Piirivalvur implements Serializable {
 		this.vahtkonnaLiiges = vahtkonnaLiiges;
 	}
 	
+    public static boolean exists(Piirivalvur p) {
+    	return entityManager().
+    			createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.eesnimed = :eesnimed AND o.perekonnanimi = :perekonnanimi", Long.class).
+    			setParameter("eesnimed", p.getEesnimed()).
+    			setParameter("perekonnanimi", p.getPerekonnanimi()).
+    			getSingleResult() > 0;
+    }
+	
 }

@@ -187,4 +187,12 @@ public class Piiriloik implements Serializable {
 		this.vahtkonndPiiriloiguls = vahtkonndPiiriloiguls;
 	}
 	
+	public static boolean exists(Piiriloik o) {
+    	return entityManager().
+    			createQuery("SELECT COUNT(o) FROM Piiriloik o WHERE o.nimetus = :nimetus", Long.class).
+    			setParameter("nimetus", o.getNimetus()).
+    			getSingleResult() > 0;
+	}
+	
+	
 }
