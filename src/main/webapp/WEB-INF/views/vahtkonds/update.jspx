@@ -3,21 +3,11 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_i377_entities_Vahtkond" idField="vahtkondId" modelAttribute="vahtkond" path="/vahtkonds" versionField="Version" z="xhH9waQpgx8atYej6AhYRGH9MaU=">
-        <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_Vahtkond_alates" z="jMUSkfVtwWNdzVik8RKttpGy5+Y="/>
-        <field:input field="avaja" id="c_ee_itcollege_i377_entities_Vahtkond_avaja" z="YZd10/MgnU9gmoFzOJ9xk/Jxnrs="/>
-        <field:datetime dateTimePattern="${vahtkond_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_Vahtkond_avatud" z="3OvbfP8yaG3p/XLP2Ny4DG1ekf8="/>
-        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_Vahtkond_kommentaar" z="EB9pZRcOOegORuiR50dSKbc1KoQ="/>
         <field:input field="kood" id="c_ee_itcollege_i377_entities_Vahtkond_kood" z="6dI/65mpU6uwNHmEZhM0t9VPcx8="/>
-        <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_Vahtkond_kuni" z="U59DTqbtohtH1T1GdLayWt2caTU="/>
-        <field:datetime dateTimePattern="${vahtkond_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_Vahtkond_muudetud" z="oqhn/Zvo5vuHsIGeuwcylDK2x9k="/>
-        <field:input field="muutja" id="c_ee_itcollege_i377_entities_Vahtkond_muutja" z="8+Bopm3ZLsLbyYWN1Jgq8rGO8XY="/>
         <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Vahtkond_nimetus" z="ArMIjxM3i5u4NBo2Qi3BGEXia7M="/>
-        <field:datetime dateTimePattern="${vahtkond_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_Vahtkond_suletud" z="gmdPB8EjrwYv9tKRKp0JfXzKpm4="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_Vahtkond_sulgeja" z="oIVa5/UNOHgD9bh/HDsuJ2ZO9LY="/>
-        <field:select field="piiripunkt" id="c_ee_itcollege_i377_entities_Vahtkond_piiripunkt" itemValue="piiripunktId" items="${piiripunkts}" path="/piiripunkts" z="fbS4wgT6/sfVq7D8KBTI7dXiKFM="/>
-        <field:select field="vaeosa" id="c_ee_itcollege_i377_entities_Vahtkond_vaeosa" itemValue="vaeosaIdId" items="${vaeosas}" path="/vaeosas" z="dqNymBZ2BLNkTcT3Vnt29sN7lwA="/>
-        <field:simple field="vahtkondIntsidendis" id="c_ee_itcollege_i377_entities_Vahtkond_vahtkondIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond Intsidendi" z="gXv5KzvS/TZSHRv2CxBuCLkvEYs="/>
-        <field:simple field="vahtkonnaLiiges" id="c_ee_itcollege_i377_entities_Vahtkond_vahtkonnaLiiges" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkonna Liige" z="cPz/a2DCnxXQUOSipoDs9Cskn5E="/>
-        <field:simple field="vahtkonndPiiriloiguls" id="c_ee_itcollege_i377_entities_Vahtkond_vahtkonndPiiriloiguls" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkonnd Piiriloigul" z="ZWK3jrrakHQxOlDYbMqpWtKI1Yw="/>
+        <field:select field="piiripunkt" id="c_ee_itcollege_i377_entities_Vahtkond_piiripunkt" itemValue="piiripunktId" items="${piiripunkts}" itemLabel="nimetus" path="/piiripunkts" z="fbS4wgT6/sfVq7D8KBTI7dXiKFM="/>
+        <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_Vahtkond_alates" z="jMUSkfVtwWNdzVik8RKttpGy5+Y="/>
+        <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_Vahtkond_kuni" z="U59DTqbtohtH1T1GdLayWt2caTU="/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Vahtkond_kommentaar" z="EB9pZRcOOegORuiR50dSKbc1KoQ="/>
     </form:update>
 </div>
