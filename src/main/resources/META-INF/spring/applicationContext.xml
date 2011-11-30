@@ -99,7 +99,7 @@
 		<property name="perekonnanimi" value="Relvavend"></property>
 	</bean>
 	<bean id="kykametsaPiiripunkt" class="ee.itcollege.i377.entities.Piiripunkt">
-		<property name="nimetus" value="Öine"></property>
+		<property name="nimetus" value="Kükametsa"></property>
 	</bean>
 	<bean id="oineVahtkond" class="ee.itcollege.i377.entities.Vahtkond">
 		<property name="nimetus" value="Öine"></property>
