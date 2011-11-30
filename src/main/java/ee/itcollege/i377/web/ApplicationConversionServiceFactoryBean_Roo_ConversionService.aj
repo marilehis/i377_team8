@@ -3,6 +3,9 @@
 
 package ee.itcollege.i377.web;
 
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.format.FormatterRegistry;
+
 import ee.itcollege.i377.entities.AdminAlluvus;
 import ee.itcollege.i377.entities.Amet;
 import ee.itcollege.i377.entities.AmetPiiripunkti;
@@ -22,7 +25,6 @@ import ee.itcollege.i377.entities.ObjektiSeadusIntsidendi;
 import ee.itcollege.i377.entities.OrgYksus;
 import ee.itcollege.i377.entities.PiiriloiguHaldaja;
 import ee.itcollege.i377.entities.Piiriloik;
-import ee.itcollege.i377.entities.Piiripunkt;
 import ee.itcollege.i377.entities.PiiripunktiAlluvus;
 import ee.itcollege.i377.entities.PiiripunktiOrgYksus;
 import ee.itcollege.i377.entities.Piiririkkuja;
@@ -50,9 +52,6 @@ import ee.itcollege.i377.entities.VahtkonnaLiige;
 import ee.itcollege.i377.entities.VahtkonndPiiriloigul;
 import ee.itcollege.i377.entities.VoimalikAlluvus;
 import ee.itcollege.i377.entities.Voodikoht;
-import java.lang.String;
-import org.springframework.core.convert.converter.Converter;
-import org.springframework.format.FormatterRegistry;
 
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
@@ -76,7 +75,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(new OrgYksusConverter());
         registry.addConverter(new PiiriloiguHaldajaConverter());
         registry.addConverter(new PiiriloikConverter());
-        registry.addConverter(new PiiripunktConverter());
         registry.addConverter(new PiiripunktiAlluvusConverter());
         registry.addConverter(new PiiripunktiOrgYksusConverter());
         registry.addConverter(new PiiririkkujaConverter());
@@ -240,13 +238,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.i377.web.ApplicationConversionServiceFactoryBean.PiiriloikConverter implements Converter<Piiriloik, String> {
         public String convert(Piiriloik piiriloik) {
             return new StringBuilder().append(piiriloik.getAvaja()).append(" ").append(piiriloik.getAvatud()).append(" ").append(piiriloik.getGpsKoordinaadid()).append(" ").append(piiriloik.getKommentaar()).toString();
-        }
-        
-    }
-    
-    static class ee.itcollege.i377.web.ApplicationConversionServiceFactoryBean.PiiripunktConverter implements Converter<Piiripunkt, String> {
-        public String convert(Piiripunkt piiripunkt) {
-            return new StringBuilder().append(piiripunkt.getAlates()).append(" ").append(piiripunkt.getAvaja()).append(" ").append(piiripunkt.getAvatud()).append(" ").append(piiripunkt.getGpsLatitude()).toString();
         }
         
     }
