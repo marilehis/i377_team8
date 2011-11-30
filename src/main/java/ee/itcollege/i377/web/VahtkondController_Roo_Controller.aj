@@ -71,18 +71,6 @@ privileged aspect VahtkondController_Roo_Controller {
         return "vahtkonds/list";
     }
     
-    @RequestMapping(method = RequestMethod.PUT)
-    public String VahtkondController.update(@Valid Vahtkond vahtkond, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("vahtkond", vahtkond);
-            addDateTimeFormatPatterns(uiModel);
-            return "vahtkonds/update";
-        }
-        uiModel.asMap().clear();
-        vahtkond.merge();
-        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getVahtkondId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{vahtkondId}", params = "form", method = RequestMethod.GET)
     public String VahtkondController.updateForm(@PathVariable("vahtkondId") Long vahtkondId, Model uiModel) {
         uiModel.addAttribute("vahtkond", Vahtkond.findVahtkond(vahtkondId));
