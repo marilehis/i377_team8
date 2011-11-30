@@ -1,5 +1,3 @@
-SET WRITE_DELAY 0;
-
 CREATE TABLE RIIGI_ADMIN_YKSUSE_LIIK (
        riigi_admin_yksuse_lik_id INTEGER,
        avaja                VARCHAR(32) NOT NULL,
@@ -14,7 +12,7 @@ CREATE TABLE RIIGI_ADMIN_YKSUSE_LIIK (
        alates               DATE NOT NULL,
        kuni                 DATE NOT NULL,
        PRIMARY KEY (riigi_admin_yksuse_lik_id)
-) IF NOT EXISTS;
+);
 
 CREATE UNIQUE INDEX XPKRIIGI_ADMIN_YKSUSE_LIIK ON RIIGI_ADMIN_YKSUSE_LIIK
 (
@@ -1578,5 +1576,3 @@ CREATE INDEX XIF70PIIRIVALVURI_SEADUS_INTSI ON PIIRIVALVURI_SEADUS_INTSIDENDI
 (
        seaduse_punkt_ID
 );
-
-SQL COMMIT;
