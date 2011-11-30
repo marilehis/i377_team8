@@ -30,18 +30,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect VahtkondController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String VahtkondController.create(@Valid Vahtkond vahtkond, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("vahtkond", vahtkond);
-            addDateTimeFormatPatterns(uiModel);
-            return "vahtkonds/create";
-        }
-        uiModel.asMap().clear();
-        vahtkond.persist();
-        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkond.getVahtkondId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String VahtkondController.createForm(Model uiModel) {
         uiModel.addAttribute("vahtkond", new Vahtkond());
