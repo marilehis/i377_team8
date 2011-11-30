@@ -3,23 +3,14 @@
 
 package ee.itcollege.i377.web;
 
-import ee.itcollege.i377.entities.Piiripunkt;
-import ee.itcollege.i377.entities.Vaeosa;
-import ee.itcollege.i377.entities.Vahtkond;
-import ee.itcollege.i377.entities.VahtkondIntsidendi;
-import ee.itcollege.i377.entities.VahtkonnaLiige;
-import ee.itcollege.i377.entities.VahtkonndPiiriloigul;
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Collection;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
+
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,6 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+
+import ee.itcollege.i377.entities.Piiripunkt;
+import ee.itcollege.i377.entities.Vaeosa;
+import ee.itcollege.i377.entities.Vahtkond;
+import ee.itcollege.i377.entities.VahtkondIntsidendi;
+import ee.itcollege.i377.entities.VahtkonnaLiige;
+import ee.itcollege.i377.entities.VahtkonndPiiriloigul;
 
 privileged aspect VahtkondController_Roo_Controller {
     
