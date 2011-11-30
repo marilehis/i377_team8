@@ -7,6 +7,8 @@
             <table:column id="c_ee_itcollege_i377_entities_Vahtkond_kood" property="kood" z="O4BVOyHeIMiA8uX+s9VbC13kK/k="/>
             <table:column id="c_ee_itcollege_i377_entities_Vahtkond_nimetus" property="nimetus" z="O4BVOyHeIMiA8uX+s9VbC1234/k="/>
             <table:column id="c_ee_itcollege_i377_entities_Vahtkond_piiripunkt" property="piiripunkt" z="O4BVOyHeIMiA8uX+s9VbC1236/k="/>
+            <table:column date="true" dateTimePattern="${vahtkond_alates_date_format}" id="c_ee_itcollege_i377_entities_Vahtkond_alates" property="alates" z="/L6VO6UuxcWFKk5aBrCgWJ1GNuw="/>
+            <table:column date="true" dateTimePattern="${vahtkond_kuni_date_format}" id="c_ee_itcollege_i377_entities_Vahtkond_kuni" property="kuni" z="MSUCymHexQgEXEHUWrbhfz1eDvc="/>
         </table:table>
     </page:list>
 </div>
