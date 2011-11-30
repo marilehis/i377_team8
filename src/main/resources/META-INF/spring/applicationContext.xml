@@ -66,9 +66,6 @@ xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springf
         <property name="numTestsPerEvictionRun" value="3"/>
         <property name="minEvictableIdleTimeMillis" value="1800000"/>
     </bean>
-	<jdbc:initialize-database data-source="dataSource" ignore-failures="ALL">
-	   <jdbc:script location="classpath:piir.sql"/>
-	</jdbc:initialize-database>    
     <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
