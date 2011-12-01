@@ -285,7 +285,6 @@ public class Piirivalvur implements Serializable {
         return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud IS NULL", Piirivalvur.class).getResultList();
     }
     
-    
     public static List<Piirivalvur> findPiirivalvurEntries(int firstResult, int maxResults) {
         return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud IS NULL", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
@@ -295,5 +294,10 @@ public class Piirivalvur implements Serializable {
         throw new SecurityException("Piirivalvurit ei tohi kustutada");
     }    
     
+    public static Piirivalvur findByIsikukood(String isikukood) {
+        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.isikukood = :isikukood", Piirivalvur.class).
+        		setParameter("isikukood", isikukood).
+        		getSingleResult();
+    }
 	
 }
