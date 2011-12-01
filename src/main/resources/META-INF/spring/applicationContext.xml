@@ -91,12 +91,16 @@
 	</bean>
 	<!-- database seed -->
 	<bean id="piirivalvurPeeter" class="ee.itcollege.i377.entities.Piirivalvur">
+		<property name="isikukood" value="1112233445567"></property>
 		<property name="eesnimed" value="Peeter"></property>
 		<property name="perekonnanimi" value="Pakiraam"></property>
+		<property name="sugu" value="mees"></property>
 	</bean>
 	<bean id="piirivalvurRaivo" class="ee.itcollege.i377.entities.Piirivalvur">
+		<property name="isikukood" value="1112233445566"></property>
 		<property name="eesnimed" value="Raivo"></property>
 		<property name="perekonnanimi" value="Relvavend"></property>
+		<property name="sugu" value="mees"></property>
 	</bean>
 	<bean id="kykametsaPiiripunkt" class="ee.itcollege.i377.entities.Piiripunkt">
 		<property name="nimetus" value="Kükametsa"></property>
