@@ -9,7 +9,6 @@
 	        <field:select field="piiripunkt" id="c_ee_itcollege_i377_entities_Vahtkond_piiripunkt" itemValue="piiripunktId" items="${piiripunkts}" itemLabel="nimetus" path="/piiripunkts" z="fbS4wgT6/sfVq7D8KBTI7dXiKFM="/>
 	        <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_Vahtkond_alates" z="jMUSkfVtwWNdzVik8RKttpGy5+Y="/>
 	        <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_Vahtkond_kuni" z="U59DTqbtohtH1T1GdLayWt2caTU="/>
-			<field:datetime dateTimePattern="${vahtkond_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_Vahtkond_suletud" z="gmdPB8EjrwYv9tKRKp0JfXzKpm4="/>	        
         </div>
         <div style="float:left; width:50%;">
         	<field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Vahtkond_kommentaar" z="EB9pZRcOOegORuiR50dSKbc1KoQ="/>
