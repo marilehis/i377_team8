@@ -236,9 +236,16 @@ public class Vahtkond implements Serializable {
     			setParameter("nimetus", o.getNimetus()).
     			getSingleResult() > 0;
 	}
-	
-	 @PreRemove
-	 public void preventRemove() {
+
+	public static Vahtkond findByNimetus(String nimetus) {
+    	return entityManager().
+    			createQuery("SELECT o FROM Vahtkond o WHERE o.nimetus = :nimetus", Vahtkond.class).
+    			setParameter("nimetus", nimetus).
+    			getSingleResult();
+	}
+
+	@PreRemove
+	public void preventRemove() {
 		 throw new SecurityException("Vahtkonna kustutamine keelatud");
 	}
 	 
