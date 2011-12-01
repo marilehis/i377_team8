@@ -3,11 +3,15 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_i377_entities_Vahtkond" idField="vahtkondId" modelAttribute="vahtkond" path="/vahtkonds" versionField="Version" z="xhH9waQpgx8atYej6AhYRGH9MaU=">
-        <field:input field="kood" id="c_ee_itcollege_i377_entities_Vahtkond_kood" z="6dI/65mpU6uwNHmEZhM0t9VPcx8="/>
-        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Vahtkond_nimetus" z="ArMIjxM3i5u4NBo2Qi3BGEXia7M="/>
-        <field:select field="piiripunkt" id="c_ee_itcollege_i377_entities_Vahtkond_piiripunkt" itemValue="piiripunktId" items="${piiripunkts}" itemLabel="nimetus" path="/piiripunkts" z="fbS4wgT6/sfVq7D8KBTI7dXiKFM="/>
-        <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_Vahtkond_alates" z="jMUSkfVtwWNdzVik8RKttpGy5+Y="/>
-        <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_Vahtkond_kuni" z="U59DTqbtohtH1T1GdLayWt2caTU="/>
-        <field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Vahtkond_kommentaar" z="EB9pZRcOOegORuiR50dSKbc1KoQ="/>
+    	<div style="float:left; width:50%;">
+	        <field:input field="kood" id="c_ee_itcollege_i377_entities_Vahtkond_kood" z="6dI/65mpU6uwNHmEZhM0t9VPcx8="/>
+	        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Vahtkond_nimetus" z="ArMIjxM3i5u4NBo2Qi3BGEXia7M="/>
+	        <field:select field="piiripunkt" id="c_ee_itcollege_i377_entities_Vahtkond_piiripunkt" itemValue="piiripunktId" items="${piiripunkts}" itemLabel="nimetus" path="/piiripunkts" z="fbS4wgT6/sfVq7D8KBTI7dXiKFM="/>
+	        <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_Vahtkond_alates" z="jMUSkfVtwWNdzVik8RKttpGy5+Y="/>
+	        <field:datetime dateTimePattern="${vahtkond_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_Vahtkond_kuni" z="U59DTqbtohtH1T1GdLayWt2caTU="/>
+        </div>
+        <div style="float:left; width:50%;">
+        	<field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Vahtkond_kommentaar" z="EB9pZRcOOegORuiR50dSKbc1KoQ="/>
+        </div>
     </form:update>
 </div>
