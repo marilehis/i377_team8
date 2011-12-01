@@ -74,11 +74,7 @@ privileged aspect Vahtkond_Roo_Entity {
     }
     
     public static long Vahtkond.countVahtkonds() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond o", Long.class).getSingleResult();
-    }
-    
-    public static List<Vahtkond> Vahtkond.findAllVahtkonds() {
-        return entityManager().createQuery("SELECT o FROM Vahtkond o", Vahtkond.class).getResultList();
+        return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond o WHERE o.suletud IS NULL", Long.class).getSingleResult();
     }
     
     public static Vahtkond Vahtkond.findVahtkond(Long vahtkondId) {
@@ -87,7 +83,7 @@ privileged aspect Vahtkond_Roo_Entity {
     }
     
     public static List<Vahtkond> Vahtkond.findVahtkondEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Vahtkond o", Vahtkond.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud IS NULL", Vahtkond.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

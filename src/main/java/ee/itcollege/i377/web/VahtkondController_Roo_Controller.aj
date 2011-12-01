@@ -63,16 +63,7 @@ privileged aspect VahtkondController_Roo_Controller {
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonds/update";
     }
-    
-    @RequestMapping(value = "/{vahtkondId}", method = RequestMethod.DELETE)
-    public String VahtkondController.delete(@PathVariable("vahtkondId") Long vahtkondId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Vahtkond.findVahtkond(vahtkondId).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/vahtkonds";
-    }
-    
+       
     @ModelAttribute("piiripunkts")
     public Collection<Piiripunkt> VahtkondController.populatePiiripunkts() {
         return Piiripunkt.findAllPiiripunkts();

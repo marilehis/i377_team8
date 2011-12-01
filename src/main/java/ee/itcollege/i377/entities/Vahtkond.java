@@ -2,6 +2,7 @@ package ee.itcollege.i377.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -234,5 +236,16 @@ public class Vahtkond implements Serializable {
     			setParameter("nimetus", o.getNimetus()).
     			getSingleResult() > 0;
 	}
+	
+	 @PreRemove
+	 public void preventRemove() {
+		 throw new SecurityException("Vahtkonna kustutamine keelatud");
+	}
+	 
+    public static List<Vahtkond> findAllVahtkonds() {
+        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud IS NULL", Vahtkond.class).getResultList();
+    }
+	    
+	 
 	
 }
