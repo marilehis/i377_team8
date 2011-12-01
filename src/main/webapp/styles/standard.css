@@ -328,7 +328,7 @@ fieldset th {
 	border:none;
 }
 
-.submit input {
+.submit input, input[type=button] {
 	border: 1px solid #BBBBBB;
 	color:#777777;
 	padding:2px 7px;

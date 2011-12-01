@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_i377_entities_Vahtkond" modelAttribute="vahtkond" path="/vahtkonds" render="${empty dependencies}" z="P9WEfQnd+ZkBnVFT2AlxGC+moF0=">
     	<div style="float:left; width:50%;">
-	        <field:input field="kood" id="c_ee_itcollege_i377_entities_Vahtkond_kood" z="6dI/65mpU6uwNHmEZhM0t9VPcx8="/>
+	        <field:input field="kood" id="c_ee_itcollege_i377_entities_Vahtkond_kood" z="6dI/65mpU6uwNHmEZhM0t9VPcx8=" required="true"/>
 	        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Vahtkond_nimetus" required="true" z="ArMIjxM3i5u4NBo2Qi3BGEXia7M="/>
 	        <field:select field="piiripunkt" id="c_ee_itcollege_i377_entities_Vahtkond_piiripunkt" required="true" itemValue="piiripunktId" items="${piiripunkts}" path="/piiripunkts" z="fbS4wgT6/sfVq7D8KBTI7dXiKFM="/>
 	        <field:datetime dateTimePattern="${vahtkond_alates_date_format}" field="alates" required="true" id="c_ee_itcollege_i377_entities_Vahtkond_alates" z="jMUSkfVtwWNdzVik8RKttpGy5+Y="/>
