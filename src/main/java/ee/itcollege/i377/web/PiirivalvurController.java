@@ -10,8 +10,10 @@ import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ee.itcollege.i377.entities.Piirivalvur;
 
@@ -34,5 +36,30 @@ public class PiirivalvurController {
         return "redirect:/piirivalvurs";
     }
     
-	
+    @RequestMapping(method = RequestMethod.PUT)
+    public String update(@Valid Piirivalvur piirivalvur, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("piirivalvur", piirivalvur);
+            addDateTimeFormatPatterns(uiModel);
+            return "piirivalvurs/update";
+        }
+        uiModel.asMap().clear();
+        piirivalvur.setMuutja(principal.getName());
+        piirivalvur.setMuudetud(new Date());
+        piirivalvur.merge();
+        return "redirect:/piirivalvurs";
+    }
+    
+    @RequestMapping(value = "/{piirivalvurId}", method = RequestMethod.DELETE)
+    public String delete(@PathVariable("piirivalvurId") Long piirivalvurId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Principal principal, Model uiModel) {
+        Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(piirivalvurId);
+        piirivalvur.setSulgeja(principal.getName());
+        piirivalvur.setSuletud(new Date());
+        piirivalvur.merge();
+        uiModel.asMap().clear();
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/piirivalvurs";
+    }
+    	
 }
