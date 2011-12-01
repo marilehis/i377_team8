@@ -10,7 +10,6 @@ public class SeedDatabase {
 			if (! Piirivalvur.exists(o)) {
 				o.setAvaja("automaatika");
 				o.setAvatud(new Date());
-				o.setSuletud(SurrogaatKuupaev.getInstance());
 				o.persist();
 			}
 		}
@@ -21,7 +20,8 @@ public class SeedDatabase {
 			if (! Vahtkond.exists(o)) {
 				o.setAvaja("automaatika");
 				o.setAvatud(new Date());
-				o.setSuletud(SurrogaatKuupaev.getInstance());
+				o.setAlates(new Date());
+				o.setKuni(SurrogaatKuupaev.getInstance());
 				o.persist();
 			}
 		}
@@ -32,7 +32,8 @@ public class SeedDatabase {
 			if (! Piiripunkt.exists(o)) {
 				o.setAvaja("automaatika");
 				o.setAvatud(new Date());
-				o.setSuletud(SurrogaatKuupaev.getInstance());
+				o.setAlates(new Date());
+				o.setKuni(SurrogaatKuupaev.getInstance());
 				o.persist();
 			}
 		}
@@ -43,11 +44,9 @@ public class SeedDatabase {
 			if (! Piiriloik.exists(o)) {
 				o.setAvaja("automaatika");
 				o.setAvatud(new Date());
-				o.setSuletud(SurrogaatKuupaev.getInstance());
 				o.persist();
 			}
 		}
-	}	
-	
+	}
 
 }
