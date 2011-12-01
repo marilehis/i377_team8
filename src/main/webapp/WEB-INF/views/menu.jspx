@@ -7,10 +7,6 @@
             <menu:item id="i_vahtkond_new" messageCode="global_menu_new" url="/vahtkonds?form" z="bvt9LhUzxYB+1+sxarsHufGq1po="/>
             <menu:item id="i_vahtkond_list" messageCode="global_menu_list" url="/vahtkonds?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yjK8dn1Lr/RZ1HbVVrZdpoTkXKI="/>
         </menu:category>
-        <menu:category id="c_vahtkonnaliige" z="dCzbyGrEFs7T/fFPeEMwGyrbZ4M=">
-            <menu:item id="i_vahtkonnaliige_new" messageCode="global_menu_new" url="/vahtkonnaliiges?form" z="VST3ao9yWT0IIPR08vCELTZVkDk="/>
-            <menu:item id="i_vahtkonnaliige_list" messageCode="global_menu_list" url="/vahtkonnaliiges?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Rq4CNHWQbEABEtnz3uslq8mAgp0="/>
-        </menu:category>
         <menu:category id="c_piirivalvur" z="sGXZ4GwwZtbGylRvbUXZI4kvKZs=">
             <menu:item id="i_piirivalvur_new" messageCode="global_menu_new" url="/piirivalvurs?form" z="HRvdB2pvoLqTAPhuPDRzOsT/HpE="/>
             <menu:item id="i_piirivalvur_list" messageCode="global_menu_list" url="/piirivalvurs?page=1&amp;size=${empty param.size ? 10 : param.size}" z="sy0TKZS9L9wBaTTNXcAXixPtYHw="/>
