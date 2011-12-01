@@ -35,7 +35,9 @@ public class VahtkonnaLiige implements Serializable {
 	@Column(name="VAHTKONNA_LIIGE_ID")
 	private Long vahtkonnaLiigeId;
 
-	private String alates;
+    @Temporal( TemporalType.DATE)
+    @DateTimeFormat(style="M-")
+	private Date alates; // ok
 
 	private String avaja;
 
@@ -45,7 +47,9 @@ public class VahtkonnaLiige implements Serializable {
 
 	private String kommentaar;
 
-	private String kuni;
+    @Temporal( TemporalType.DATE)
+    @DateTimeFormat(style="M-")
+	private Date kuni; // ok
 
     @Temporal( TemporalType.DATE)
     @DateTimeFormat(style="M-")
@@ -80,11 +84,11 @@ public class VahtkonnaLiige implements Serializable {
 		this.vahtkonnaLiigeId = vahtkonnaLiigeId;
 	}
 
-	public String getAlates() {
+	public Date getAlates() {
 		return this.alates;
 	}
 
-	public void setAlates(String alates) {
+	public void setAlates(Date alates) {
 		this.alates = alates;
 	}
 
@@ -112,11 +116,11 @@ public class VahtkonnaLiige implements Serializable {
 		this.kommentaar = kommentaar;
 	}
 
-	public String getKuni() {
+	public Date getKuni() {
 		return this.kuni;
 	}
 
-	public void setKuni(String kuni) {
+	public void setKuni(Date kuni) {
 		this.kuni = kuni;
 	}
 
