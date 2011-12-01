@@ -3,14 +3,11 @@
 
 package ee.itcollege.i377.entities;
 
-import ee.itcollege.i377.entities.Piirivalvur;
-import java.lang.Integer;
-import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
+
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piirivalvur_Roo_Entity {

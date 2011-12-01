@@ -33,7 +33,7 @@ public class PiiripunktController {
         piiripunkt.setAvaja(principal.getName());
         piiripunkt.setAvatud(new Date());
         piiripunkt.persist();
-        return "redirect:/piiripunkts/" + encodeUrlPathSegment(piiripunkt.getPiiripunktId().toString(), httpServletRequest);
+        return "redirect:/piiripunkts";
     }
     	
     @RequestMapping(method = RequestMethod.PUT)
@@ -55,6 +55,7 @@ public class PiiripunktController {
     	Piiripunkt piiripunkt = Piiripunkt.findPiiripunkt(piiripunktId);
     	piiripunkt.setSulgeja(principal.getName());
     	piiripunkt.setSuletud(new Date());
+    	piiripunkt.merge();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
