@@ -73,21 +73,9 @@ privileged aspect Piirivalvur_Roo_Entity {
         return em;
     }
     
-    public static long Piirivalvur.countPiirivalvurs() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o", Long.class).getSingleResult();
-    }
-    
-    public static List<Piirivalvur> Piirivalvur.findAllPiirivalvurs() {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).getResultList();
-    }
-    
     public static Piirivalvur Piirivalvur.findPiirivalvur(Long piirivalvurId) {
         if (piirivalvurId == null) return null;
         return entityManager().find(Piirivalvur.class, piirivalvurId);
-    }
-    
-    public static List<Piirivalvur> Piirivalvur.findPiirivalvurEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }

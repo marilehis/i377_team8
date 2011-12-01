@@ -33,18 +33,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect PiirivalvurController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String PiirivalvurController.create(@Valid Piirivalvur piirivalvur, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("piirivalvur", piirivalvur);
-            addDateTimeFormatPatterns(uiModel);
-            return "piirivalvurs/create";
-        }
-        uiModel.asMap().clear();
-        piirivalvur.persist();
-        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getPiirivalvurId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String PiirivalvurController.createForm(Model uiModel) {
         uiModel.addAttribute("piirivalvur", new Piirivalvur());

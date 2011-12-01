@@ -2,6 +2,7 @@ package ee.itcollege.i377.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -10,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -274,5 +276,24 @@ public class Piirivalvur implements Serializable {
     			setParameter("perekonnanimi", p.getPerekonnanimi()).
     			getSingleResult() > 0;
     }
+    
+    public static long countPiirivalvurs() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.suletud IS NULL", Long.class).getSingleResult();
+    }
+    
+    public static List<Piirivalvur> findAllPiirivalvurs() {
+        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud IS NULL", Piirivalvur.class).getResultList();
+    }
+    
+    
+    public static List<Piirivalvur> findPiirivalvurEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud IS NULL", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    @PreRemove
+    public void preventRemove() {
+        throw new SecurityException("Piirivalvurit ei tohi kustutada");
+    }    
+    
 	
 }
