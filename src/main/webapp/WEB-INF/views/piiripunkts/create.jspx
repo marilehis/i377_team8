@@ -3,25 +3,14 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_i377_entities_Piiripunkt" modelAttribute="piiripunkt" path="/piiripunkts" render="${empty dependencies}" z="dNq2ctOMzmZuB2sI7Lyfvjc/ryE=">
-        <field:datetime dateTimePattern="${piiripunkt_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_Piiripunkt_alates" z="SgsAsypS9Xz32x81KfSa9m3f1zA="/>
-        <field:input field="avaja" id="c_ee_itcollege_i377_entities_Piiripunkt_avaja" z="R/m3rcGAkoCJdeOmqvV47FbZl1M="/>
-        <field:datetime dateTimePattern="${piiripunkt_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_Piiripunkt_avatud" z="pDjP9O1Z5e3+DL3jXmgYHRz7TeY="/>
+        <field:input field="kood" id="c_ee_itcollege_i377_entities_Piiripunkt_kood" required="true" z="4XPRTe8WANCKpOX87pJ7uH3RDbk="/>
+        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Piiripunkt_nimetus" required="true" z="Pl/e0nFbuJWxc4TpKH1lKu9U1vU="/>
+        <field:datetime dateTimePattern="${piiripunkt_alates_date_format}" field="alates" required="true" id="c_ee_itcollege_i377_entities_Piiripunkt_alates" z="SgsAsypS9Xz32x81KfSa9m3f1zA="/>
+        <field:datetime dateTimePattern="${piiripunkt_kuni_date_format}" field="kuni" required="true" id="c_ee_itcollege_i377_entities_Piiripunkt_kuni" z="4xYTrAQxt5vbr9goLFpIKfMxY9E="/>
         <field:input field="gpsLatitude" id="c_ee_itcollege_i377_entities_Piiripunkt_gpsLatitude" validationMessageCode="field_invalid_number" z="+nZoEhLVuVlXH03y/kD0Ya4rpFc="/>
         <field:input field="gpsLongituide" id="c_ee_itcollege_i377_entities_Piiripunkt_gpsLongituide" validationMessageCode="field_invalid_number" z="Y8VcdohRTJrREAhgdZRNPyZIaXY="/>
-        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_Piiripunkt_kommentaar" z="9+H8fM8Jq6g13oRlQp6Ajn1VdZ4="/>
-        <field:input field="kood" id="c_ee_itcollege_i377_entities_Piiripunkt_kood" z="4XPRTe8WANCKpOX87pJ7uH3RDbk="/>
         <field:input field="korgusMerepinnast" id="c_ee_itcollege_i377_entities_Piiripunkt_korgusMerepinnast" validationMessageCode="field_invalid_number" z="8K9wTLZTNnwpKktfafUAVL/sr50="/>
-        <field:datetime dateTimePattern="${piiripunkt_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_Piiripunkt_kuni" z="4xYTrAQxt5vbr9goLFpIKfMxY9E="/>
-        <field:datetime dateTimePattern="${piiripunkt_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_Piiripunkt_muudetud" z="e0zAuyXx7etcd+yvUF7ZbyoK/fw="/>
-        <field:input field="muutja" id="c_ee_itcollege_i377_entities_Piiripunkt_muutja" z="XVTGhCBSCb1HzwtX9fc1g78ir6Q="/>
-        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Piiripunkt_nimetus" z="Pl/e0nFbuJWxc4TpKH1lKu9U1vU="/>
-        <field:datetime dateTimePattern="${piiripunkt_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_Piiripunkt_suletud" z="DXF4Mpk8ZFBtmqnPZI+fAfVNE2Q="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_Piiripunkt_sulgeja" z="ErjF8jU8G4abWbTIPHyaEtpHA/s="/>
-        <field:simple field="ametPiiripunktis" id="c_ee_itcollege_i377_entities_Piiripunkt_ametPiiripunktis" messageCode="entity_reference_not_managed" messageCodeAttribute="Amet Piiripunkti" z="1XZOe8gGv5iNm4Lycd8hAwVmpkY="/>
-        <field:simple field="piiriloiguHaldajas" id="c_ee_itcollege_i377_entities_Piiripunkt_piiriloiguHaldajas" messageCode="entity_reference_not_managed" messageCodeAttribute="Piiriloigu Haldaja" z="vHjq3AD1CSUv2dncs3KrX30Nhq4="/>
-        <field:simple field="piiripunktiAlluvuses" id="c_ee_itcollege_i377_entities_Piiripunkt_piiripunktiAlluvuses" messageCode="entity_reference_not_managed" messageCodeAttribute="Piiripunkti Alluvus" z="ACSf+BU94SdFbrYAAQco7ahpdf4="/>
-        <field:simple field="piiripunktiOrgYksuses" id="c_ee_itcollege_i377_entities_Piiripunkt_piiripunktiOrgYksuses" messageCode="entity_reference_not_managed" messageCodeAttribute="Piiripunkti Org Yksus" z="EAMYUNlS/nyDdoWdhX+04XWVHAs="/>
-        <field:simple field="vahtkonds" id="c_ee_itcollege_i377_entities_Piiripunkt_vahtkonds" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond" z="KG4+TS2BsYeUOFO7vztDZWQzyq8="/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Piiripunkt_kommentaar" z="9+H8fM8Jq6g13oRlQp6Ajn1VdZ4="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_i377_entities_Piiripunkt" render="${not empty dependencies}" z="X4c1ubu9IhoJ7qU/aSiryYo6nHY="/>
 </div>
