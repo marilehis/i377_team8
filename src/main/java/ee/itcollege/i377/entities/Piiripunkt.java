@@ -3,6 +3,7 @@ package ee.itcollege.i377.entities;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -11,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -265,4 +267,21 @@ public class Piiripunkt implements Serializable {
     			getSingleResult() > 0;
 	}
 	
+    public static long countPiiripunkts() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piiripunkt o WHERE o.suletud IS NULL", Long.class).getSingleResult();
+    }
+    
+    public static List<Piiripunkt> findAllPiiripunkts() {
+        return entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.suletud IS NULL", Piiripunkt.class).getResultList();
+    }
+    
+    public static List<Piiripunkt> findPiiripunktEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.suletud IS NULL", Piiripunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    @PreRemove
+    public void preventRemove() {
+        throw new SecurityException("Piiripunkti ei tohi kustutada!");
+    }    
+
 }

@@ -30,18 +30,7 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect PiiripunktController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String PiiripunktController.create(@Valid Piiripunkt piiripunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("piiripunkt", piiripunkt);
-            addDateTimeFormatPatterns(uiModel);
-            return "piiripunkts/create";
-        }
-        uiModel.asMap().clear();
-        piiripunkt.persist();
-        return "redirect:/piiripunkts/" + encodeUrlPathSegment(piiripunkt.getPiiripunktId().toString(), httpServletRequest);
-    }
-    
+
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String PiiripunktController.createForm(Model uiModel) {
         uiModel.addAttribute("piiripunkt", new Piiripunkt());
@@ -71,32 +60,11 @@ privileged aspect PiiripunktController_Roo_Controller {
         return "piiripunkts/list";
     }
     
-    @RequestMapping(method = RequestMethod.PUT)
-    public String PiiripunktController.update(@Valid Piiripunkt piiripunkt, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("piiripunkt", piiripunkt);
-            addDateTimeFormatPatterns(uiModel);
-            return "piiripunkts/update";
-        }
-        uiModel.asMap().clear();
-        piiripunkt.merge();
-        return "redirect:/piiripunkts/" + encodeUrlPathSegment(piiripunkt.getPiiripunktId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{piiripunktId}", params = "form", method = RequestMethod.GET)
     public String PiiripunktController.updateForm(@PathVariable("piiripunktId") Long piiripunktId, Model uiModel) {
         uiModel.addAttribute("piiripunkt", Piiripunkt.findPiiripunkt(piiripunktId));
         addDateTimeFormatPatterns(uiModel);
         return "piiripunkts/update";
-    }
-    
-    @RequestMapping(value = "/{piiripunktId}", method = RequestMethod.DELETE)
-    public String PiiripunktController.delete(@PathVariable("piiripunktId") Long piiripunktId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Piiripunkt.findPiiripunkt(piiripunktId).remove();
-        uiModel.asMap().clear();
-        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
-        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
-        return "redirect:/piiripunkts";
     }
     
     @ModelAttribute("ametpiiripunktis")

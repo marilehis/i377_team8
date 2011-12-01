@@ -3,14 +3,11 @@
 
 package ee.itcollege.i377.entities;
 
-import ee.itcollege.i377.entities.Piiripunkt;
-import java.lang.Integer;
-import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
+
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiripunkt_Roo_Entity {
@@ -73,21 +70,10 @@ privileged aspect Piiripunkt_Roo_Entity {
         return em;
     }
     
-    public static long Piiripunkt.countPiiripunkts() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piiripunkt o", Long.class).getSingleResult();
-    }
-    
-    public static List<Piiripunkt> Piiripunkt.findAllPiiripunkts() {
-        return entityManager().createQuery("SELECT o FROM Piiripunkt o", Piiripunkt.class).getResultList();
-    }
-    
     public static Piiripunkt Piiripunkt.findPiiripunkt(Long piiripunktId) {
         if (piiripunktId == null) return null;
         return entityManager().find(Piiripunkt.class, piiripunktId);
     }
-    
-    public static List<Piiripunkt> Piiripunkt.findPiiripunktEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piiripunkt o", Piiripunkt.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
+   
     
 }
