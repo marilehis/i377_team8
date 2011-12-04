@@ -77,7 +77,7 @@
 						<constructor-arg index="0">
 							<bean class="java.text.SimpleDateFormat">
 								<constructor-arg>
-									<value>yy.M.d</value>
+									<value>dd.MM.yyyy</value>
 								</constructor-arg>
 							</bean>
 						</constructor-arg>
