@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PreRemove;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -175,7 +176,25 @@ public class VahtkonndPiiriloigul implements Serializable {
 	
 	 public static List<VahtkonndPiiriloigul> findVahtkonndPiiriloigulEntriesByVahtkond(int vahtkond_id,int firstResult, int maxResults) {
 	     if(vahtkond_id==0)return findVahtkonndPiiriloigulEntries(firstResult, maxResults);
+	     // FIXME: siin tuleb ka kontrollida, ega pole juba kustutatud
 		 return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o where vahtkond_ID="+Integer.toString(vahtkond_id), VahtkonndPiiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
 	 }
-	
+	 
+    public static long countVahtkonndPiiriloiguls() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL", Long.class).getSingleResult();
+    }
+    
+    public static List<VahtkonndPiiriloigul> findAllVahtkonndPiiriloiguls() {
+        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL", VahtkonndPiiriloigul.class).getResultList();
+    }
+    
+    public static List<VahtkonndPiiriloigul> findVahtkonndPiiriloigulEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL", VahtkonndPiiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+	 
+    @PreRemove
+	public void preventRemove() {
+		 throw new SecurityException("Vahtkonna ja piirilõigu seose kustutamine keelatud!");
+	}
+	 
 }

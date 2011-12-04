@@ -3,14 +3,11 @@
 
 package ee.itcollege.i377.entities;
 
-import ee.itcollege.i377.entities.VahtkonndPiiriloigul;
-import java.lang.Integer;
-import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
+
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect VahtkonndPiiriloigul_Roo_Entity {
@@ -73,21 +70,9 @@ privileged aspect VahtkonndPiiriloigul_Roo_Entity {
         return em;
     }
     
-    public static long VahtkonndPiiriloigul.countVahtkonndPiiriloiguls() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM VahtkonndPiiriloigul o", Long.class).getSingleResult();
-    }
-    
-    public static List<VahtkonndPiiriloigul> VahtkonndPiiriloigul.findAllVahtkonndPiiriloiguls() {
-        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o", VahtkonndPiiriloigul.class).getResultList();
-    }
-    
     public static VahtkonndPiiriloigul VahtkonndPiiriloigul.findVahtkonndPiiriloigul(Long vahtkondPiiriloiulId) {
         if (vahtkondPiiriloiulId == null) return null;
         return entityManager().find(VahtkonndPiiriloigul.class, vahtkondPiiriloiulId);
     }
-    
-    public static List<VahtkonndPiiriloigul> VahtkonndPiiriloigul.findVahtkonndPiiriloigulEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o", VahtkonndPiiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
-    }
-    
+        
 }
