@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_i377_entities_VahtkonnaLiige" modelAttribute="vahtkonnaLiige" path="/vahtkonnaliiges" render="${empty dependencies}" z="G6wrnwOmyJuCF3IVbeEtKOx58gY=">
-        <field:select field="vahtkond" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" itemValue="vahtkondId" items="${vahtkonds}" path="/vahtkonds" z="ccuEgwAgo4ztiMloquYl82SXTJ8=" itemLabel="nimetus" required="true"/>
+        <input type="hidden" name="vahtkondId" id="vahtkondId" value="${vahtkond.vahtkondId}"/>
         <field:select field="piirivalvur" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_piirivalvur" itemValue="piirivalvurId" items="${piirivalvurs}" path="/piirivalvurs" z="lwN7kcaxq99InJYOPKaQ5deABFY=" itemLabel="nimi" required="true"/>
         <field:datetime dateTimePattern="${vahtkonnaLiige_alates_date_format}" field="alates" required="true" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_alates" z="jMUSkfVtwWNdzVik8RKttpGy5+5="/>
         <field:datetime dateTimePattern="${vahtkonnaLiige_kuni_date_format}" field="kuni" required="true" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kuni" z="U59DTqbtohtH1T1GdLayWt2caT2="/>

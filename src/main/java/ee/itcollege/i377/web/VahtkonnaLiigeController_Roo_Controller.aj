@@ -27,25 +27,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect VahtkonnaLiigeController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String VahtkonnaLiigeController.create(@Valid VahtkonnaLiige vahtkonnaLiige, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("vahtkonnaLiige", vahtkonnaLiige);
-            addDateTimeFormatPatterns(uiModel);
-            return "vahtkonnaliiges/create";
-        }
-        uiModel.asMap().clear();
-        vahtkonnaLiige.persist();
-        return "redirect:/vahtkonnaliiges/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkonnaLiigeId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String VahtkonnaLiigeController.createForm(Model uiModel) {
-        uiModel.addAttribute("vahtkonnaLiige", new VahtkonnaLiige());
-        addDateTimeFormatPatterns(uiModel);
-        return "vahtkonnaliiges/create";
-    }
-    
     @RequestMapping(value = "/{vahtkonnaLiigeId}", method = RequestMethod.GET)
     public String VahtkonnaLiigeController.show(@PathVariable("vahtkonnaLiigeId") Long vahtkonnaLiigeId, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
@@ -112,6 +93,8 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
     }
     
     void VahtkonnaLiigeController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("vahtkonnaLiige_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("vahtkonnaLiige_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("vahtkonnaLiige_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("vahtkonnaLiige_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("vahtkonnaLiige_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
