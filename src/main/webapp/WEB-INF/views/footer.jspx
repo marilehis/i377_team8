@@ -17,13 +17,15 @@
         <spring:message code="security_logout"/>
       </a>
     </span>
+    <c:out value=" | "/>
     <spring:url value="/" var="home"/>
-    <span> 
-    <a href="${home}?lang=en"> Eng </a>
-    </span>
-    <span>
-    <a href="${home}?lang=est"> Est </a>
-    </span>
-    
+    <span> <a href="${home}?lang=en"> Eng </a></span>
+    <c:out value=" - "/>
+    <span><a href="${home}?lang=et">Est</a></span>
+    <c:otherwise>
+    <spring:url value="/resources/j_spring_security_login" var="home"/>
+    <span> <a href="${home}?lang=en"> Eng </a></span>
+    <c:out value=" - "/>
+    <span><a href="${home}?lang=et">Est</a></span>
   </c:if>
 </div>
