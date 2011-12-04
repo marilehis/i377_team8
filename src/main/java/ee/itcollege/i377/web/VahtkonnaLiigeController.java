@@ -48,5 +48,21 @@ public class VahtkonnaLiigeController {
         return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkond().getVahtkondId().toString(), httpServletRequest) + "?form";
     }
     
+    @RequestMapping(method = RequestMethod.PUT)
+    public String update(@Valid VahtkonnaLiige vahtkonnaLiige, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("vahtkonnaLiige", vahtkonnaLiige);
+            addDateTimeFormatPatterns(uiModel);
+            return "vahtkonnaliiges/update";
+        }
+        uiModel.asMap().clear();
+        vahtkonnaLiige.setMuudetud(new Date());
+        vahtkonnaLiige.setMuutja(principal.getName());
+        vahtkonnaLiige.merge();
+        return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkond().getVahtkondId().toString(), httpServletRequest) + "?form";
+    }
+    
+    
+    
 	
 }

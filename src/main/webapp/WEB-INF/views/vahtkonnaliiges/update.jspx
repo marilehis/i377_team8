@@ -3,16 +3,10 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_i377_entities_VahtkonnaLiige" idField="vahtkonnaLiigeId" modelAttribute="vahtkonnaLiige" path="/vahtkonnaliiges" versionField="Version" z="DIDmX6NJs5HTlRPh2M3HF0OdUto=">
-        <field:input field="alates" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_alates" z="G74TIB2fWcAL1dWvEQuZ4ObmqrE="/>
-        <field:input field="avaja" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_avaja" z="4BxQSeYCzJFh1CSxLjnbYVCtEbY="/>
-        <field:datetime dateTimePattern="${vahtkonnaLiige_avatud_date_format}" field="avatud" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_avatud" z="6E5OJh6B7QSHVa9THTDOwzzzA9g="/>
-        <field:input field="kommentaar" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kommentaar" z="ZzoGTVPFThWqKYMoMrt2SWm28bM="/>
-        <field:input field="kuni" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kuni" z="UFLYvFtJ9uub9wLnF6vJJh2faA8="/>
-        <field:datetime dateTimePattern="${vahtkonnaLiige_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_muudetud" z="Zu9RRTzxchBQxLJQkU76hMpg66s="/>
-        <field:input field="muutja" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_muutja" z="4ZFANYohflzoUPlO6R9rp3YYPm8="/>
-        <field:datetime dateTimePattern="${vahtkonnaLiige_suletud_date_format}" field="suletud" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_suletud" z="K2JMig1Ii/XNrnzNFHCqatW0Dv8="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_sulgeja" z="fJf5zVzfOAy7BbFW+w9SGDtX4Ps="/>
-        <field:select field="piirivalvur" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_piirivalvur" itemValue="piirivalvurId" items="${piirivalvurs}" path="/piirivalvurs" z="lwN7kcaxq99InJYOPKaQ5deABFY="/>
-        <field:select field="vahtkond" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" itemValue="vahtkondId" items="${vahtkonds}" path="/vahtkonds" z="ccuEgwAgo4ztiMloquYl82SXTJ8="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" itemValue="vahtkondId" itemLabel="nimetus" items="${vahtkonds}" path="/vahtkonds" z="ccuEgwAgo4ztiMloquYl82SXTJ8="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_piirivalvur" itemValue="piirivalvurId" itemLabel="nimi" items="${piirivalvurs}" path="/piirivalvurs" z="lwN7kcaxq99InJYOPKaQ5deABFY="/>
+        <field:datetime dateTimePattern="${vahtkonnaLiige_alates_date_format}" field="alates" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_alates" z="6E5OJh6B7QSHVa9THTDOwzzzA9g="/>
+        <field:datetime dateTimePattern="${vahtkonnaLiige_kuni_date_format}" field="kuni" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kuni" z="Zu9RRTzxchBQxLJQkU76hMpg66s="/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kommentaar" z="ZzoGTVPFThWqKYMoMrt2SWm28bM="/>
     </form:update>
 </div>

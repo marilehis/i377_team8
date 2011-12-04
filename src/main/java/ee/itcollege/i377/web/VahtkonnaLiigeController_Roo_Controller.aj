@@ -3,20 +3,14 @@
 
 package ee.itcollege.i377.web;
 
-import ee.itcollege.i377.entities.Piirivalvur;
-import ee.itcollege.i377.entities.Vahtkond;
-import ee.itcollege.i377.entities.VahtkonnaLiige;
 import java.io.UnsupportedEncodingException;
-import java.lang.Integer;
-import java.lang.Long;
-import java.lang.String;
 import java.util.Collection;
+
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
+
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
+
+import ee.itcollege.i377.entities.Piirivalvur;
+import ee.itcollege.i377.entities.Vahtkond;
+import ee.itcollege.i377.entities.VahtkonnaLiige;
 
 privileged aspect VahtkonnaLiigeController_Roo_Controller {
     
@@ -47,18 +45,6 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonnaliiges/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String VahtkonnaLiigeController.update(@Valid VahtkonnaLiige vahtkonnaLiige, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("vahtkonnaLiige", vahtkonnaLiige);
-            addDateTimeFormatPatterns(uiModel);
-            return "vahtkonnaliiges/update";
-        }
-        uiModel.asMap().clear();
-        vahtkonnaLiige.merge();
-        return "redirect:/vahtkonnaliiges/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkonnaLiigeId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{vahtkonnaLiigeId}", params = "form", method = RequestMethod.GET)
