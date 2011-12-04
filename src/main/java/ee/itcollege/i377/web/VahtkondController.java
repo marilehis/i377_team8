@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ee.itcollege.i377.entities.SurrogaatKuupaev;
 import ee.itcollege.i377.entities.Vahtkond;
 
 import java.text.SimpleDateFormat;
@@ -48,6 +49,8 @@ public class VahtkondController {
         uiModel.asMap().clear();
         vahtkond.setAvatud(new Date());
         vahtkond.setAvaja(principal.getName());
+        vahtkond.setMuudetud(SurrogaatKuupaev.getInstance());
+        vahtkond.setSuletud(SurrogaatKuupaev.getInstance());
         vahtkond.persist();
         return "redirect:/vahtkonds";
     }

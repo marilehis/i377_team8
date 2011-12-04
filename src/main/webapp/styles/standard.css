@@ -389,4 +389,17 @@ fieldset th {
 #c_ametpiiripunkti {
 	display:none;
 }
+
+.nameContainer {
+	float:left;
+	width:400px;
+}
+
+.searchContainer {
+	width:200px;
+	float:left;
+}
+
+.searchContainer input[type=submit] {
+	margin-top:10px;
 }

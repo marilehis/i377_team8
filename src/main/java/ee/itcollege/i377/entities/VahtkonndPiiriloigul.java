@@ -176,7 +176,8 @@ public class VahtkonndPiiriloigul implements Serializable {
 	
 	 public static List<VahtkonndPiiriloigul> findVahtkonndPiiriloigulEntriesByVahtkond(Long vahtkondId, int firstResult, int maxResults) {
 		 return entityManager().
-				 createQuery("SELECT o FROM VahtkonndPiiriloigul o where o.suletud IS NULL AND vahtkond_ID = "+ vahtkondId.toString(), VahtkonndPiiriloigul.class).
+				 createQuery("SELECT o FROM VahtkonndPiiriloigul o where o.suletud = :surrogaat AND vahtkond_ID = "+ vahtkondId.toString(), VahtkonndPiiriloigul.class).
+				 setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
 				 setFirstResult(firstResult).
 				 setMaxResults(maxResults).
 				 getResultList();
@@ -184,16 +185,21 @@ public class VahtkonndPiiriloigul implements Serializable {
 	 
     public static long countVahtkonndPiiriloiguls(Long vahtkondId) {
         return entityManager().
-        		createQuery("SELECT COUNT(o) FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL AND vahtkond_ID = " + vahtkondId.toString(), Long.class).
+        		createQuery("SELECT COUNT(o) FROM VahtkonndPiiriloigul o WHERE o.suletud = :surrogaat AND vahtkond_ID = " + vahtkondId.toString(), Long.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
         		getSingleResult();
     }
     
     public static List<VahtkonndPiiriloigul> findAllVahtkonndPiiriloiguls() {
-        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL", VahtkonndPiiriloigul.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o WHERE o.suletud = :surrogaat", VahtkonndPiiriloigul.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		getResultList();
     }
     
     public static List<VahtkonndPiiriloigul> findVahtkonndPiiriloigulEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL", VahtkonndPiiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o WHERE o.suletud = :surrogaat", VahtkonndPiiriloigul.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
 	 
     @PreRemove

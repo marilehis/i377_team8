@@ -278,15 +278,22 @@ public class Piirivalvur implements Serializable {
     }
     
     public static long countPiirivalvurs() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.suletud IS NULL", Long.class).getSingleResult();
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.suletud = :surrogaat", Long.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		getSingleResult();
+        
     }
     
     public static List<Piirivalvur> findAllPiirivalvurs() {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud IS NULL", Piirivalvur.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud = :surrogaat", Piirivalvur.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		getResultList();
     }
     
     public static List<Piirivalvur> findPiirivalvurEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud IS NULL", Piirivalvur.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud = :surrogaat", Piirivalvur.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
     @PreRemove
@@ -306,6 +313,10 @@ public class Piirivalvur implements Serializable {
     	sb.append(" ");
     	sb.append(getPerekonnanimi());
     	return sb.toString();
+    }
+    
+    public List<IndividuaalneToograafik> getIndividuaalneToograafik(Date alates, Date kuni) {
+    	return IndividuaalneToograafik.findIndividuaalneToograafikFor(this, alates, kuni);
     }
 	
 }

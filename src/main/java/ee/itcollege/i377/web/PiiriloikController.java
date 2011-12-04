@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ee.itcollege.i377.entities.Piiriloik;
+import ee.itcollege.i377.entities.SurrogaatKuupaev;
 
 @RooWebScaffold(path = "piiriloiks", formBackingObject = Piiriloik.class)
 @RequestMapping("/piiriloiks")
@@ -34,6 +35,8 @@ public class PiiriloikController {
 		uiModel.asMap().clear();
 		piiriloik.setAvaja(principal.getName());
 		piiriloik.setAvatud(new Date());
+		piiriloik.setMuudetud(SurrogaatKuupaev.getInstance());
+		piiriloik.setSuletud(SurrogaatKuupaev.getInstance());
 		piiriloik.persist();
 
 		return "redirect:/piiriloiks";

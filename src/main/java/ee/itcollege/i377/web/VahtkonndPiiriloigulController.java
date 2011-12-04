@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import ee.itcollege.i377.entities.SurrogaatKuupaev;
 import ee.itcollege.i377.entities.Vahtkond;
 import ee.itcollege.i377.entities.VahtkonndPiiriloigul;
 
@@ -69,6 +70,8 @@ public class VahtkonndPiiriloigulController {
         vahtkonndPiiriloigul.setVahtkond(vahtkond);
         vahtkonndPiiriloigul.setAvaja(principal.getName());
         vahtkonndPiiriloigul.setAvatud(new Date());
+        vahtkonndPiiriloigul.setMuudetud(SurrogaatKuupaev.getInstance());
+        vahtkonndPiiriloigul.setSuletud(SurrogaatKuupaev.getInstance());
         vahtkonndPiiriloigul.persist();
         return "redirect:/vahtkonndpiiriloiguls?vahtkondId=" + vahtkond.getVahtkondId().toString();
     }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ee.itcollege.i377.entities.Piirivalvur;
+import ee.itcollege.i377.entities.SurrogaatKuupaev;
 
 @RooWebScaffold(path = "piirivalvurs", formBackingObject = Piirivalvur.class)
 @RequestMapping("/piirivalvurs")
@@ -32,6 +33,8 @@ public class PiirivalvurController {
         uiModel.asMap().clear();
         piirivalvur.setAvaja(principal.getName());
         piirivalvur.setAvatud(new Date());
+        piirivalvur.setMuudetud(SurrogaatKuupaev.getInstance());
+        piirivalvur.setSuletud(SurrogaatKuupaev.getInstance());
         piirivalvur.persist();
         return "redirect:/piirivalvurs";
     }

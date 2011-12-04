@@ -33,20 +33,6 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
         return "vahtkonnaliiges/show";
     }
     
-    @RequestMapping(method = RequestMethod.GET)
-    public String VahtkonnaLiigeController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        if (page != null || size != null) {
-            int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("vahtkonnaliiges", VahtkonnaLiige.findVahtkonnaLiigeEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
-            float nrOfPages = (float) VahtkonnaLiige.countVahtkonnaLiiges() / sizeNo;
-            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
-        } else {
-            uiModel.addAttribute("vahtkonnaliiges", VahtkonnaLiige.findAllVahtkonnaLiiges());
-        }
-        addDateTimeFormatPatterns(uiModel);
-        return "vahtkonnaliiges/list";
-    }
-    
     @RequestMapping(value = "/{vahtkonnaLiigeId}", params = "form", method = RequestMethod.GET)
     public String VahtkonnaLiigeController.updateForm(@PathVariable("vahtkonnaLiigeId") Long vahtkonnaLiigeId, Model uiModel) {
         uiModel.addAttribute("vahtkonnaLiige", VahtkonnaLiige.findVahtkonnaLiige(vahtkonnaLiigeId));

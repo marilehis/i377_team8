@@ -1,6 +1,7 @@
 package ee.itcollege.i377.web;
 
 import java.security.Principal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +13,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import ee.itcollege.i377.entities.Piirivalvur;
+import ee.itcollege.i377.entities.SurrogaatKuupaev;
 import ee.itcollege.i377.entities.Vahtkond;
 import ee.itcollege.i377.entities.VahtkonnaLiige;
 
@@ -44,6 +48,8 @@ public class VahtkonnaLiigeController {
         vahtkonnaLiige.setVahtkond(getVahtkond(httpServletRequest));
         vahtkonnaLiige.setAvaja(principal.getName());
         vahtkonnaLiige.setAvatud(new Date());
+        vahtkonnaLiige.setMuudetud(SurrogaatKuupaev.getInstance());
+        vahtkonnaLiige.setSuletud(SurrogaatKuupaev.getInstance());
         vahtkonnaLiige.persist();
         return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkond().getVahtkondId().toString(), httpServletRequest) + "?form";
     }
@@ -62,7 +68,32 @@ public class VahtkonnaLiigeController {
         return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkond().getVahtkondId().toString(), httpServletRequest) + "?form";
     }
     
-    
-    
+    @RequestMapping(method = RequestMethod.GET)
+    public String list(
+    		@RequestParam(value = "piirivalvurId", required = true) Long piirivalvurId, 
+    		@RequestParam(value = "alates", required = false) String alates,
+    		@RequestParam(value = "kuni", required = false) String kuni,
+    		Model uiModel) {
+    	Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(piirivalvurId);
+    	
+    	SimpleDateFormat fmt = new SimpleDateFormat("MMM d, yyyy");
+    	
+    	Date dateAlates = null;
+    	try {
+    		dateAlates = fmt.parse(alates);
+    	} catch(Exception e) {}
+    	
+    	Date dateKuni = null;
+    	try {
+    		dateKuni = fmt.parse(kuni);
+    	} catch(Exception e) {}
+    	
+        uiModel.addAttribute("rows", piirivalvur.getIndividuaalneToograafik(dateAlates, dateKuni));
+        uiModel.addAttribute("piirivalvur", piirivalvur);
+        uiModel.addAttribute("alates", alates);
+        uiModel.addAttribute("kuni", kuni);
+        addDateTimeFormatPatterns(uiModel);
+        return "vahtkonnaliiges/list";
+    }
 	
 }

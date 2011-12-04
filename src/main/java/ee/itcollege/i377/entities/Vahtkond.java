@@ -254,7 +254,23 @@ public class Vahtkond implements Serializable {
 	}
 	 
     public static List<Vahtkond> findAllVahtkonds() {
-        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud IS NULL", Vahtkond.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud = :surrogaat", Vahtkond.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		getResultList();
     }
+    
+    public static long countVahtkonds() {
+        return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond o WHERE o.suletud = :surrogaat", Long.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		getSingleResult();
+    }
+    
+    public static List<Vahtkond> findVahtkondEntries(int firstResult, int maxResults) {
+        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud = :surrogaat", Vahtkond.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+    }
+    
+    
 	
 }

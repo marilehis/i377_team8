@@ -1,16 +1,90 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" 
-xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
-xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
-version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_ee_itcollege_i377_entities_VahtkonnaLiige" items="${vahtkonnaliiges}" z="isEsJhrkAKLrgLrIz36aPVa6cPU=">
-        <table:table data="${vahtkonnaliiges}" id="l_ee_itcollege_i377_entities_VahtkonnaLiige" path="/vahtkonnaliiges" typeIdFieldName="vahtkonnaLiigeId" z="kXTMeymjrQS+DHgQPW7A2WETr7Q=">
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" property="vahtkonnaNimetus" z="5uV3T414NIsUKtFHl/s1DUd85M12"/>
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_alates" property="alates" z="5uV3T404NIsUKtFHl/s1DUd85MQ="/>
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kuni" property="kuni" z="mGT9i6fCEYoicfb9P3TKYVfvqhc="/>
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kommentaar" property="kommentaar" z="mGT9i6fCEYoicfb9P3TKYVfvqh11"/>
-        </table:table>
-    </page:list>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:spring="http://www.springframework.org/tags" 
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<div>
+		<div class="searchHeader">
+			<div class="nameContainer">
+				Piirivalvur <strong><c:out value="${piirivalvur.nimi}"></c:out></strong>
+			</div>
+			<div class="searchContainer">
+				<spring:url value="/piirivalvurs/${piirivalvur.piirivalvurId}" var="update_url">
+				<spring:param name="form"></spring:param>
+				</spring:url>
+				<a href="${update_url}">
+					<input type="button" value="Muuda"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div style="clear:both"></div>
+	<script type="javascript">
+		dojo.require('dijit.form.DateTextBox')
+	</script>
+    <form method="GET" action="vahtkonnaliiges" class="searchForm">
+		<input type="hidden" name="piirivalvurId" id="piirivalvurId" value="${piirivalvur.piirivalvurId}"/>
+		<div class="searchContainer">
+			<label for="alates">Alates</label><br/>
+			<div class="dijitReset dijitInputField dijitInputContainer">
+				<input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" 
+					autocomplete="off" type="text" maxlength="524288" 
+					aria-valuenow="" aria-invalid="false" id="alates" name="alates" tabindex="0" aria-required="true" value="${alates}"/>
+				<script type="text/javascript">
+	        		Spring.addDecoration(new Spring.ElementDecoration({elementId : 'alates', 
+	        			widgetType : 'dijit.form.DateTextBox', widgetAttrs : {promptMessage: 'Enter From (required)', 
+	        				invalidMessage: 'Please enter valid From', required: false, 
+	        				constraints: {datePattern : 'MMM d, yyyy', required : false}, 
+	        				datePattern : 'MMM d, yyyy'}})); 
+	        	</script>				
+			</div>			
+		</div>
+		<div class="searchContainer">
+			<label for="kuni">Kuni</label><br/>
+			<div class="dijitReset dijitInputField dijitInputContainer">
+				<input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" 
+					autocomplete="off" type="text" maxlength="524288" 
+					aria-valuenow="" aria-invalid="false" id="kuni" name="kuni" tabindex="0" aria-required="true" value="${kuni}"/>
+				<script type="text/javascript">
+	        		Spring.addDecoration(new Spring.ElementDecoration({elementId : 'kuni', 
+	        			widgetType : 'dijit.form.DateTextBox', widgetAttrs : {promptMessage: 'Enter Until (required)', 
+	        				invalidMessage: 'Please enter valid Until', required: false, 
+	        				constraints: {datePattern : 'MMM d, yyyy', required : false}, 
+	        				datePattern : 'MMM d, yyyy'}})); 
+	        	</script>				
+			</div>			
+		</div>
+		<div class="searchContainer">
+			<input type="submit" value="Värskenda"/>
+		</div>
+    </form>
+	<table>
+		<thead>
+			<th></th>
+			<th>Piirilõik</th>
+			<th>Vahtkond</th>
+			<th>Algus</th>
+			<th>Lõpp</th>
+		</thead>
+		<tbody>
+			<c:set var="rowcounter" value="0" scope="page" />
+			<c:forEach var="item" items="${rows}">
+				<tr>
+					<c:set var="rowcounter" value="${rowcounter + 1}" scope="page" />
+					<td><c:out value="${rowcounter}" /></td>
+					<td>${item.piiriloik.nimetus}</td>
+					<td>${item.vahtkond.nimetus}</td>
+					<td><util:dateformat date="${item.alates}" /></td>
+					<td><util:dateformat date="${item.kuni}" /></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </div>
