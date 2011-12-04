@@ -203,7 +203,7 @@ public class VahtkonnaLiige implements Serializable {
 	 public static List<VahtkonnaLiige> findAllVahtkonnaLiiges() {
 		 List<VahtkonnaLiige> L = entityManager().createQuery("SELECT o FROM VahtkonnaLiige o", VahtkonnaLiige.class).getResultList();
 		 for(VahtkonnaLiige item : L ){
-			 L.setVahtkondName(L.getVahtkond().getNimetus());
+			 item.setVahtkondName(item.getVahtkond().getNimetus());
 		 }
 		 return L;
 	 }
