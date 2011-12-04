@@ -3,31 +3,13 @@
 
 package ee.itcollege.i377.entities;
 
-import java.lang.String;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 privileged aspect RiigiAdminYksus_Roo_ToString {
     
-    public String RiigiAdminYksus.toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("AdminAlluvuses1: ").append(getAdminAlluvuses1() == null ? "null" : getAdminAlluvuses1().size()).append(", ");
-        sb.append("AdminAlluvuses2: ").append(getAdminAlluvuses2() == null ? "null" : getAdminAlluvuses2().size()).append(", ");
-        sb.append("Alates: ").append(getAlates()).append(", ");
-        sb.append("Avaja: ").append(getAvaja()).append(", ");
-        sb.append("Avatud: ").append(getAvatud()).append(", ");
-        sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Kood: ").append(getKood()).append(", ");
-        sb.append("Kuni: ").append(getKuni()).append(", ");
-        sb.append("Muudetud: ").append(getMuudetud()).append(", ");
-        sb.append("Muutja: ").append(getMuutja()).append(", ");
-        sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("RiigiAdminYksusId: ").append(getRiigiAdminYksusId()).append(", ");
-        sb.append("RiigiAdminYksuseLiik: ").append(getRiigiAdminYksuseLiik()).append(", ");
-        sb.append("Ruumiyksuses: ").append(getRuumiyksuses() == null ? "null" : getRuumiyksuses().size()).append(", ");
-        sb.append("Suletud: ").append(getSuletud()).append(", ");
-        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
-        sb.append("Vaeosas: ").append(getVaeosas() == null ? "null" : getVaeosas().size()).append(", ");
-        sb.append("Version: ").append(getVersion());
-        return sb.toString();
+    public java.lang.String RiigiAdminYksus.toString() {
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     
 }

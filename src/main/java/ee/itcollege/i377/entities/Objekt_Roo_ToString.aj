@@ -3,26 +3,13 @@
 
 package ee.itcollege.i377.entities;
 
-import java.lang.String;
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 privileged aspect Objekt_Roo_ToString {
     
-    public String Objekt.toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Avaja: ").append(getAvaja()).append(", ");
-        sb.append("Avatud: ").append(getAvatud()).append(", ");
-        sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Muudetud: ").append(getMuudetud()).append(", ");
-        sb.append("Muutja: ").append(getMuutja()).append(", ");
-        sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("ObjektId: ").append(getObjektId()).append(", ");
-        sb.append("ObjektIntsidendis: ").append(getObjektIntsidendis() == null ? "null" : getObjektIntsidendis().size()).append(", ");
-        sb.append("ObjektiLiik: ").append(getObjektiLiik()).append(", ");
-        sb.append("Piiririkkujas: ").append(getPiiririkkujas() == null ? "null" : getPiiririkkujas().size()).append(", ");
-        sb.append("Suletud: ").append(getSuletud()).append(", ");
-        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
-        sb.append("Version: ").append(getVersion());
-        return sb.toString();
+    public java.lang.String Objekt.toString() {
+        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
     }
     
 }
