@@ -91,6 +91,19 @@ public class Vahtkond implements Serializable {
 	@OneToMany(mappedBy="vahtkond")
 	private Set<VahtkonndPiiriloigul> vahtkonndPiiriloiguls;
 
+	
+	
+	private String vahtkondName;
+	
+	public String getVahtkondName() {
+		return this.vahtkondName;
+	}
+	
+	public void setVahtkondName(String vahtkondName) {
+		this.vahtkondName = vahtkondName;
+	}
+	
+	
     public Vahtkond() {
     }
 
