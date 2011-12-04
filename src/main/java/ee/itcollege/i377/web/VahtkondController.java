@@ -18,8 +18,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import ee.itcollege.i377.entities.SurrogaatKuupaev;
 import ee.itcollege.i377.entities.Vahtkond;
 
-import java.text.SimpleDateFormat;
-
 @RooWebScaffold(path = "vahtkonds", formBackingObject = Vahtkond.class)
 @RequestMapping("/vahtkonds")
 @Controller
@@ -67,17 +65,4 @@ public class VahtkondController {
         return "redirect:/vahtkonds";
     }
 	
-    void VahtkondController.addDateTimeFormatPatterns(Model uiModel) {
-    	uiModel.addAttribute("vahtkond_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-         uiModel.addAttribute("vahtkond_kuni_date_format", SimpleDateFormat("dd.mm.yyyy"));
-        
-        uiModel.addAttribute("vahtkond_alates_date_format", SimpleDateFormat("dd.mm.yyyy"));
-       // uiModel.addAttribute("vahtkond_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-       // uiModel.addAttribute("vahtkond_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("vahtkond_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-    }
-    
-    
-    
 }
