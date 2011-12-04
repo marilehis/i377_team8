@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <div 
-xmlns:jsp="http://java.sun.com/JSP/Page" 
-xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
-xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
-xmlns:fn="http://java.sun.com/jsp/jstl/functions" 
-version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <h1>Vahtkond ${fn:escapeXml(vahtkond.kood)} - ${fn:escapeXml(vahtkond.nimetus)}</h1>
-    <page:list id="pl_ee_itcollege_i377_entities_VahtkonndPiiriloigul" items="${vahtkonndpiiriloiguls}" z="CkfWRyP5KGU8W2t36dOb51QuZP0=">
-        <table:table data="${vahtkonndpiiriloiguls}" id="l_ee_itcollege_i377_entities_VahtkonndPiiriloigul" path="/vahtkonndpiiriloiguls" typeIdFieldName="vahtkondPiiriloiulId" z="7Dy0H8carqI+GYlEt7upRk8C4eU=">
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonndPiiriloigul_piiriloik" property="piiriloik" z="G80Vjn7RXyUqGkHNak8d6/uvvfv="/>
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonndPiiriloigul_kommentaar" property="kommentaar" z="OcfahBQoMEAOtFIF6a2YYHe9IH8="/>
-            <table:column date="true" dateTimePattern="${vahtkonndPiiriloigul_kuni_date_format}" id="c_ee_itcollege_i377_entities_VahtkonndPiiriloigul_kuni" property="kuni" z="RFI+QmhUBNP31TfsOSiSV4i4lBM="/>
-            <table:column date="true" dateTimePattern="${vahtkonndPiiriloigul_alates_date_format}" id="c_ee_itcollege_i377_entities_VahtkonndPiiriloigul_alates" property="alates" z="H1H+kS3rNDkevBI7OnTTT5qQ4j4="/>
-        </table:table>
-    </page:list>
+	xmlns:spring="http://www.springframework.org/tags"
+	xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" 
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<h1>Vahtkond ${fn:escapeXml(vahtkond.kood)} -
+		${fn:escapeXml(vahtkond.nimetus)}</h1>
+	<table>
+		<thead>
+			<th></th>
+			<th>Piirilõik</th>
+			<th>Kommentaar</th>
+			<th>Algus</th>
+			<th>Lõpp</th>
+			<th></th>
+		</thead>
+		<tbody>
+			<c:set var="rowcounter" value="0" scope="page" />
+			<c:forEach var="item" items="${vahtkonndpiiriloiguls}">
+				<c:set var="rowcounter" value="${rowcounter + 1}" scope="page"/>
+				<tr>
+					<td><c:out value="${rowcounter}"/></td>
+					<td>${item.piiriloik.nimetus}</td>
+					<td>${item.kommentaar}</td>
+					<td><util:dateformat date="${item.alates}" /></td>
+					<td><util:dateformat date="${item.kuni}" /></td>
+					<td align="right"><spring:url value="/vahtkonndpiiriloiguls/${item.vahtkondPiiriloiulId}" var="update_url">
+						<spring:param name="form"></spring:param>
+						</spring:url> <a href="${update_url}"> <input type="button" value="Muuda" />
+						</a>
+					</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td align="right" colspan="6">
+					<spring:url value="/vahtkonndpiiriloiguls" var="create_url">
+						<spring:param name="form"></spring:param>
+						<spring:param name="vahtkondId" value="${vahtkond.vahtkondId}"></spring:param>
+					</spring:url>
+					<a href="${create_url}">
+						<input type="button" value="Lisa"/>
+					</a>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
 </div>
