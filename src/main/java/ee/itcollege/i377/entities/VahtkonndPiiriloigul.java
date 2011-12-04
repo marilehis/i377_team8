@@ -183,7 +183,7 @@ public class VahtkonndPiiriloigul implements Serializable {
 	}
 	
 	 public static List<VahtkonndPiiriloigul> findVahtkonndPiiriloigulEntriesByVahtkond(int vahtkond_id,int firstResult, int maxResults) {
-	     if(vahtkond_id==0)return findVahtkonndPiiriloigulEntries(firstResult, maxResults):
+	     if(vahtkond_id==0)return findVahtkonndPiiriloigulEntries(firstResult, maxResults);
 		 return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o where vahtkond_ID="+Integer.toString(vahtkond_id), VahtkonndPiiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
 	 }
 	
