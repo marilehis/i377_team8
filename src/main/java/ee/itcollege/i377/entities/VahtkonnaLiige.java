@@ -2,6 +2,7 @@ package ee.itcollege.i377.entities;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,16 +19,6 @@ import javax.persistence.TemporalType;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-
-import ee.itcollege.i377.entities.VahtkonnaLiige;
-import java.lang.Integer;
-import java.lang.Long;
-import java.util.List;
-import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Version;
-import org.springframework.transaction.annotation.Transactional;
 
 
 /**
@@ -84,18 +75,6 @@ public class VahtkonnaLiige implements Serializable {
 	@JoinColumn(name="VAHTKOND_ID")
 	private Vahtkond vahtkond;
     
-    
-    
-    private String vahtkondName;
-	
-	public String getVahtkondName() {
-		return this.vahtkondName;
-	}
-	
-	public void setVahtkondName(String vahtkondName) {
-		this.vahtkondName = vahtkondName;
-	}
-
     public VahtkonnaLiige() {
     }
 
@@ -201,14 +180,7 @@ public class VahtkonnaLiige implements Serializable {
 	}
 	
 	 public static List<VahtkonnaLiige> findAllVahtkonnaLiiges() {
-		 List<VahtkonnaLiige> L = entityManager().createQuery("SELECT o FROM VahtkonnaLiige o", VahtkonnaLiige.class).getResultList();
-		 for(VahtkonnaLiige item : L ){
-			 item.setVahtkondName(item.getVahtkond().getNimetus());
-		 }
-		 return L;
+		 return entityManager().createQuery("SELECT o FROM VahtkonnaLiige o WHERE o.suletud IS NULL", VahtkonnaLiige.class).getResultList();
 	 }
-	
-	
-	
 	 
 }
