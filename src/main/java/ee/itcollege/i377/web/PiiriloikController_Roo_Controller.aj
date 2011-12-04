@@ -28,7 +28,7 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect PiiriloikController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
+    /*@RequestMapping(method = RequestMethod.POST)
     public String PiiriloikController.create(@Valid Piiriloik piiriloik, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiriloik", piiriloik);
@@ -38,7 +38,7 @@ privileged aspect PiiriloikController_Roo_Controller {
         uiModel.asMap().clear();
         piiriloik.persist();
         return "redirect:/piiriloiks/" + encodeUrlPathSegment(piiriloik.getPiiriloikId().toString(), httpServletRequest);
-    }
+    }*/
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String PiiriloikController.createForm(Model uiModel) {
@@ -69,6 +69,7 @@ privileged aspect PiiriloikController_Roo_Controller {
         return "piiriloiks/list";
     }
     
+    /*
     @RequestMapping(method = RequestMethod.PUT)
     public String PiiriloikController.update(@Valid Piiriloik piiriloik, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -79,7 +80,7 @@ privileged aspect PiiriloikController_Roo_Controller {
         uiModel.asMap().clear();
         piiriloik.merge();
         return "redirect:/piiriloiks/" + encodeUrlPathSegment(piiriloik.getPiiriloikId().toString(), httpServletRequest);
-    }
+    }*/
     
     @RequestMapping(value = "/{piiriloikId}", params = "form", method = RequestMethod.GET)
     public String PiiriloikController.updateForm(@PathVariable("piiriloikId") Long piiriloikId, Model uiModel) {
@@ -88,6 +89,7 @@ privileged aspect PiiriloikController_Roo_Controller {
         return "piiriloiks/update";
     }
     
+    /*
     @RequestMapping(value = "/{piiriloikId}", method = RequestMethod.DELETE)
     public String PiiriloikController.delete(@PathVariable("piiriloikId") Long piiriloikId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Piiriloik.findPiiriloik(piiriloikId).remove();
@@ -96,6 +98,8 @@ privileged aspect PiiriloikController_Roo_Controller {
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/piiriloiks";
     }
+    */
+    
     
     @ModelAttribute("intsidents")
     public Collection<Intsident> PiiriloikController.populateIntsidents() {
