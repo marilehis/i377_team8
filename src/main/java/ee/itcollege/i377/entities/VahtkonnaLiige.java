@@ -20,7 +20,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
-
 /**
  * The persistent class for the VAHTKONNA_LIIGE database table.
  * 
@@ -28,55 +27,55 @@ import org.springframework.roo.addon.tostring.RooToString;
 @Entity
 @RooToString
 @RooEntity
-@Table(name="VAHTKONNA_LIIGE")
+@Table(name = "VAHTKONNA_LIIGE")
 public class VahtkonnaLiige implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="VAHTKONNA_LIIGE_ID")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "VAHTKONNA_LIIGE_ID")
 	private Long vahtkonnaLiigeId;
 
-    @Temporal( TemporalType.DATE)
-    @DateTimeFormat(style="M-")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(style = "M-")
 	private Date alates; // ok
 
 	private String avaja;
 
-    @Temporal( TemporalType.DATE)
-    @DateTimeFormat(style="M-")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(style = "M-")
 	private Date avatud; // ok
 
 	private String kommentaar;
 
-    @Temporal( TemporalType.DATE)
-    @DateTimeFormat(style="M-")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(style = "M-")
 	private Date kuni; // ok
 
-    @Temporal( TemporalType.DATE)
-    @DateTimeFormat(style="M-")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(style = "M-")
 	private Date muudetud; // ok
 
 	private String muutja;
 
-    @Temporal( TemporalType.DATE)
-    @DateTimeFormat(style="M-")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(style = "M-")
 	private Date suletud; // ok
 
 	private String sulgeja;
 
-	//bi-directional many-to-one association to Piirivalvur
-    @ManyToOne
-	@JoinColumn(name="PIIRIVALVUR_ID")
+	// bi-directional many-to-one association to Piirivalvur
+	@ManyToOne
+	@JoinColumn(name = "PIIRIVALVUR_ID")
 	private Piirivalvur piirivalvur;
 
-	//bi-directional many-to-one association to Vahtkond
-    @ManyToOne
-	@JoinColumn(name="VAHTKOND_ID")
+	// bi-directional many-to-one association to Vahtkond
+	@ManyToOne
+	@JoinColumn(name = "VAHTKOND_ID")
 	private Vahtkond vahtkond;
-    
-    public VahtkonnaLiige() {
-    }
+
+	public VahtkonnaLiige() {
+	}
 
 	public Long getVahtkonnaLiigeId() {
 		return this.vahtkonnaLiigeId;
@@ -165,7 +164,7 @@ public class VahtkonnaLiige implements Serializable {
 	public void setPiirivalvur(Piirivalvur piirivalvur) {
 		this.piirivalvur = piirivalvur;
 	}
-	
+
 	public Vahtkond getVahtkond() {
 		return this.vahtkond;
 	}
@@ -173,14 +172,20 @@ public class VahtkonnaLiige implements Serializable {
 	public void setVahtkond(Vahtkond vahtkond) {
 		this.vahtkond = vahtkond;
 	}
-	
+
 	@PreRemove
 	public void preventRemove() {
-		 throw new SecurityException("Vahtkonna liikme kustutamine keelatud!");
+		throw new SecurityException("Vahtkonna liikme kustutamine keelatud!");
+	}
+
+	public static List<VahtkonnaLiige> findAllVahtkonnaLiiges() {
+		return entityManager().createQuery(
+				"SELECT o FROM VahtkonnaLiige o WHERE o.suletud IS NULL",
+				VahtkonnaLiige.class).getResultList();
 	}
 	
-	 public static List<VahtkonnaLiige> findAllVahtkonnaLiiges() {
-		 return entityManager().createQuery("SELECT o FROM VahtkonnaLiige o WHERE o.suletud IS NULL", VahtkonnaLiige.class).getResultList();
-	 }
-	 
+	public String getVahtkonnaNimetus() {
+		return getVahtkond().getNimetus();
+	}
+
 }
