@@ -9,4 +9,53 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/piiriloiks")
 @Controller
 public class PiiriloikController {
+	
+	private Piiriloik setCreated(Piiriloik piiriloik,Principal principal){
+		piiriloik.setAvaja(principal.getName());
+		piiriloik.setAvatud(new Date());
+		piiriloik.persist();
+        return piiriloik;
+	}
+	
+	private Piiriloik setModified(Piiriloik piiriloik,Principal principal){
+		piiriloik.setMuutja(principal.getName());
+		piiriloik.setMuudetud(new Date());
+		piiriloik.merge();
+        return piiriloik;
+	}
+	
+	private String hasErrors(Piiriloik piiriloik,Model uiModel,String go_to){
+		uiModel.addAttribute("piiriloik", piiriloik);
+        addDateTimeFormatPatterns(uiModel);
+		return go_to;
+	}
+	
+	
+	 @RequestMapping(method = RequestMethod.POST)
+	 public String create(@Valid Piiriloik piiriloik, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
+		if (bindingResult.hasErrors())return this.hasErrors(piiriloik, uiModel, "piiriloik/create");
+        uiModel.asMap().clear();
+        piiriloik = this.setCreated(piiriloik);     
+        return "redirect:/piiriloiks";
+	 }
+	    	
+    @RequestMapping(method = RequestMethod.PUT)
+    public String update(@Valid Piiriloik piiriloik, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) this.hasErrors(piiriloik, uiModel, "piiriloiks/update");
+        uiModel.asMap().clear();
+        piiriloik = this.setModified(piiriloik);
+        piiriloik.merge();
+        return "redirect:/piiriloiks";
+    }
+    
+    @RequestMapping(value = "/{piiriloikId}", method = RequestMethod.DELETE)
+    public String delete(@PathVariable("piiriloikId") Long piiriloikId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Principal principal, Model uiModel) {
+    	Piiriloik piiriloik = Piiriloik.findPiiriloik(piiriloikId);
+    	piiriloik = this.setModified(piiriloik);
+    	piiriloik.merge();
+        uiModel.asMap().clear();
+        uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
+        uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
+        return "redirect:/piiriloiks";
+    }
 }
