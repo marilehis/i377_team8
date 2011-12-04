@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:spring="http://www.springframework.org/tags" 
+<div 
+xmlns:spring="http://www.springframework.org/tags" 
 xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
 xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"  
 xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" 

@@ -27,25 +27,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect VahtkonndPiiriloigulController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String VahtkonndPiiriloigulController.create(@Valid VahtkonndPiiriloigul vahtkonndPiiriloigul, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("vahtkonndPiiriloigul", vahtkonndPiiriloigul);
-            addDateTimeFormatPatterns(uiModel);
-            return "vahtkonndpiiriloiguls/create";
-        }
-        uiModel.asMap().clear();
-        vahtkonndPiiriloigul.persist();
-        return "redirect:/vahtkonndpiiriloiguls/" + encodeUrlPathSegment(vahtkonndPiiriloigul.getVahtkondPiiriloiulId().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String VahtkonndPiiriloigulController.createForm(Model uiModel) {
-        uiModel.addAttribute("vahtkonndPiiriloigul", new VahtkonndPiiriloigul());
-        addDateTimeFormatPatterns(uiModel);
-        return "vahtkonndpiiriloiguls/create";
-    }
-    
     @RequestMapping(value = "/{vahtkondPiiriloiulId}", method = RequestMethod.GET)
     public String VahtkonndPiiriloigulController.show(@PathVariable("vahtkondPiiriloiulId") Long vahtkondPiiriloiulId, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
