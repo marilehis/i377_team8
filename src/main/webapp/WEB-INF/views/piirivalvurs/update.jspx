@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<div 
+xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields"
+xmlns:spring="http://www.springframework.org/tags"
+xmlns:form="urn:jsptagdir:/WEB-INF/tags/form"
+xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_i377_entities_Piirivalvur" idField="piirivalvurId" modelAttribute="piirivalvur" path="/piirivalvurs" versionField="Version" z="gw1UH7AYI0/m32br7R0lHsxIifg=">
-        <field:input field="isikukood" id="c_ee_itcollege_i377_entities_Piirivalvur_isikukood" required="true" z="CeZAPnv7ahzyRA6i7V4lwQBBJbA="/>
-        <field:input field="eesnimed" id="c_ee_itcollege_i377_entities_Piirivalvur_eesnimed" required="true" z="glspsM35V5QZ/JZskJCa/HIWumc="/>
-        <field:input field="perekonnanimi" id="c_ee_itcollege_i377_entities_Piirivalvur_perekonnanimi" required="true" z="aYwEVNljflwdINF0AiVXmlHjw3Y="/>
-        <field:input field="soduriKood" id="c_ee_itcollege_i377_entities_Piirivalvur_soduriKood" required="true" z="TSQZIkzsgrtwhhtTGPSElHGEFE0="/>
-        <field:input field="sugu" id="c_ee_itcollege_i377_entities_Piirivalvur_sugu" required="true" z="/rB6YS6Qh0xV2AQuYvACdLXjAQE="/>
-        <field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Piirivalvur_kommentaar" z="MgNztty5Xe3JowPlwE6WyVp0Z/s="/>
+    	<div style="float:left; width:50%;">
+	        <field:input field="isikukood" id="c_ee_itcollege_i377_entities_Piirivalvur_isikukood" required="true" z="CeZAPnv7ahzyRA6i7V4lwQBBJbA="/>
+	        <field:input field="eesnimed" id="c_ee_itcollege_i377_entities_Piirivalvur_eesnimed" required="true" z="glspsM35V5QZ/JZskJCa/HIWumc="/>
+	        <field:input field="perekonnanimi" id="c_ee_itcollege_i377_entities_Piirivalvur_perekonnanimi" required="true" z="aYwEVNljflwdINF0AiVXmlHjw3Y="/>
+	        <field:input field="soduriKood" id="c_ee_itcollege_i377_entities_Piirivalvur_soduriKood" required="true" z="TSQZIkzsgrtwhhtTGPSElHGEFE0="/>
+	        <field:input field="sugu" id="c_ee_itcollege_i377_entities_Piirivalvur_sugu" required="true" z="/rB6YS6Qh0xV2AQuYvACdLXjAQE="/>
+        </div>
+        <div style="float:left; width:50%;">
+	        <field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Piirivalvur_kommentaar" z="MgNztty5Xe3JowPlwE6WyVp0Z/s="/>
+             <spring:url value="/vahtkonnaliiges?piirivalvurId=${piirivalvur.piirivalvurId}" var="individuaalse_toograafiku_url"/>
+             <a href="${individuaalse_toograafiku_url}">
+             	<input type="button" value="Individuaalne töögraafik"/>
+             </a>
+	    </div>
     </form:update>
 </div>
