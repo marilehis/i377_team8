@@ -32,7 +32,8 @@ xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
 						<th>Piirivalvur</th>
 						<th>Alates</th>
 						<th>Kuni</th>
-						<th colspan="2">Kommentaar</th>
+						<th>Kommentaar</th>
+						<th></th>
 					</tr>
 	    		</thead>
 	    		<tbody>
@@ -55,7 +56,7 @@ xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
 				</tbody>
 				<tfoot>
 					<tr>
-						<td align="right" colspan="5">
+						<td align="right" colspan="6">
 							<spring:url value="/vahtkonnaliiges" var="create_vahtkonnaliige_url">
 								<spring:param name="form"></spring:param>
 								<spring:param name="vahtkondId" value="${vahtkond.vahtkondId}"></spring:param>
