@@ -31,6 +31,7 @@ public class PiiriloikController {
         return piiriloik;
 	}
 	
+	
 	private Piiriloik setModified(Piiriloik piiriloik,Principal principal){
 		piiriloik.setMuutja(principal.getName());
 		piiriloik.setMuudetud(new Date());
