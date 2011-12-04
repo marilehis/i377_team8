@@ -376,3 +376,17 @@ fieldset th {
 .clearer {
   clear:both;
 }
+
+/* Hide Roo generated menu items we don't need for now */
+
+#c_intsidendiliik, #c_objektiliik, #c_riik, #c_kodakondsus, #c_piiririkkuja, #c_objekt, #c_objektintsidendi,
+#c_objektiseadusintsidendi, #c_auaste, #c_auastmemuutumine, #c_kontaktiliik, #c_piirivalvurikontakt, 
+#c_piirivalvurpiiripunkti, #c_piirivalvurvaeosa, #c_adminalluvus, #c_voimalikalluvus, #c_riigiadminyksuseliik,
+#c_riigiadminyksus, #c_ruumiyksuseliik, #c_ruumiyksus, #c_voodikoht, #c_piirivalvurvodikohal, 
+#c_suguluserolliliik, #c_seotudkontaktisik, #c_vahtkondintsidendi, #c_vahtkonndpiiriloigul, #c_vahtkonnaliige,
+#c_piirivalvurintsidendi, #c_piirivalvuriseadusintsidendi, #c_seadus, #c_seadusepunkt, #c_isikuseadusintsidendi,
+#c_isikintsidendi, #c_intsident, #c_piiriloiguhaldaja, #c_piiripunktialluvus, #c_piiripunktiorgyksus,
+#c_ametpiiripunkti {
+	display:none;
+}
+}
