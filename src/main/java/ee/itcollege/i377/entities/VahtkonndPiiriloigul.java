@@ -174,14 +174,18 @@ public class VahtkonndPiiriloigul implements Serializable {
 		this.vahtkond = vahtkond;
 	}
 	
-	 public static List<VahtkonndPiiriloigul> findVahtkonndPiiriloigulEntriesByVahtkond(int vahtkond_id,int firstResult, int maxResults) {
-	     if(vahtkond_id==0)return findVahtkonndPiiriloigulEntries(firstResult, maxResults);
-	     // FIXME: siin tuleb ka kontrollida, ega pole juba kustutatud
-		 return entityManager().createQuery("SELECT o FROM VahtkonndPiiriloigul o where vahtkond_ID="+Integer.toString(vahtkond_id), VahtkonndPiiriloigul.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
+	 public static List<VahtkonndPiiriloigul> findVahtkonndPiiriloigulEntriesByVahtkond(Long vahtkondId, int firstResult, int maxResults) {
+		 return entityManager().
+				 createQuery("SELECT o FROM VahtkonndPiiriloigul o where o.suletud IS NULL AND vahtkond_ID = "+ vahtkondId.toString(), VahtkonndPiiriloigul.class).
+				 setFirstResult(firstResult).
+				 setMaxResults(maxResults).
+				 getResultList();
 	 }
 	 
-    public static long countVahtkonndPiiriloiguls() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL", Long.class).getSingleResult();
+    public static long countVahtkonndPiiriloiguls(Long vahtkondId) {
+        return entityManager().
+        		createQuery("SELECT COUNT(o) FROM VahtkonndPiiriloigul o WHERE o.suletud IS NULL AND vahtkond_ID = " + vahtkondId.toString(), Long.class).
+        		getSingleResult();
     }
     
     public static List<VahtkonndPiiriloigul> findAllVahtkonndPiiriloiguls() {
