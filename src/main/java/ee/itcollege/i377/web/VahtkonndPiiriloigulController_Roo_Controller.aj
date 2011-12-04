@@ -54,6 +54,7 @@ privileged aspect VahtkonndPiiriloigulController_Roo_Controller {
         return "vahtkonndpiiriloiguls/show";
     }
     
+    /*
     @RequestMapping(method = RequestMethod.GET)
     public String VahtkonndPiiriloigulController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         if (page != null || size != null) {
@@ -66,7 +67,7 @@ privileged aspect VahtkonndPiiriloigulController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonndpiiriloiguls/list";
-    }
+    }*/
     
     @RequestMapping(method = RequestMethod.PUT)
     public String VahtkonndPiiriloigulController.update(@Valid VahtkonndPiiriloigul vahtkonndPiiriloigul, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
