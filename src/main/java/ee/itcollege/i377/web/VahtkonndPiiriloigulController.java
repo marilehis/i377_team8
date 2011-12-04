@@ -72,6 +72,20 @@ public class VahtkonndPiiriloigulController {
         vahtkonndPiiriloigul.persist();
         return "redirect:/vahtkonndpiiriloiguls?vahtkondId=" + vahtkond.getVahtkondId().toString();
     }
+    
+    @RequestMapping(method = RequestMethod.PUT)
+    public String update(@Valid VahtkonndPiiriloigul vahtkonndPiiriloigul, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
+        if (bindingResult.hasErrors()) {
+            uiModel.addAttribute("vahtkonndPiiriloigul", vahtkonndPiiriloigul);
+            addDateTimeFormatPatterns(uiModel);
+            return "vahtkonndpiiriloiguls/update";
+        }
+        uiModel.asMap().clear();
+        vahtkonndPiiriloigul.setMuudetud(new Date());
+        vahtkonndPiiriloigul.setMuutja(principal.getName());
+        vahtkonndPiiriloigul.merge();
+        return "redirect:/vahtkonndpiiriloiguls?vahtkondId=" + vahtkonndPiiriloigul.getVahtkond().getVahtkondId().toString();
+    }
 	
 }
 //findVahtkonndPiiriloigulEntriesByVahtkond

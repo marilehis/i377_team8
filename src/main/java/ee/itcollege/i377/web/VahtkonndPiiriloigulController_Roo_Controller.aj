@@ -35,33 +35,6 @@ privileged aspect VahtkonndPiiriloigulController_Roo_Controller {
         return "vahtkonndpiiriloiguls/show";
     }
     
-    /*
-    @RequestMapping(method = RequestMethod.GET)
-    public String VahtkonndPiiriloigulController.list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        if (page != null || size != null) {
-            int sizeNo = size == null ? 10 : size.intValue();
-            uiModel.addAttribute("vahtkonndpiiriloiguls", VahtkonndPiiriloigul.findVahtkonndPiiriloigulEntries(page == null ? 0 : (page.intValue() - 1) * sizeNo, sizeNo));
-            float nrOfPages = (float) VahtkonndPiiriloigul.countVahtkonndPiiriloiguls() / sizeNo;
-            uiModel.addAttribute("maxPages", (int) ((nrOfPages > (int) nrOfPages || nrOfPages == 0.0) ? nrOfPages + 1 : nrOfPages));
-        } else {
-            uiModel.addAttribute("vahtkonndpiiriloiguls", VahtkonndPiiriloigul.findAllVahtkonndPiiriloiguls());
-        }
-        addDateTimeFormatPatterns(uiModel);
-        return "vahtkonndpiiriloiguls/list";
-    }*/
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String VahtkonndPiiriloigulController.update(@Valid VahtkonndPiiriloigul vahtkonndPiiriloigul, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("vahtkonndPiiriloigul", vahtkonndPiiriloigul);
-            addDateTimeFormatPatterns(uiModel);
-            return "vahtkonndpiiriloiguls/update";
-        }
-        uiModel.asMap().clear();
-        vahtkonndPiiriloigul.merge();
-        return "redirect:/vahtkonndpiiriloiguls/" + encodeUrlPathSegment(vahtkonndPiiriloigul.getVahtkondPiiriloiulId().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(value = "/{vahtkondPiiriloiulId}", params = "form", method = RequestMethod.GET)
     public String VahtkonndPiiriloigulController.updateForm(@PathVariable("vahtkondPiiriloiulId") Long vahtkondPiiriloiulId, Model uiModel) {
         uiModel.addAttribute("vahtkonndPiiriloigul", VahtkonndPiiriloigul.findVahtkonndPiiriloigul(vahtkondPiiriloiulId));

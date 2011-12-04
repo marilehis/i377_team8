@@ -30,9 +30,9 @@
 					<td>${item.kommentaar}</td>
 					<td><util:dateformat date="${item.alates}" /></td>
 					<td><util:dateformat date="${item.kuni}" /></td>
-					<td align="right"><spring:url value="/vahtkonndpiiriloiguls/${item.vahtkondPiiriloiulId}?form" var="update_url">
+					<td align="right"><spring:url value="/vahtkonndpiiriloiguls/${item.vahtkondPiiriloiulId}" var="update_url">
 						<spring:param name="form"></spring:param>
-						</spring:url> <a href="${update__url}"> <input type="button" value="Muuda" />
+						</spring:url> <a href="${update_url}"> <input type="button" value="Muuda" />
 						</a>
 					</td>
 				</tr>
