@@ -67,11 +67,16 @@ public class VahtkonnaLiigeController {
     @RequestMapping(method = RequestMethod.GET)
     public String list(
     		@RequestParam(value = "piirivalvurId", required = true) Long piirivalvurId, 
-    		@RequestParam(value = "alates", required = false) Date alates,
-    		@RequestParam(value = "kuni", required = false) Date kuni,
+    		@RequestParam(value = "alates", required = false) String alates,
+    		@RequestParam(value = "kuni", required = false) String kuni,
     		Model uiModel) {
     	Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(piirivalvurId);
-        uiModel.addAttribute("rows", piirivalvur.getIndividuaalneToograafik(alates, kuni));
+    	
+    	Date dateAlates = null;
+    	Date dateKuni = null;
+    	
+        uiModel.addAttribute("rows", piirivalvur.getIndividuaalneToograafik(dateAlates, dateKuni));
+        uiModel.addAttribute("piirivalvur", piirivalvur);
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonnaliiges/list";
     }
