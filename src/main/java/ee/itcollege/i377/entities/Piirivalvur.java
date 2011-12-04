@@ -299,5 +299,13 @@ public class Piirivalvur implements Serializable {
         		setParameter("isikukood", isikukood).
         		getSingleResult();
     }
+    
+    public String getNimi() {
+    	StringBuilder sb = new StringBuilder();
+    	sb.append(getEesnimed());
+    	sb.append(" ");
+    	sb.append(getPerekonnanimi());
+    	return sb.toString();
+    }
 	
 }

@@ -6,6 +6,8 @@ import org.springframework.format.support.FormattingConversionServiceFactoryBean
 import org.springframework.roo.addon.web.mvc.controller.RooConversionService;
 
 import ee.itcollege.i377.entities.Piiripunkt;
+import ee.itcollege.i377.entities.Piirivalvur;
+import ee.itcollege.i377.entities.Vahtkond;
 
 /**
  * A central place to register application converters and formatters. 
@@ -18,6 +20,8 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 		super.installFormatters(registry);
 		// Register application converters and formatters
 	    registry.addConverter(PiiripunktConverter());
+	    registry.addConverter(PiirivalvurConverter());
+	    registry.addConverter(VahtkondConverter());
 	}
 	
 	Converter<Piiripunkt, String> PiiripunktConverter() {
@@ -27,5 +31,24 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
             	return o.getNimetus();
             }
         };
+    }
+	
+	Converter<Piirivalvur, String> PiirivalvurConverter() {
+        return new Converter<Piirivalvur, String>() {
+            @Override
+			public String convert(Piirivalvur o) {
+            	return o.getNimi();
+            }
+        };
     }	
+
+	Converter<Vahtkond, String> VahtkondConverter() {
+        return new Converter<Vahtkond, String>() {
+            @Override
+			public String convert(Vahtkond o) {
+            	return o.getNimetus();
+            }
+        };
+    }	
+
 }
