@@ -1,6 +1,7 @@
 package ee.itcollege.i377.web;
 
 import java.security.Principal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -72,11 +73,22 @@ public class VahtkonnaLiigeController {
     		Model uiModel) {
     	Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(piirivalvurId);
     	
+    	SimpleDateFormat fmt = new SimpleDateFormat("MMM d, yyyy");
+    	
     	Date dateAlates = null;
+    	try {
+    		dateAlates = fmt.parse(alates);
+    	} catch(Exception e) {}
+    	
     	Date dateKuni = null;
+    	try {
+    		dateKuni = fmt.parse(kuni);
+    	} catch(Exception e) {}
     	
         uiModel.addAttribute("rows", piirivalvur.getIndividuaalneToograafik(dateAlates, dateKuni));
         uiModel.addAttribute("piirivalvur", piirivalvur);
+        uiModel.addAttribute("alates", alates);
+        uiModel.addAttribute("kuni", kuni);
         addDateTimeFormatPatterns(uiModel);
         return "vahtkonnaliiges/list";
     }

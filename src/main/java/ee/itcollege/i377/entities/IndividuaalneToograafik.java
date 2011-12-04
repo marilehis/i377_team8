@@ -61,6 +61,14 @@ public class IndividuaalneToograafik {
 				if (null != vahtkondPiiriloigul.getSuletud())
 					continue;
 				
+				if ((null != alates) && (alates.after(vahtkondPiiriloigul.getAlates()))) {
+					continue;
+				}
+				
+				if ((null != kuni) && (kuni.before(vahtkondPiiriloigul.getAlates()))) {
+					continue;
+				}
+				
 				IndividuaalneToograafik rida = new IndividuaalneToograafik();
 				rida.setAlates(vahtkondPiiriloigul.getAlates());
 				rida.setKuni(vahtkondPiiriloigul.getKuni());

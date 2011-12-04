@@ -26,15 +26,40 @@
 		</div>
 	</div>
 	<div style="clear:both"></div>
+	<script type="javascript">
+		dojo.require('dijit.form.DateTextBox')
+	</script>
     <form method="GET" action="vahtkonnaliiges" class="searchForm">
 		<input type="hidden" name="piirivalvurId" id="piirivalvurId" value="${piirivalvur.piirivalvurId}"/>
 		<div class="searchContainer">
-			<label for="alates">Alates</label>
-			<input type="text" name="alates" id="alates" value="${alates}"/>
+			<label for="alates">Alates</label><br/>
+			<div class="dijitReset dijitInputField dijitInputContainer">
+				<input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" 
+					autocomplete="off" type="text" maxlength="524288" 
+					aria-valuenow="" aria-invalid="false" id="alates" name="alates" tabindex="0" aria-required="true" value="${alates}"/>
+				<script type="text/javascript">
+	        		Spring.addDecoration(new Spring.ElementDecoration({elementId : 'alates', 
+	        			widgetType : 'dijit.form.DateTextBox', widgetAttrs : {promptMessage: 'Enter From (required)', 
+	        				invalidMessage: 'Please enter valid From', required: false, 
+	        				constraints: {datePattern : 'MMM d, yyyy', required : false}, 
+	        				datePattern : 'MMM d, yyyy'}})); 
+	        	</script>				
+			</div>			
 		</div>
 		<div class="searchContainer">
-			<label for="kuni">Kuni</label>
-			<input type="text" name="kuni" id="kuni" value="${kuni}"/>
+			<label for="kuni">Kuni</label><br/>
+			<div class="dijitReset dijitInputField dijitInputContainer">
+				<input class="dijitReset dijitInputInner" dojoattachpoint="textbox,focusNode" 
+					autocomplete="off" type="text" maxlength="524288" 
+					aria-valuenow="" aria-invalid="false" id="kuni" name="kuni" tabindex="0" aria-required="true" value="${kuni}"/>
+				<script type="text/javascript">
+	        		Spring.addDecoration(new Spring.ElementDecoration({elementId : 'kuni', 
+	        			widgetType : 'dijit.form.DateTextBox', widgetAttrs : {promptMessage: 'Enter Until (required)', 
+	        				invalidMessage: 'Please enter valid Until', required: false, 
+	        				constraints: {datePattern : 'MMM d, yyyy', required : false}, 
+	        				datePattern : 'MMM d, yyyy'}})); 
+	        	</script>				
+			</div>			
 		</div>
 		<div class="searchContainer">
 			<input type="submit" value="Värskenda"/>
