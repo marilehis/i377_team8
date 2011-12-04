@@ -3,13 +3,29 @@
 
 package ee.itcollege.i377.entities;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import java.lang.String;
 
 privileged aspect PiirivalvurIntsidendi_Roo_ToString {
     
-    public java.lang.String PiirivalvurIntsidendi.toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    public String PiirivalvurIntsidendi.toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Alates: ").append(getAlates()).append(", ");
+        sb.append("Avaja: ").append(getAvaja()).append(", ");
+        sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("Intsident: ").append(getIntsident()).append(", ");
+        sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
+        sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
+        sb.append("Kuni: ").append(getKuni()).append(", ");
+        sb.append("Muudetud: ").append(getMuudetud()).append(", ");
+        sb.append("Muutja: ").append(getMuutja()).append(", ");
+        sb.append("Piirivalvur: ").append(getPiirivalvur()).append(", ");
+        sb.append("PiirivalvurIntsidendisId: ").append(getPiirivalvurIntsidendisId()).append(", ");
+        sb.append("PiirivalvuriSeadusIntsidendis: ").append(getPiirivalvuriSeadusIntsidendis() == null ? "null" : getPiirivalvuriSeadusIntsidendis().size()).append(", ");
+        sb.append("Suletud: ").append(getSuletud()).append(", ");
+        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
+        sb.append("VahtkondIntsidendi: ").append(getVahtkondIntsidendi()).append(", ");
+        sb.append("Version: ").append(getVersion());
+        return sb.toString();
     }
     
 }

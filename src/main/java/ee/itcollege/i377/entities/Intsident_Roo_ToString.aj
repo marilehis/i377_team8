@@ -3,13 +3,35 @@
 
 package ee.itcollege.i377.entities;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import java.lang.String;
 
 privileged aspect Intsident_Roo_ToString {
     
-    public java.lang.String Intsident.toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    public String Intsident.toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Avaja: ").append(getAvaja()).append(", ");
+        sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("GpsLatituud: ").append(getGpsLatituud()).append(", ");
+        sb.append("GpsLongituud: ").append(getGpsLongituud()).append(", ");
+        sb.append("IntsidendiLiik: ").append(getIntsidendiLiik()).append(", ");
+        sb.append("IntsidentId: ").append(getIntsidentId()).append(", ");
+        sb.append("IsikIntsidendis: ").append(getIsikIntsidendis() == null ? "null" : getIsikIntsidendis().size()).append(", ");
+        sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
+        sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
+        sb.append("Kood: ").append(getKood()).append(", ");
+        sb.append("Muudetud: ").append(getMuudetud()).append(", ");
+        sb.append("Muutja: ").append(getMuutja()).append(", ");
+        sb.append("Nimetus: ").append(getNimetus()).append(", ");
+        sb.append("ObjektIntsidendis: ").append(getObjektIntsidendis() == null ? "null" : getObjektIntsidendis().size()).append(", ");
+        sb.append("Piiriloik: ").append(getPiiriloik()).append(", ");
+        sb.append("PiirivalvurIntsidendis: ").append(getPiirivalvurIntsidendis() == null ? "null" : getPiirivalvurIntsidendis().size()).append(", ");
+        sb.append("Suletud: ").append(getSuletud()).append(", ");
+        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
+        sb.append("ToimumiseAlgus: ").append(getToimumiseAlgus()).append(", ");
+        sb.append("ToimumiseLopp: ").append(getToimumiseLopp()).append(", ");
+        sb.append("VahtkondIntsidendis: ").append(getVahtkondIntsidendis() == null ? "null" : getVahtkondIntsidendis().size()).append(", ");
+        sb.append("Version: ").append(getVersion());
+        return sb.toString();
     }
     
 }

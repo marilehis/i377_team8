@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class PiiriloikController {
 	
-	
 	private Piiriloik setCreated(Piiriloik piiriloik,Principal principal){
 		piiriloik.setAvaja(principal.getName());
 		piiriloik.setAvatud(new Date());
@@ -73,6 +72,4 @@ public class PiiriloikController {
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/piiriloiks";
     }
-
 }
-

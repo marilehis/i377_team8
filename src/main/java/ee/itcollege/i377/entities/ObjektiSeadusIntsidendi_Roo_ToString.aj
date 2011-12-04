@@ -3,13 +3,27 @@
 
 package ee.itcollege.i377.entities;
 
-import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
-import org.apache.commons.lang3.builder.ToStringStyle;
+import java.lang.String;
 
 privileged aspect ObjektiSeadusIntsidendi_Roo_ToString {
     
-    public java.lang.String ObjektiSeadusIntsidendi.toString() {
-        return ReflectionToStringBuilder.toString(this, ToStringStyle.SHORT_PREFIX_STYLE);
+    public String ObjektiSeadusIntsidendi.toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Alates: ").append(getAlates()).append(", ");
+        sb.append("Avaja: ").append(getAvaja()).append(", ");
+        sb.append("Avatud: ").append(getAvatud()).append(", ");
+        sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
+        sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
+        sb.append("Kuni: ").append(getKuni()).append(", ");
+        sb.append("Muudetud: ").append(getMuudetud()).append(", ");
+        sb.append("Muutja: ").append(getMuutja()).append(", ");
+        sb.append("ObjektIntsidendi: ").append(getObjektIntsidendi()).append(", ");
+        sb.append("ObjektiSeadusIntsidendisId: ").append(getObjektiSeadusIntsidendisId()).append(", ");
+        sb.append("SeadusePunkt: ").append(getSeadusePunkt()).append(", ");
+        sb.append("Suletud: ").append(getSuletud()).append(", ");
+        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
+        sb.append("Version: ").append(getVersion());
+        return sb.toString();
     }
     
 }
