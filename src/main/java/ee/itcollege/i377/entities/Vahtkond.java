@@ -254,7 +254,7 @@ public class Vahtkond implements Serializable {
     }
 	    
 	 
-    public String Vahtkond.toString() {
+    public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Kood: ").append(getKood()).append(", ");
