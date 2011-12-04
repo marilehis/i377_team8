@@ -548,6 +548,11 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>tomcat-maven-plugin</artifactId>
                 <version>1.1</version>
+ 				<configuration>
+        			<url>http://localhost:8080/manager/html</url>
+        			<server>tomcat_localhost</server>
+        		<path>/i377_team8</path>
+    </configuration>                
             </plugin>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
