@@ -3,14 +3,11 @@
 
 package ee.itcollege.i377.entities;
 
-import ee.itcollege.i377.entities.Vahtkond;
-import java.lang.Integer;
-import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
+
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Vahtkond_Roo_Entity {
@@ -73,17 +70,9 @@ privileged aspect Vahtkond_Roo_Entity {
         return em;
     }
     
-    public static long Vahtkond.countVahtkonds() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Vahtkond o WHERE o.suletud IS NULL", Long.class).getSingleResult();
-    }
-    
     public static Vahtkond Vahtkond.findVahtkond(Long vahtkondId) {
         if (vahtkondId == null) return null;
         return entityManager().find(Vahtkond.class, vahtkondId);
-    }
-    
-    public static List<Vahtkond> Vahtkond.findVahtkondEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud IS NULL", Vahtkond.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }
