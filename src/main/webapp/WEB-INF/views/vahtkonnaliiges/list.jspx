@@ -1,16 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" 
-xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" 
-xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" 
-version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:list id="pl_ee_itcollege_i377_entities_VahtkonnaLiige" items="${vahtkonnaliiges}" z="isEsJhrkAKLrgLrIz36aPVa6cPU=">
-        <table:table data="${vahtkonnaliiges}" id="l_ee_itcollege_i377_entities_VahtkonnaLiige" path="/vahtkonnaliiges" typeIdFieldName="vahtkonnaLiigeId" z="kXTMeymjrQS+DHgQPW7A2WETr7Q=">
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" property="vahtkonnaNimetus" z="5uV3T414NIsUKtFHl/s1DUd85M12"/>
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_alates" property="alates" z="5uV3T404NIsUKtFHl/s1DUd85MQ="/>
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kuni" property="kuni" z="mGT9i6fCEYoicfb9P3TKYVfvqhc="/>
-            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kommentaar" property="kommentaar" z="mGT9i6fCEYoicfb9P3TKYVfvqh11"/>
-        </table:table>
-    </page:list>
+<div xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:page="urn:jsptagdir:/WEB-INF/tags/form"
+	xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+	<jsp:directive.page contentType="text/html;charset=UTF-8" />
+	<jsp:output omit-xml-declaration="yes" />
+	<table>
+		<thead>
+			<th></th>
+			<th>Piirilõik</th>
+			<th>Vahtkond</th>
+			<th>Algus</th>
+			<th>Lõpp</th>
+		</thead>
+		<tbody>
+			<c:set var="rowcounter" value="0" scope="page" />
+			<c:forEach var="item" items="${rows}">
+				<tr>
+					<c:set var="rowcounter" value="${rowcounter + 1}" scope="page" />
+					<td><c:out value="${rowcounter}" /></td>
+					<td>${item.piiriloik.nimetus}</td>
+					<td>${item.vahtkond.nimetus}</td>
+					<td><util:dateformat date="${item.alates}" /></td>
+					<td><util:dateformat date="${item.kuni}" /></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 </div>

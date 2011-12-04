@@ -307,5 +307,9 @@ public class Piirivalvur implements Serializable {
     	sb.append(getPerekonnanimi());
     	return sb.toString();
     }
+    
+    public List<IndividuaalneToograafik> getIndividuaalneToograafik(Date alates, Date kuni) {
+    	return IndividuaalneToograafik.findIndividuaalneToograafikFor(this, alates, kuni);
+    }
 	
 }

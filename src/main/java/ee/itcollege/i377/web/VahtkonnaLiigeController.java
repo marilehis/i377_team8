@@ -12,7 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import ee.itcollege.i377.entities.Piirivalvur;
 import ee.itcollege.i377.entities.Vahtkond;
 import ee.itcollege.i377.entities.VahtkonnaLiige;
 
@@ -62,7 +64,16 @@ public class VahtkonnaLiigeController {
         return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkond().getVahtkondId().toString(), httpServletRequest) + "?form";
     }
     
-    
-    
+    @RequestMapping(method = RequestMethod.GET)
+    public String list(
+    		@RequestParam(value = "piirivalvurId", required = true) Long piirivalvurId, 
+    		@RequestParam(value = "alates", required = false) Date alates,
+    		@RequestParam(value = "kuni", required = false) Date kuni,
+    		Model uiModel) {
+    	Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(piirivalvurId);
+        uiModel.addAttribute("rows", piirivalvur.getIndividuaalneToograafik(alates, kuni));
+        addDateTimeFormatPatterns(uiModel);
+        return "vahtkonnaliiges/list";
+    }
 	
 }
