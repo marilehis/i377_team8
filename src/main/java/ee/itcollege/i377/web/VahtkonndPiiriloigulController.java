@@ -21,6 +21,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
+import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
+import org.springframework.stereotype.Controller;
+
 @RooWebScaffold(path = "vahtkonndpiiriloiguls", formBackingObject = VahtkonndPiiriloigul.class)
 @RequestMapping("/vahtkonndpiiriloiguls")
 @Controller
