@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PreRemove;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -172,4 +173,9 @@ public class VahtkonnaLiige implements Serializable {
 		this.vahtkond = vahtkond;
 	}
 	
+	@PreRemove
+	public void preventRemove() {
+		 throw new SecurityException("Vahtkonna liikme kustutamine keelatud!");
+	}
+	 
 }
