@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_i377_entities_Piiriloik" modelAttribute="piiriloik" path="/piiriloiks" render="${empty dependencies}" z="RoVKYGt4PZeZImBeX3UtwTq3eXI=">         
-        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Piiriloik_nimetus" z="BEHQy0m/D/wtHriuaUGsYQMFK5I=" required="true"/>
         <field:input field="kood" id="c_ee_itcollege_i377_entities_Piiriloik_kood" z="gfkxzdKPny19tttSQ55Kxg5SzEo=" required="true"/>
+        <field:input field="nimetus" id="c_ee_itcollege_i377_entities_Piiriloik_nimetus" z="BEHQy0m/D/wtHriuaUGsYQMFK5I=" required="true"/>
         <field:input field="gpsKoordinaadid" id="c_ee_itcollege_i377_entities_Piiriloik_gpsKoordinaadid" z="rkcKy3Jl/YJtcV26D8B0aycwIzY="/>
    		<field:textarea field="kommentaar" id="c_ee_itcollege_i377_entities_Piiriloik_kommentaar" z="YS08omQgUdSrDbfeRmO6g9de5/o="/>
     </form:create>
