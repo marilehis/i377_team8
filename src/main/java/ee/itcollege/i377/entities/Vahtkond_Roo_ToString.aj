@@ -6,7 +6,7 @@ package ee.itcollege.i377.entities;
 import java.lang.String;
 
 privileged aspect Vahtkond_Roo_ToString {
-    
+    /*
     public String Vahtkond.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Alates: ").append(getAlates()).append(", ");
@@ -28,6 +28,6 @@ privileged aspect Vahtkond_Roo_ToString {
         sb.append("VahtkonndPiiriloiguls: ").append(getVahtkonndPiiriloiguls() == null ? "null" : getVahtkonndPiiriloiguls().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
-    }
+    }*/
     
 }
