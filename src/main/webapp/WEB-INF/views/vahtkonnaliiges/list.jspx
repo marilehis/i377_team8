@@ -7,8 +7,8 @@ version="2.0">
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_i377_entities_VahtkonnaLiige" items="${vahtkonnaliiges}" z="isEsJhrkAKLrgLrIz36aPVa6cPU=">
         <table:table data="${vahtkonnaliiges}" id="l_ee_itcollege_i377_entities_VahtkonnaLiige" path="/vahtkonnaliiges" typeIdFieldName="vahtkonnaLiigeId" z="kXTMeymjrQS+DHgQPW7A2WETr7Q=">
-             <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" property="vahtkond" z="5uV3T414NIsUKtFHl/s1DUd85MQ="/>
-             <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_piiriloik" property="piiriloik" z="5uV3T415NIsUKtFHl/s1DUd85MQ="/>             
+            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_vahtkond" property="vahtkond" z="5uV3T414NIsUKtFHl/s1DUd85MQ="/>
+            <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_piiriloik" property="piiriloik" z="5uV3T415NIsUKtFHl/s1DUd85MQ="/>             
             <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_alates" property="alates" z="5uV3T404NIsUKtFHl/s1DUd85MQ="/>
             <table:column id="c_ee_itcollege_i377_entities_VahtkonnaLiige_kuni" property="kuni" z="mGT9i6fCEYoicfb9P3TKYVfvqhc="/>
             <table:column date="true" dateTimePattern="${vahtkonnaLiige_muudetud_date_format}" id="c_ee_itcollege_i377_entities_VahtkonnaLiige_muudetud" property="muudetud" z="b+bAcgxsDMaJIkzhUYW2Rds5jXw="/>
