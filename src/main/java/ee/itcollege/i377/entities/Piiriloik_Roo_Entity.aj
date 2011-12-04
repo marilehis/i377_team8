@@ -3,14 +3,11 @@
 
 package ee.itcollege.i377.entities;
 
-import ee.itcollege.i377.entities.Piiriloik;
-import java.lang.Integer;
-import java.lang.Long;
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
+
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiriloik_Roo_Entity {
@@ -73,21 +70,9 @@ privileged aspect Piiriloik_Roo_Entity {
         return em;
     }
     
-    public static long Piiriloik.countPiiriloiks() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o", Long.class).getSingleResult();
-    }
-    
-    public static List<Piiriloik> Piiriloik.findAllPiiriloiks() {
-        return entityManager().createQuery("SELECT o FROM Piiriloik o", Piiriloik.class).getResultList();
-    }
-    
     public static Piiriloik Piiriloik.findPiiriloik(Long piiriloikId) {
         if (piiriloikId == null) return null;
         return entityManager().find(Piiriloik.class, piiriloikId);
-    }
-    
-    public static List<Piiriloik> Piiriloik.findPiiriloikEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piiriloik o", Piiriloik.class).setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
 }
