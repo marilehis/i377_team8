@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ee.itcollege.i377.entities.Piiripunkt;
+import ee.itcollege.i377.entities.SurrogaatKuupaev;
 
 @RooWebScaffold(path = "piiripunkts", formBackingObject = Piiripunkt.class)
 @RequestMapping("/piiripunkts")
@@ -32,6 +33,8 @@ public class PiiripunktController {
         uiModel.asMap().clear();
         piiripunkt.setAvaja(principal.getName());
         piiripunkt.setAvatud(new Date());
+        piiripunkt.setMuudetud(SurrogaatKuupaev.getInstance());
+        piiripunkt.setSuletud(SurrogaatKuupaev.getInstance());
         piiripunkt.persist();
         return "redirect:/piiripunkts";
     }

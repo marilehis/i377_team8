@@ -254,7 +254,9 @@ public class Vahtkond implements Serializable {
 	}
 	 
     public static List<Vahtkond> findAllVahtkonds() {
-        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud IS NULL", Vahtkond.class).getResultList();
+        return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud = :surrogaat", Vahtkond.class).
+        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        		getResultList();
     }
 	
 }

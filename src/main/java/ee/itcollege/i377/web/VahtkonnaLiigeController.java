@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import ee.itcollege.i377.entities.Piirivalvur;
+import ee.itcollege.i377.entities.SurrogaatKuupaev;
 import ee.itcollege.i377.entities.Vahtkond;
 import ee.itcollege.i377.entities.VahtkonnaLiige;
 
@@ -47,6 +48,8 @@ public class VahtkonnaLiigeController {
         vahtkonnaLiige.setVahtkond(getVahtkond(httpServletRequest));
         vahtkonnaLiige.setAvaja(principal.getName());
         vahtkonnaLiige.setAvatud(new Date());
+        vahtkonnaLiige.setMuudetud(SurrogaatKuupaev.getInstance());
+        vahtkonnaLiige.setSuletud(SurrogaatKuupaev.getInstance());
         vahtkonnaLiige.persist();
         return "redirect:/vahtkonds/" + encodeUrlPathSegment(vahtkonnaLiige.getVahtkond().getVahtkondId().toString(), httpServletRequest) + "?form";
     }

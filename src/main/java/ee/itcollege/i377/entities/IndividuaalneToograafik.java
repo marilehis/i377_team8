@@ -50,15 +50,15 @@ public class IndividuaalneToograafik {
 			Date alates, Date kuni) {
 		List<IndividuaalneToograafik> rows = new ArrayList<IndividuaalneToograafik>();
 		for(VahtkonnaLiige vahtkonnaLiige : piirivalvur.getVahtkonnaLiiges()) {
-			if (null != vahtkonnaLiige.getSuletud())
+			if (null != vahtkonnaLiige.getSuletud() && !vahtkonnaLiige.getSuletud().equals(SurrogaatKuupaev.getInstance()))
 				continue;
 			
 			Vahtkond vahtkond = vahtkonnaLiige.getVahtkond();
-			if (null != vahtkond.getSuletud())
+			if (null != vahtkond.getSuletud() && !vahtkond.getSuletud().equals(SurrogaatKuupaev.getInstance()))
 				continue;
 				
 			for(VahtkonndPiiriloigul vahtkondPiiriloigul : vahtkond.getVahtkonndPiiriloiguls()) {
-				if (null != vahtkondPiiriloigul.getSuletud())
+				if (null != vahtkondPiiriloigul.getSuletud() && !vahtkondPiiriloigul.getSuletud().equals(SurrogaatKuupaev.getInstance()))
 					continue;
 				
 				if ((null != alates) && (alates.after(vahtkondPiiriloigul.getAlates()))) {
