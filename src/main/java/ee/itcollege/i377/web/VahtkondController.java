@@ -2,6 +2,7 @@ package ee.itcollege.i377.web;
 
 import java.security.Principal;
 import java.util.Date;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -69,9 +70,9 @@ public class VahtkondController {
 	
     void VahtkondController.addDateTimeFormatPatterns(Model uiModel) {
     	uiModel.addAttribute("vahtkond_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-         uiModel.addAttribute("vahtkond_kuni_date_format", SimpleDateFormat("dd.mm.yyyy"));
+         uiModel.addAttribute("vahtkond_kuni_date_format", DateTimeFormat.patternForStyle("M-", Locale.ENGLISH));
         
-        uiModel.addAttribute("vahtkond_alates_date_format", SimpleDateFormat("dd.mm.yyyy"));
+        uiModel.addAttribute("vahtkond_alates_date_format", DateTimeFormat.patternForStyle("M-", Locale.ENGLISH));
        // uiModel.addAttribute("vahtkond_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
        // uiModel.addAttribute("vahtkond_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("vahtkond_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
