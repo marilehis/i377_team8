@@ -20,8 +20,6 @@
     <c:out value=" | "/>
     <spring:url value="/" var="home"/>
     <span> <a href="${home}?lang=en"> Eng </a></span>
-    <c:out value=" - "/>
-    <span><a href="${home}?lang=et">Est</a></span>
     
   
   </c:if>
@@ -29,8 +27,6 @@
   <c:out value=" | "/>
     <spring:url value="/resources/j_spring_security_login" var="home"/>
     <span> <a href="${home}?lang=en"> Eng </a></span>
-    <c:out value=" - "/>
-    <span><a href="${home}?lang=et">Est</a></span>
   </c:if>  
     
   
