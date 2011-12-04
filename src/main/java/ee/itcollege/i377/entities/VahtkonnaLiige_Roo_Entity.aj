@@ -77,9 +77,9 @@ privileged aspect VahtkonnaLiige_Roo_Entity {
         return entityManager().createQuery("SELECT COUNT(o) FROM VahtkonnaLiige o", Long.class).getSingleResult();
     }
     
-    public static List<VahtkonnaLiige> VahtkonnaLiige.findAllVahtkonnaLiiges() {
+   /* public static List<VahtkonnaLiige> VahtkonnaLiige.findAllVahtkonnaLiiges() {
         return entityManager().createQuery("SELECT o FROM VahtkonnaLiige o", VahtkonnaLiige.class).getResultList();
-    }
+    }*/
     
     public static VahtkonnaLiige VahtkonnaLiige.findVahtkonnaLiige(Long vahtkonnaLiigeId) {
         if (vahtkonnaLiigeId == null) return null;

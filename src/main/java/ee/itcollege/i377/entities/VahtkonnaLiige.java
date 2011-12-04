@@ -73,6 +73,18 @@ public class VahtkonnaLiige implements Serializable {
     @ManyToOne
 	@JoinColumn(name="VAHTKOND_ID")
 	private Vahtkond vahtkond;
+    
+    
+    
+    private String vahtkondName;
+	
+	public String getVahtkondName() {
+		return this.vahtkondName;
+	}
+	
+	public void setVahtkondName(String vahtkondName) {
+		this.vahtkondName = vahtkondName;
+	}
 
     public VahtkonnaLiige() {
     }
@@ -177,5 +189,16 @@ public class VahtkonnaLiige implements Serializable {
 	public void preventRemove() {
 		 throw new SecurityException("Vahtkonna liikme kustutamine keelatud!");
 	}
+	
+	 public static List<VahtkonnaLiige> findAllVahtkonnaLiiges() {
+		 List<VahtkonnaLiige> L = entityManager().createQuery("SELECT o FROM VahtkonnaLiige o", VahtkonnaLiige.class).getResultList();
+		 for(VahtkonnaLiige item : L ){
+			 L.setVahtkondName(L.vahtkond.getNimetus());
+		 }
+		 return L;
+	 }
+	
+	
+	
 	 
 }
