@@ -4,9 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_i377_entities_Piiriloik" items="${piiriloiks}" z="nim715xGo6Zoai8bSbBcfINUJNc=">
         <table:table data="${piiriloiks}" id="l_ee_itcollege_i377_entities_Piiriloik" path="/piiriloiks" typeIdFieldName="piiriloikId" z="bn3su31fog4kxjAQ6NJ/LIZctqE=">
-            <table:column id="c_ee_itcollege_i377_entities_Piiriloik_nimetus" property="nimetus" z="PQOySWy3+mKf/sprrP3VMOE7VBQY="/>
             <table:column id="c_ee_itcollege_i377_entities_Piiriloik_kood" property="kood" z="PQOySWy3+mKf/spoP3VMOE7VBQY="/>
-            <table:column id="c_ee_itcollege_i377_entities_Piiriloik_gpsKoordinaadid" property="gpsKoordinaadid" z="ySn5+18VBmchcDCtXl9rSKDgEuE="/>
+            <table:column id="c_ee_itcollege_i377_entities_Piiriloik_nimetus" property="nimetus" z="PQOySWy3+mKf/sprrP3VMOE7VBQY="/>
             <table:column id="c_ee_itcollege_i377_entities_Piiriloik_kommentaar" property="kommentaar" z="yu4uNG7HrsDgP5j7tkZ46G6/RMM="/>       
         </table:table>
     </page:list>
