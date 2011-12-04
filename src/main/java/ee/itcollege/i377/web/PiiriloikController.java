@@ -49,7 +49,7 @@ public class PiiriloikController {
 	 public String create(@Valid Piiriloik piiriloik, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
 		if (bindingResult.hasErrors())return this.hasErrors(piiriloik, uiModel, "piiriloik/create");
         uiModel.asMap().clear();
-        piiriloik = this.setCreated(piiriloik);     
+        piiriloik = this.setCreated(piiriloik,principal);     
         return "redirect:/piiriloiks";
 	 }
 	    	
@@ -57,7 +57,7 @@ public class PiiriloikController {
     public String update(@Valid Piiriloik piiriloik, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) this.hasErrors(piiriloik, uiModel, "piiriloiks/update");
         uiModel.asMap().clear();
-        piiriloik = this.setModified(piiriloik);
+        piiriloik = this.setModified(piiriloik,principal);
         piiriloik.merge();
         return "redirect:/piiriloiks";
     }
@@ -65,7 +65,7 @@ public class PiiriloikController {
     @RequestMapping(value = "/{piiriloikId}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("piiriloikId") Long piiriloikId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Principal principal, Model uiModel) {
     	Piiriloik piiriloik = Piiriloik.findPiiriloik(piiriloikId);
-    	piiriloik = this.setModified(piiriloik);
+    	piiriloik = this.setModified(piiriloik,principal);
     	piiriloik.merge();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
