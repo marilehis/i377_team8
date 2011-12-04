@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PreRemove;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -194,5 +195,9 @@ public class Piiriloik implements Serializable {
     			getSingleResult() > 0;
 	}
 	
+    @PreRemove
+    public void preventRemove() {
+        throw new SecurityException("Piirilõiku ei tohi kustutada!");
+    }    
 	
 }
