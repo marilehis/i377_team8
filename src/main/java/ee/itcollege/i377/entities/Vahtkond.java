@@ -256,27 +256,5 @@ public class Vahtkond implements Serializable {
     public static List<Vahtkond> findAllVahtkonds() {
         return entityManager().createQuery("SELECT o FROM Vahtkond o WHERE o.suletud IS NULL", Vahtkond.class).getResultList();
     }
-	    
-	 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Nimetus: ").append(getNimetus()).append(", ");
-        sb.append("Kood: ").append(getKood()).append(", ");
-        sb.append("Alates: ").append(getAlates()).append(", ");
-        sb.append("Kuni: ").append(getKuni()).append(", ");
-        sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
-        sb.append("Piiripunkt: ").append(getPiiripunkt()).append(", ");
-        sb.append("Vaeosa: ").append(getVaeosa()).append(", ");
-        sb.append("VahtkondId: ").append(getVahtkondId()).append(", ");
-        sb.append("VahtkondIntsidendis: ").append(getVahtkondIntsidendis() == null ? "null" : getVahtkondIntsidendis().size()).append(", ");
-        sb.append("VahtkonnaLiiges: ").append(getVahtkonnaLiiges() == null ? "null" : getVahtkonnaLiiges().size()).append(", ");
-        sb.append("VahtkonndPiiriloiguls: ").append(getVahtkonndPiiriloiguls() == null ? "null" : getVahtkonndPiiriloiguls().size()).append(", ");
-        sb.append("Version: ").append(getVersion());
-        return sb.toString();
-    }
-    
-    
-    
-    
 	
 }
