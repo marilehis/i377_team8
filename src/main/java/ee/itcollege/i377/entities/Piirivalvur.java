@@ -278,21 +278,18 @@ public class Piirivalvur implements Serializable {
     }
     
     public static long countPiirivalvurs() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.suletud = :surrogaat", Long.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piirivalvur o WHERE o.sulgeja IS NULL", Long.class).
         		getSingleResult();
         
     }
     
     public static List<Piirivalvur> findAllPiirivalvurs() {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud = :surrogaat", Piirivalvur.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.sulgeja IS NULL", Piirivalvur.class).
         		getResultList();
     }
     
     public static List<Piirivalvur> findPiirivalvurEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.suletud = :surrogaat", Piirivalvur.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT o FROM Piirivalvur o WHERE o.sulgeja IS NULL", Piirivalvur.class).
         		setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     

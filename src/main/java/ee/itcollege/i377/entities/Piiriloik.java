@@ -202,20 +202,17 @@ public class Piiriloik implements Serializable {
     }
     
     public static long countPiiriloiks() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o WHERE o.suletud = :surrogaat", Long.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piiriloik o WHERE o.sulgeja IS NULL", Long.class).
         		getSingleResult();
     }
     
     public static List<Piiriloik> findAllPiiriloiks() {
-        return entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud = :surrogaat", Piiriloik.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.sulgeja IS NULL", Piiriloik.class).
         		getResultList();
     }
     
     public static List<Piiriloik> findPiiriloikEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.suletud = :surrogaat", Piiriloik.class).setFirstResult(firstResult).setMaxResults(maxResults).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT o FROM Piiriloik o WHERE o.sulgeja IS NULL", Piiriloik.class).setFirstResult(firstResult).setMaxResults(maxResults).
         		getResultList();
     }
 	
