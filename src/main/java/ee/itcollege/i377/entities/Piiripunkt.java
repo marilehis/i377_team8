@@ -268,20 +268,17 @@ public class Piiripunkt implements Serializable {
 	}
 	
     public static long countPiiripunkts() {
-        return entityManager().createQuery("SELECT COUNT(o) FROM Piiripunkt o WHERE o.suletud = :surrogaat", Long.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT COUNT(o) FROM Piiripunkt o WHERE o.sulgeja IS NULL", Long.class).
         		getSingleResult();
     }
     
     public static List<Piiripunkt> findAllPiiripunkts() {
-        return entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.suletud = :surrogaat", Piiripunkt.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.sulgeja IS NULL", Piiripunkt.class).
         		getResultList();
     }
     
     public static List<Piiripunkt> findPiiripunktEntries(int firstResult, int maxResults) {
-        return entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.suletud = :surrogaat", Piiripunkt.class).
-        		setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+        return entityManager().createQuery("SELECT o FROM Piiripunkt o WHERE o.sulgeja IS NULL", Piiripunkt.class).
         		setFirstResult(firstResult).setMaxResults(maxResults).getResultList();
     }
     
