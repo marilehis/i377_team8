@@ -180,8 +180,7 @@ public class VahtkonnaLiige implements Serializable {
 
 	public static List<VahtkonnaLiige> findAllVahtkonnaLiiges() {
 		return entityManager().createQuery(
-				"SELECT o FROM VahtkonnaLiige o WHERE o.suletud = :surrogaat", VahtkonnaLiige.class).
-				setParameter("surrogaat", SurrogaatKuupaev.getInstance()).
+				"SELECT o FROM VahtkonnaLiige o WHERE o.sulgeja IS NULL", VahtkonnaLiige.class).
 				getResultList();
 	}
 	
