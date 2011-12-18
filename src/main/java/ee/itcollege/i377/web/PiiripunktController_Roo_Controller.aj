@@ -3,11 +3,18 @@
 
 package ee.itcollege.i377.web;
 
+import ee.itcollege.i377.entities.AmetPiiripunkti;
+import ee.itcollege.i377.entities.PiiriloiguHaldaja;
+import ee.itcollege.i377.entities.Piiripunkt;
+import ee.itcollege.i377.entities.PiiripunktiAlluvus;
+import ee.itcollege.i377.entities.PiiripunktiOrgYksus;
+import ee.itcollege.i377.entities.Vahtkond;
 import java.io.UnsupportedEncodingException;
+import java.lang.Integer;
+import java.lang.Long;
+import java.lang.String;
 import java.util.Collection;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
@@ -19,16 +26,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
-import ee.itcollege.i377.entities.AmetPiiripunkti;
-import ee.itcollege.i377.entities.PiiriloiguHaldaja;
-import ee.itcollege.i377.entities.Piiripunkt;
-import ee.itcollege.i377.entities.PiiripunktiAlluvus;
-import ee.itcollege.i377.entities.PiiripunktiOrgYksus;
-import ee.itcollege.i377.entities.Vahtkond;
-
 privileged aspect PiiripunktController_Roo_Controller {
     
-
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String PiiripunktController.createForm(Model uiModel) {
         uiModel.addAttribute("piiripunkt", new Piiripunkt());
@@ -36,11 +35,11 @@ privileged aspect PiiripunktController_Roo_Controller {
         return "piiripunkts/create";
     }
     
-    @RequestMapping(value = "/{piiripunktId}", method = RequestMethod.GET)
-    public String PiiripunktController.show(@PathVariable("piiripunktId") Long piiripunktId, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String PiiripunktController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("piiripunkt", Piiripunkt.findPiiripunkt(piiripunktId));
-        uiModel.addAttribute("itemId", piiripunktId);
+        uiModel.addAttribute("piiripunkt", Piiripunkt.findPiiripunkt(id));
+        uiModel.addAttribute("itemId", id);
         return "piiripunkts/show";
     }
     
@@ -58,9 +57,9 @@ privileged aspect PiiripunktController_Roo_Controller {
         return "piiripunkts/list";
     }
     
-    @RequestMapping(value = "/{piiripunktId}", params = "form", method = RequestMethod.GET)
-    public String PiiripunktController.updateForm(@PathVariable("piiripunktId") Long piiripunktId, Model uiModel) {
-        uiModel.addAttribute("piiripunkt", Piiripunkt.findPiiripunkt(piiripunktId));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String PiiripunktController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("piiripunkt", Piiripunkt.findPiiripunkt(id));
         addDateTimeFormatPatterns(uiModel);
         return "piiripunkts/update";
     }
@@ -96,11 +95,11 @@ privileged aspect PiiripunktController_Roo_Controller {
     }
     
     void PiiripunktController.addDateTimeFormatPatterns(Model uiModel) {
-        uiModel.addAttribute("piiripunkt_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("piiripunkt_avatud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
-        uiModel.addAttribute("piiripunkt_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("piiripunkt_muudetud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
         uiModel.addAttribute("piiripunkt_suletud_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("piiripunkt_alates_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
+        uiModel.addAttribute("piiripunkt_kuni_date_format", DateTimeFormat.patternForStyle("M-", LocaleContextHolder.getLocale()));
     }
     
     String PiiripunktController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

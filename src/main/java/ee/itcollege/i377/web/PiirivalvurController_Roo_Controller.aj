@@ -3,11 +3,21 @@
 
 package ee.itcollege.i377.web;
 
+import ee.itcollege.i377.entities.AuastmeMuutumine;
+import ee.itcollege.i377.entities.Piirivalvur;
+import ee.itcollege.i377.entities.PiirivalvurIntsidendi;
+import ee.itcollege.i377.entities.PiirivalvurPiiripunkti;
+import ee.itcollege.i377.entities.PiirivalvurVaeosa;
+import ee.itcollege.i377.entities.PiirivalvurVodikohal;
+import ee.itcollege.i377.entities.PiirivalvuriKontakt;
+import ee.itcollege.i377.entities.SeotudKontaktisik;
+import ee.itcollege.i377.entities.VahtkonnaLiige;
 import java.io.UnsupportedEncodingException;
+import java.lang.Integer;
+import java.lang.Long;
+import java.lang.String;
 import java.util.Collection;
-
 import javax.servlet.http.HttpServletRequest;
-
 import org.joda.time.format.DateTimeFormat;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.ui.Model;
@@ -19,16 +29,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.util.UriUtils;
 import org.springframework.web.util.WebUtils;
 
-import ee.itcollege.i377.entities.AuastmeMuutumine;
-import ee.itcollege.i377.entities.Piirivalvur;
-import ee.itcollege.i377.entities.PiirivalvurIntsidendi;
-import ee.itcollege.i377.entities.PiirivalvurPiiripunkti;
-import ee.itcollege.i377.entities.PiirivalvurVaeosa;
-import ee.itcollege.i377.entities.PiirivalvurVodikohal;
-import ee.itcollege.i377.entities.PiirivalvuriKontakt;
-import ee.itcollege.i377.entities.SeotudKontaktisik;
-import ee.itcollege.i377.entities.VahtkonnaLiige;
-
 privileged aspect PiirivalvurController_Roo_Controller {
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -38,11 +38,11 @@ privileged aspect PiirivalvurController_Roo_Controller {
         return "piirivalvurs/create";
     }
     
-    @RequestMapping(value = "/{piirivalvurId}", method = RequestMethod.GET)
-    public String PiirivalvurController.show(@PathVariable("piirivalvurId") Long piirivalvurId, Model uiModel) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public String PiirivalvurController.show(@PathVariable("id") Long id, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
-        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(piirivalvurId));
-        uiModel.addAttribute("itemId", piirivalvurId);
+        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(id));
+        uiModel.addAttribute("itemId", id);
         return "piirivalvurs/show";
     }
     
@@ -60,13 +60,13 @@ privileged aspect PiirivalvurController_Roo_Controller {
         return "piirivalvurs/list";
     }
     
-    @RequestMapping(value = "/{piirivalvurId}", params = "form", method = RequestMethod.GET)
-    public String PiirivalvurController.updateForm(@PathVariable("piirivalvurId") Long piirivalvurId, Model uiModel) {
-        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(piirivalvurId));
+    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
+    public String PiirivalvurController.updateForm(@PathVariable("id") Long id, Model uiModel) {
+        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(id));
         addDateTimeFormatPatterns(uiModel);
         return "piirivalvurs/update";
     }
-
+    
     @ModelAttribute("auastmemuutumines")
     public Collection<AuastmeMuutumine> PiirivalvurController.populateAuastmeMuutumines() {
         return AuastmeMuutumine.findAllAuastmeMuutumines();

@@ -3,77 +3,14 @@
 
 package ee.itcollege.i377.entities;
 
-import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Version;
-
-import org.springframework.transaction.annotation.Transactional;
+import ee.itcollege.i377.entities.Piiripunkt;
+import java.lang.Long;
 
 privileged aspect Piiripunkt_Roo_Entity {
     
-    @PersistenceContext
-    transient EntityManager Piiripunkt.entityManager;
-    
-    @Version
-    @Column(name = "version")
-    private Integer Piiripunkt.version;
-    
-    public Integer Piiripunkt.getVersion() {
-        return this.version;
+    public static Piiripunkt Piiripunkt.findPiiripunkt(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Piiripunkt.class, id);
     }
-    
-    public void Piiripunkt.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Piiripunkt.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
-    }
-    
-    @Transactional
-    public void Piiripunkt.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piiripunkt attached = Piiripunkt.findPiiripunkt(this.piiripunktId);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Piiripunkt.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Piiripunkt.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Piiripunkt Piiripunkt.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Piiripunkt merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
-    
-    public static final EntityManager Piiripunkt.entityManager() {
-        EntityManager em = new Piiripunkt().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
-    }
-    
-    public static Piiripunkt Piiripunkt.findPiiripunkt(Long piiripunktId) {
-        if (piiripunktId == null) return null;
-        return entityManager().find(Piiripunkt.class, piiripunktId);
-    }
-   
     
 }

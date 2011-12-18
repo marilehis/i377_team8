@@ -3,76 +3,14 @@
 
 package ee.itcollege.i377.entities;
 
-import javax.persistence.Column;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Version;
-
-import org.springframework.transaction.annotation.Transactional;
+import ee.itcollege.i377.entities.Piiriloik;
+import java.lang.Long;
 
 privileged aspect Piiriloik_Roo_Entity {
     
-    @PersistenceContext
-    transient EntityManager Piiriloik.entityManager;
-    
-    @Version
-    @Column(name = "version")
-    private Integer Piiriloik.version;
-    
-    public Integer Piiriloik.getVersion() {
-        return this.version;
-    }
-    
-    public void Piiriloik.setVersion(Integer version) {
-        this.version = version;
-    }
-    
-    @Transactional
-    public void Piiriloik.persist() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.persist(this);
-    }
-    
-    @Transactional
-    public void Piiriloik.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Piiriloik attached = Piiriloik.findPiiriloik(this.piiriloikId);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
-    public void Piiriloik.flush() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.flush();
-    }
-    
-    @Transactional
-    public void Piiriloik.clear() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Piiriloik Piiriloik.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Piiriloik merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
-    }
-    
-    public static final EntityManager Piiriloik.entityManager() {
-        EntityManager em = new Piiriloik().entityManager;
-        if (em == null) throw new IllegalStateException("Entity manager has not been injected (is the Spring Aspects JAR configured as an AJC/AJDT aspects library?)");
-        return em;
-    }
-    
-    public static Piiriloik Piiriloik.findPiiriloik(Long piiriloikId) {
-        if (piiriloikId == null) return null;
-        return entityManager().find(Piiriloik.class, piiriloikId);
+    public static Piiriloik Piiriloik.findPiiriloik(Long id) {
+        if (id == null) return null;
+        return entityManager().find(Piiriloik.class, id);
     }
     
 }
