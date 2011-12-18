@@ -37,17 +37,6 @@ privileged aspect Baasolem_Roo_Entity {
     }
     
     @Transactional
-    public void Baasolem.remove() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        if (this.entityManager.contains(this)) {
-            this.entityManager.remove(this);
-        } else {
-            Baasolem attached = Baasolem.findBaasolem(this.id);
-            this.entityManager.remove(attached);
-        }
-    }
-    
-    @Transactional
     public void Baasolem.flush() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.flush();
@@ -57,14 +46,6 @@ privileged aspect Baasolem_Roo_Entity {
     public void Baasolem.clear() {
         if (this.entityManager == null) this.entityManager = entityManager();
         this.entityManager.clear();
-    }
-    
-    @Transactional
-    public Baasolem Baasolem.merge() {
-        if (this.entityManager == null) this.entityManager = entityManager();
-        Baasolem merged = this.entityManager.merge(this);
-        this.entityManager.flush();
-        return merged;
     }
     
     public static final EntityManager Baasolem.entityManager() {

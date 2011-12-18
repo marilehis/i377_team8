@@ -29,14 +29,9 @@ public class PiiriloikController {
 			HttpServletRequest httpServletRequest) {
 		if (bindingResult.hasErrors()) {
 			uiModel.addAttribute("piiriloik", piiriloik);
-			addDateTimeFormatPatterns(uiModel);
 			return "piiriloiks/create";
 		}
 		uiModel.asMap().clear();
-		piiriloik.setAvaja(principal.getName());
-		piiriloik.setAvatud(new Date());
-		piiriloik.setMuudetud(SurrogaatKuupaev.getInstance());
-		piiriloik.setSuletud(SurrogaatKuupaev.getInstance());
 		piiriloik.persist();
 
 		return "redirect:/piiriloiks";
@@ -48,12 +43,9 @@ public class PiiriloikController {
 			HttpServletRequest httpServletRequest) {
 		if (bindingResult.hasErrors()) {
 			uiModel.addAttribute("piiripunkt", piiriloik);
-			addDateTimeFormatPatterns(uiModel);
 			return "piiriloiks/update";
 		}
 		uiModel.asMap().clear();
-		piiriloik.setMuudetud(new Date());
-		piiriloik.setMuutja(principal.getName());
 		piiriloik.merge();
 		return "redirect:/piiriloiks";
 	}
@@ -64,8 +56,6 @@ public class PiiriloikController {
 			@RequestParam(value = "size", required = false) Integer size,
 			Principal principal, Model uiModel) {
 		Piiriloik piiriloik = Piiriloik.findPiiriloik(piiriloikId);
-		piiriloik.setSuletud(new Date());
-		piiriloik.setSulgeja(principal.getName());
 		piiriloik.merge();
 		uiModel.asMap().clear();
 		uiModel.addAttribute("page", (page == null) ? "1" : page.toString());

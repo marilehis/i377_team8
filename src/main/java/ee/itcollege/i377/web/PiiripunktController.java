@@ -27,14 +27,9 @@ public class PiiripunktController {
     public String create(@Valid Piiripunkt piiripunkt, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiripunkt", piiripunkt);
-            addDateTimeFormatPatterns(uiModel);
             return "piiripunkts/create";
         }
         uiModel.asMap().clear();
-        piiripunkt.setAvaja(principal.getName());
-        piiripunkt.setAvatud(new Date());
-        piiripunkt.setMuudetud(SurrogaatKuupaev.getInstance());
-        piiripunkt.setSuletud(SurrogaatKuupaev.getInstance());
         piiripunkt.persist();
         return "redirect:/piiripunkts";
     }
@@ -43,12 +38,9 @@ public class PiiripunktController {
     public String update(@Valid Piiripunkt piiripunkt, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piiripunkt", piiripunkt);
-            addDateTimeFormatPatterns(uiModel);
             return "piiripunkts/update";
         }
         uiModel.asMap().clear();
-        piiripunkt.setMuutja(principal.getName());
-        piiripunkt.setMuudetud(new Date());
         piiripunkt.merge();
         return "redirect:/piiripunkts";
     }
@@ -56,8 +48,6 @@ public class PiiripunktController {
     @RequestMapping(value = "/{piiripunktId}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("piiripunktId") Long piiripunktId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Principal principal, Model uiModel) {
     	Piiripunkt piiripunkt = Piiripunkt.findPiiripunkt(piiripunktId);
-    	piiripunkt.setSulgeja(principal.getName());
-    	piiripunkt.setSuletud(new Date());
     	piiripunkt.merge();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());

@@ -239,14 +239,14 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.i377.web.ApplicationConversionServiceFactoryBean.PiiriloikConverter implements Converter<Piiriloik, String> {
         public String convert(Piiriloik piiriloik) {
-            return new StringBuilder().append(piiriloik.getAvaja()).append(" ").append(piiriloik.getMuutja()).append(" ").append(piiriloik.getSulgeja()).append(" ").append(piiriloik.getAvatud()).toString();
+            return new StringBuilder().append(piiriloik.getGpsKoordinaadid()).append(" ").append(piiriloik.getKommentaar()).append(" ").append(piiriloik.getKood()).append(" ").append(piiriloik.getNimetus()).toString();
         }
         
     }
     
     static class ee.itcollege.i377.web.ApplicationConversionServiceFactoryBean.PiiripunktConverter implements Converter<Piiripunkt, String> {
         public String convert(Piiripunkt piiripunkt) {
-            return new StringBuilder().append(piiripunkt.getAvaja()).append(" ").append(piiripunkt.getMuutja()).append(" ").append(piiripunkt.getSulgeja()).append(" ").append(piiripunkt.getAvatud()).toString();
+            return new StringBuilder().append(piiripunkt.getAlates()).append(" ").append(piiripunkt.getGpsLatitude()).append(" ").append(piiripunkt.getGpsLongituide()).append(" ").append(piiripunkt.getKommentaar()).toString();
         }
         
     }
@@ -274,7 +274,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.i377.web.ApplicationConversionServiceFactoryBean.PiirivalvurConverter implements Converter<Piirivalvur, String> {
         public String convert(Piirivalvur piirivalvur) {
-            return new StringBuilder().append(piirivalvur.getAvaja()).append(" ").append(piirivalvur.getMuutja()).append(" ").append(piirivalvur.getSulgeja()).append(" ").append(piirivalvur.getAvatud()).toString();
+            return new StringBuilder().append(piirivalvur.getEesnimed()).append(" ").append(piirivalvur.getIsikukood()).append(" ").append(piirivalvur.getKommentaar()).append(" ").append(piirivalvur.getPerekonnanimi()).toString();
         }
         
     }

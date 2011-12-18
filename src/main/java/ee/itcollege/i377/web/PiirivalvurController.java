@@ -27,14 +27,9 @@ public class PiirivalvurController {
     public String create(@Valid Piirivalvur piirivalvur, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piirivalvur", piirivalvur);
-            addDateTimeFormatPatterns(uiModel);
             return "piirivalvurs/create";
         }
         uiModel.asMap().clear();
-        piirivalvur.setAvaja(principal.getName());
-        piirivalvur.setAvatud(new Date());
-        piirivalvur.setMuudetud(SurrogaatKuupaev.getInstance());
-        piirivalvur.setSuletud(SurrogaatKuupaev.getInstance());
         piirivalvur.persist();
         return "redirect:/piirivalvurs";
     }
@@ -43,12 +38,9 @@ public class PiirivalvurController {
     public String update(@Valid Piirivalvur piirivalvur, BindingResult bindingResult, Principal principal, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piirivalvur", piirivalvur);
-            addDateTimeFormatPatterns(uiModel);
             return "piirivalvurs/update";
         }
         uiModel.asMap().clear();
-        piirivalvur.setMuutja(principal.getName());
-        piirivalvur.setMuudetud(new Date());
         piirivalvur.merge();
         return "redirect:/piirivalvurs";
     }
@@ -56,8 +48,6 @@ public class PiirivalvurController {
     @RequestMapping(value = "/{piirivalvurId}", method = RequestMethod.DELETE)
     public String delete(@PathVariable("piirivalvurId") Long piirivalvurId, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Principal principal, Model uiModel) {
         Piirivalvur piirivalvur = Piirivalvur.findPiirivalvur(piirivalvurId);
-        piirivalvur.setSulgeja(principal.getName());
-        piirivalvur.setSuletud(new Date());
         piirivalvur.merge();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());

@@ -11,8 +11,6 @@ privileged aspect Piiripunkt_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Alates: ").append(getAlates()).append(", ");
         sb.append("AmetPiiripunktis: ").append(getAmetPiiripunktis() == null ? "null" : getAmetPiiripunktis().size()).append(", ");
-        sb.append("Avaja: ").append(getAvaja()).append(", ");
-        sb.append("Avatud: ").append(getAvatud()).append(", ");
         sb.append("GpsLatitude: ").append(getGpsLatitude()).append(", ");
         sb.append("GpsLongituide: ").append(getGpsLongituide()).append(", ");
         sb.append("Id: ").append(getId()).append(", ");
@@ -20,14 +18,10 @@ privileged aspect Piiripunkt_Roo_ToString {
         sb.append("Kood: ").append(getKood()).append(", ");
         sb.append("KorgusMerepinnast: ").append(getKorgusMerepinnast()).append(", ");
         sb.append("Kuni: ").append(getKuni()).append(", ");
-        sb.append("Muudetud: ").append(getMuudetud()).append(", ");
-        sb.append("Muutja: ").append(getMuutja()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("PiiriloiguHaldajas: ").append(getPiiriloiguHaldajas() == null ? "null" : getPiiriloiguHaldajas().size()).append(", ");
         sb.append("PiiripunktiAlluvuses: ").append(getPiiripunktiAlluvuses() == null ? "null" : getPiiripunktiAlluvuses().size()).append(", ");
         sb.append("PiiripunktiOrgYksuses: ").append(getPiiripunktiOrgYksuses() == null ? "null" : getPiiripunktiOrgYksuses().size()).append(", ");
-        sb.append("Suletud: ").append(getSuletud()).append(", ");
-        sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
         sb.append("Vahtkonds: ").append(getVahtkonds() == null ? "null" : getVahtkonds().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

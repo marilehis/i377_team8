@@ -6,12 +6,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.PrePersist;
+import javax.persistence.PreRemove;
+import javax.persistence.PreUpdate;
 
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.transaction.annotation.Transactional;
 
 @MappedSuperclass
 @RooToString
@@ -26,18 +29,77 @@ public class Baasolem {
 		String muutja;
 		String sulgeja;
 		
-		@Temporal( TemporalType.DATE)
-	    @DateTimeFormat(style="M-")
 		Date avatud;
-		
-		@Temporal( TemporalType.DATE)
-	    @DateTimeFormat(style="M-")
 		Date muudetud;
-		
-		@Temporal( TemporalType.DATE)
-	    @DateTimeFormat(style="M-")
 		Date suletud;
-				
+			
+		
+		protected static String authUser() {
+
+			Authentication auth = SecurityContextHolder.getContext()
+					.getAuthentication();
+			if (auth != null) {
+				String userName = auth.getName();
+				return userName;
+			}
+
+			else
+
+				return null;
+
+		}
+
+
+		@PrePersist
+		public void recordCreated() {
+			setAvatud(new Date());
+			setMuudetud((SurrogaatKuupaev.getInstance()));
+			setSuletud((SurrogaatKuupaev.getInstance()));
+			setAvaja(authUser());
+		}
+
+		@PreUpdate
+		public void recordUpdated() {
+			setMuudetud(new Date());
+			setMuutja(authUser());
+		}
+
+		@PreRemove
+		public void preventRemove() {
+			throw new SecurityException("Removing of records is prohibited!");
+		}
+
+		@Transactional
+		public void remove() {
+			setSuletud(new Date());
+			setSulgeja(authUser());
+			merge();
+		}
+
+		@Transactional
+		public Baasolem merge() {
+			if (this.entityManager == null)
+				this.entityManager = entityManager();
+
+			if (this.id != null && !entityManager.contains(this)) {
+				Baasolem oldEntity = entityManager().find(getClass(), id);
+				if (getAvatud() == null)
+					setAvatud(oldEntity.getAvatud());
+				if (getAvaja() == null)
+					setAvaja(oldEntity.getAvaja());
+				if (getSuletud() == null)
+					setSuletud(oldEntity.getSuletud());
+				if (getSulgeja() == null)
+					setSulgeja(oldEntity.getSulgeja());
+
+			}
+			Baasolem merged = this.entityManager.merge(this);
+			this.entityManager.flush();
+			return merged;
+		}
+		
+		
+		
 		
 		public Long getId() {
 			return id;
@@ -45,40 +107,40 @@ public class Baasolem {
 		public void setId(Long id) {
 			this.id = id;
 		}
-		public String getAvaja() {
+		protected String getAvaja() {
 			return avaja;
 		}
-		public void setAvaja(String avaja) {
+		protected void setAvaja(String avaja) {
 			this.avaja = avaja;
 		}
-		public String getMuutja() {
+		protected String getMuutja() {
 			return muutja;
 		}
-		public void setMuutja(String muutja) {
+		protected void setMuutja(String muutja) {
 			this.muutja = muutja;
 		}
-		public String getSulgeja() {
+		protected String getSulgeja() {
 			return sulgeja;
 		}
-		public void setSulgeja(String sulgeja) {
+		protected void setSulgeja(String sulgeja) {
 			this.sulgeja = sulgeja;
 		}
-		public Date getAvatud() {
+		protected Date getAvatud() {
 			return avatud;
 		}
-		public void setAvatud(Date avatud) {
+		protected void setAvatud(Date avatud) {
 			this.avatud = avatud;
 		}
-		public Date getMuudetud() {
+		protected Date getMuudetud() {
 			return muudetud;
 		}
-		public void setMuudetud(Date muudetud) {
+		protected void setMuudetud(Date muudetud) {
 			this.muudetud = muudetud;
 		}
-		public Date getSuletud() {
+		protected Date getSuletud() {
 			return suletud;
 		}
-		public void setSuletud(Date suletud) {
+		protected void setSuletud(Date suletud) {
 			this.suletud = suletud;
 		}
 
